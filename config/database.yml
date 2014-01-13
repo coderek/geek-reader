@@ -11,10 +11,10 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: Reader_development
+  database: greader
   pool: 5
   username: root
-  password:
+  password: zengqiang
   socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -23,10 +23,10 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: Reader_test
+  database: greader
   pool: 5
   username: root
-  password:
+  password: zengqiang
   socket: /tmp/mysql.sock
 
 production:

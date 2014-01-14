@@ -11,7 +11,7 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: greader
+  database: greader_dev
   pool: 5
   username: root
   password: zengqiang
@@ -23,7 +23,7 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: greader
+  database: greader_test
   pool: 5
   username: root
   password: zengqiang
@@ -32,7 +32,7 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: Reader_production
+  database: greader
   pool: 5
   username: root
   password:

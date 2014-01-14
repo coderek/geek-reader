@@ -4,15 +4,14 @@ window.Reader =
   Views: {}
   Routers: {}
   initialize: ->
-    # check session
-    sess = new Reader.Models.Session
-    sess.fetch
-      success: (model)->
-        if model.isNew()
-          router = new Reader.Routers.Sessions
-          Backbone.history.start()
-        else
-#          new Reader.Routers.
-          alert "show feeds!"
+    $(".container").html(JST["index"]())
+    session = new Reader.Models.Session
+    session.fetch
+      success: =>
+        new Reader.Routers.Sessions({session: session})
+        Backbone.history.start()
+      error: =>
+        $(".container").html("error with server, please try again later")
+
 $(document).ready ->
   Reader.initialize()

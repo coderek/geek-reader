@@ -1,0 +1,17 @@
+<h1>Geek Reader</h1>
+
+<% if @session and @session.username: %>
+Welcome, <%= @session.username %>, <a href="#logout" class="btn">logout</a>
+
+<% else: %>
+<div class="welcome">
+    <div>
+        <a href="#login">Login now</a>
+    </div>
+    <div>
+        <a href="#register">Register now</a>
+    </div>
+</div>
+<% end %>
+
+

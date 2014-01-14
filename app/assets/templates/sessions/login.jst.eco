@@ -2,15 +2,12 @@
     <h3>User Login</h3>
     <div class="form-group">
         <label for="username">Username: </label>
-        <input type="text" class="form-control" id="username" placeholder="User Name"/>
-
+        <input type="text" class="form-control" name="username" placeholder="User Name"/>
     </div>
     <div class="form-group">
         <label for="password">Password: </label>
-        <input type="password" class="form-control" id="password" placeholder="Password"/>
-
+        <input type="password" class="form-control" name="password" placeholder="Password"/>
     </div>
-
     <div class="form-group">
         <button class="btn">Login</button>
     </div>

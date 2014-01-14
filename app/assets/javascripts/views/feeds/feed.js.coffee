@@ -1,7 +1,6 @@
 class Reader.Views.Feed extends Backbone.View
-
-  template: JST['feeds/index']
-
+  tagName: "li"
+  className: "list-unstyled"
   initialize: ->
     @listenTo @model, "destroy", @remove
 
@@ -12,12 +11,15 @@ class Reader.Views.Feed extends Backbone.View
   show_entries: ->
     entries = new Reader.Collections.Entries
     entries.url = "/feeds/#{@model.get("id")}/entries"
-    @entriesView = new Reader.Views.Entries({collection: entries, feed: @model})
-    $(".entries").append(@entriesView.render().el)
+    if @entriesView
+      @entriesView.show()
+    else
+      @entriesView = new Reader.Views.Entries({collection: entries, feed: @model})
+      $(".entries").append(@entriesView.render().el)
 
   delete_feed: ->
     @model.destroy()
 
   render: ->
-    @$el.html @template(feed: @model)
+    @$el.html @model.get("title")
     @

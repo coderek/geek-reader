@@ -1,0 +1,10 @@
+<div>
+    <div class="form-group ">
+        <label for="feed_source">Feed Source: </label>
+        <input type="text" name="feed_source" class="form-control"/>
+    </div>
+    <div class="form-group form-inline">
+        <button class="btn new" data-loading-text="fetching feed..">Submit</button>
+        <button class="btn cancel">cancel</button>
+    </div>
+</div>

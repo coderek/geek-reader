@@ -1,13 +1,16 @@
 class Reader.Views.Entry extends Backbone.View
 
-  template: JST['feeds/entry']
-
+  tagName: "li"
   initialize: (options) ->
 
   events:
     "click": "open"
   open: ->
-    $("body").append(JST["feeds/article"](entry: @model))
+    if @articleView
+      @articleView.show()
+    else
+      @articleView = new Reader.Views.Article(model: @model)
+      $(".articles").append(@articleView.render().el)
   render: ->
-    @$el.html(@template(entry:@model))
+    @$el.html(@model.get("title"))
     @

@@ -3,18 +3,18 @@ class Reader.Routers.Sessions extends Backbone.Router
     "login": "login"
     "logout": "logout"
     "register":"register"
+    "" : "index"
     "index" : "index"
 
-  initialize: (options) ->
-    @session = options.session
-    @session.on "logged_in", =>
+  initialize: ->
+    Reader.session.on "logged_in", =>
       @navigate("index", trigger:true)
-    @session.on "destroy", =>
-      @session.clear()
+    Reader.session.on "destroy", =>
+      Reader.session.clear()
       @navigate("index", trigger:true)
-    @session.fetch
+    Reader.session.fetch
       success: =>
-        if @session.has("id")
+        if Reader.session.has("id")
           @navigate("index", trigger:true)
         else
           @navigate("login", trigger:true)
@@ -25,15 +25,15 @@ class Reader.Routers.Sessions extends Backbone.Router
 
   register: ->
     registerView = new Reader.Views.Register
-    $(".container").html(registerView.render().el)
+    $(".content").html(registerView.render().el)
 
   login: ->
-    loginView = new Reader.Views.Login(model: @session)
-    $(".container").html(loginView.render().el)
+    loginView = new Reader.Views.Login
+    $(".content").html(loginView.render().el)
 
   logout: ->
-    @session.destroy({wait:true})
+    Reader.session.destroy({wait:true})
 
   index: ->
-    indexView = new Reader.Views.Index(model: @session)
-    $(".container").html(indexView. render().el)
+    indexView = new Reader.Views.Index
+    $(".content").html(indexView.render().el)

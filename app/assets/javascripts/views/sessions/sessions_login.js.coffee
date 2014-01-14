@@ -1,7 +1,5 @@
 class Reader.Views.Login extends Backbone.View
   initialize: ->
-    @session = @model
-
   template: JST['sessions/login']
   events:
     "click button" : "login"
@@ -10,11 +8,11 @@ class Reader.Views.Login extends Backbone.View
     ev.preventDefault()
     username = @$("[name=username]").val()
     password = @$("[name=password]").val()
-    @session.clear()
-    @session.set {username: username, password: password}
-    @session.save {},
+    Reader.session.clear()
+    Reader.session.set {username: username, password: password}
+    Reader.session.save {},
       success: =>
-        @session.trigger("logged_in")
+        Reader.session.trigger("logged_in")
       error: ->
   render: ->
     @$el.html(@template())

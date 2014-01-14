@@ -1,10 +1,48 @@
 <nav class="navbar navbar-default">
   <div class="navbar-brand">
-    GReader
+    <a href="#">Geek Reader</a>
   </div>
-
+  <div class="session navbar-right"></div>
 </nav>
 
 <div class="container">
-  loading...
+  <div class="row">
+    <ul class="menu col-md-3">
+      <li>
+        <div>
+          <i class="glyphicon glyphicon-plus-sign"></i>
+          <a href="#" class="new_sub">new subscription</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <i class="glyphicon glyphicon-unchecked"></i>
+          <a href="#unread">unread</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <i class="glyphicon glyphicon-star"></i>
+          <a href="#starred">starred</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <i class="glyphicon glyphicon-search"></i>
+          <input type="text" role="search" placeholder="search"/>
+        </div>
+      </li>
+      <li>
+        <div>
+          <i class="glyphicon glyphicon-folder-close"></i>
+          <a href="#">all subscriptions</a>
+        </div>
+        <ul class="feeds"></ul>
+      </li>
+      <!--<li>groups</li>-->
+
+    </ul>
+    <div class="content col-md-9"></div>
+  </div>
+
 </div>

@@ -1,3 +1,0 @@
-<ul class="entries" data-feed="<%=@feed_id%>">
-
-</ul>

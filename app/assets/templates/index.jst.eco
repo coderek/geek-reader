@@ -1,28 +1,19 @@
-<h1>Geek Reader</h1>
+<div class="reader">
+    <% if @session and @session.username: %>
 
-<% if @session and @session.username: %>
-Welcome, <%= @session.username %>, <a href="#logout" class="btn">logout</a>
-
-    <form class="form-inline" role="form">
-        <div class="form-group ">
-            <label for="feed_source">Feed Source: </label>
-            <input type="text" name="feed_source" class="form-control"/>
-        </div>
-        <button class="btn new" data-loading-text="fetching feed..">Submit</button>
-    </form>
     <div class="listings row">
         <div class="feeds col-md-5"></div>
         <div class="entries col-md-7"></div>
+        <div class="articles"></div>
     </div>
-<% else: %>
-<div class="welcome">
-    <div>
-        <a href="#login">Login now</a>
+    <% else: %>
+    <div class="welcome">
+        <div>
+            <a href="#login">Login now</a>
+        </div>
+        <div>
+            <a href="#register">Register now</a>
+        </div>
     </div>
-    <div>
-        <a href="#register">Register now</a>
-    </div>
+    <% end %>
 </div>
-<% end %>
-
-

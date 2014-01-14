@@ -1,9 +1,2 @@
 <li class="list-unstyled row">
-    <div class="col-md-8">
-        <%= @feed.get("title") %>
-        <span><%=@feed.get("feed_url") %></span>
-    </div>
-    <div class="col-md-4">
-        <button class="btn btn-danger">delete</button>
-    </div>
 </li>

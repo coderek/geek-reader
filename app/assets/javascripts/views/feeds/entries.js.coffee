@@ -1,7 +1,6 @@
 class Reader.Views.Entries extends Backbone.View
 
-  template: JST['feeds/entries']
-
+  tagName: "ol"
   initialize: (options) ->
     @feed = options.feed
     @collection.fetch(reset:true)
@@ -15,5 +14,9 @@ class Reader.Views.Entries extends Backbone.View
     @$el.append(entryView.render().el)
 
   render: ->
-    @$el.html @template(feed_id: @feed.get("id"))
+    @$el.attr("data-feed", @feed.get("id"))
+    @show()
     @
+  show: ->
+    $(".entries>.show").removeClass("show")
+    @$el.addClass("show")

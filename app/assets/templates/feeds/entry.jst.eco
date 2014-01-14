@@ -1,1 +1,14 @@
-<li class="list-unstyled"><%=@entry.get("title")%></li>
+<div class="title">
+    <%= @entry.get("title")%>
+</div>
+<div class="feed title">
+    <%= @entry.get("author")%>
+</div>
+<div class="detail">
+    <h3><%= @entry.get("title") %></h3>
+    <% if @entry.has("content") and @entry.get("content") isnt "" : %>
+        <%- @entry.get("content")%>
+    <% else : %>
+        <%- @entry.get("summary")%>
+    <% end %>
+</div>

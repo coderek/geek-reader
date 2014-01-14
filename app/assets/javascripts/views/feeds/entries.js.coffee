@@ -1,6 +1,6 @@
 class Reader.Views.Entries extends Backbone.View
-
-  tagName: "ol"
+  tagName: "ul"
+  className: "entries"
   initialize: (options) ->
     @feed = options.feed
     @collection.fetch(reset:true)
@@ -10,13 +10,9 @@ class Reader.Views.Entries extends Backbone.View
     entries.each(@render_entry, @)
 
   render_entry: (entry)->
-    entryView = new Reader.Views.Entry(model:entry)
+    entryView = new Reader.Views.Entry({model:entry, feed: @feed})
     @$el.append(entryView.render().el)
 
   render: ->
     @$el.attr("data-feed", @feed.get("id"))
-    @show()
     @
-  show: ->
-    $(".entries>.show").removeClass("show")
-    @$el.addClass("show")

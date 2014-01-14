@@ -1,6 +1,7 @@
 class Reader.Views.Menu extends Backbone.View
   initialize: ->
     @listenTo Reader.feeds, "add", @add_new_feed
+    @shown = false
 
   el: ".menu"
   events:
@@ -17,6 +18,9 @@ class Reader.Views.Menu extends Backbone.View
   show: ->
     Reader.feeds.fetch()
     @$el.show()
+    @shown = true
   hide: ->
     @$el.hide()
+    @shown = false
 
+  is_shown: -> @shown

@@ -1,90 +1,94 @@
-.reader {
-  form {
-    margin: 20px 0;
-    input[type=text] {
-      width: 400px;
+@mixin col_title {
+  &>div:first-child {
+    span {
+      font-size: 12pt;
+      font-weight: bold;
+      line-height: 50px;
     }
+    height: 50px;
+    padding: 10px 10px;
+    border-bottom: 1px solid black;
   }
-  .listings {
-    position: relative;
-  }
-  .feeds {
-    background-color: #5bc0de;
-    li {
-      margin: 4px 0;
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
-  .entries {
-    background-color: #5bc0de;
-    overflow: hidden;
-    padding: 0;
-    ol {
-      margin: 0;
-      float: left;
-      li {
-        margin: 4px;
-      }
-      display: none;
-      &.show {
-        display: block;
-      }
-    }
-  }
-  .article {
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
-    position: absolute;
-    width: 100%;
-    top: 0;
-    background-color: #afd9ee;
-    display: none;
-    &.show {
-      display: block;
-    }
-    padding: 10px;
-  }
-
 }
 
-.menu {
-  li {
-    list-style: none;
-    margin: 0;
-    border-top: 1px solid #f3f3f3;
-    padding: 0;
-    i {
-      margin-right: 10px;
+.content_col {
+  @include col_title;
+  &>div:first-child {
+    text-align: center;
+  }
+  .content {
+    height: 600px;
+    width: 100%;
+    overflow-y: scroll;
+    .entries {
+      float: left;
+      padding: 0;
+      margin: 0;
+      li {
+        margin: 0;
+        min-height: 50px;
+        border-top: 1px solid #f3f3f3;
+        list-style: none;
+        padding: 10px;
+        .title {
+          font-size: 12pt;
+        }
+        .feed.title {
+          font-size: 10pt;
+        }
+        position: relative;
+
+        .detail {
+//          background-color:#afd9ee ;
+          padding: 10px;
+          display: none;
+          &.show {
+            display: block;
+          }
+        }
+      }
     }
-    >div {
-      margin: 10px;
-    }
   }
-  [role=search] {
-    border: #f3f3f3;
-  }
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-  div + ul {
+}
+.menu_col {
+  @include col_title;
+  .menu {
     li {
-      padding: 10px 0;
-      padding-left: 20px;
-      border-left: none;
-      border-right: none;
+      list-style: none;
+      margin: 0;
+      border-top: 1px solid #f3f3f3;
+      padding: 0;
+      i {
+        margin-right: 10px;
+      }
+      >div {
+        margin: 10px;
+      }
+
     }
-    li:first-child {
-      border-top: none;
+
+
+    [role=search] {
+      border: #f3f3f3;
     }
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    div + ul {
+      li {
+        padding: 10px 0;
+        padding-left: 20px;
+        border-left: none;
+        border-right: none;
+      }
+      li:first-child {
+        border-top: none;
+      }
+    }
+    margin: 0;
+    padding: 0;
   }
-  margin: 0;
-  padding: 0;
 }
 
 form.new_feed {

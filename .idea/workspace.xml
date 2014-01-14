@@ -23,28 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="reader.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/reader.scss">
+      <file leaf-file-name="menu.js.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/menu.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="5" selection-start="954" selection-end="954" vertical-scroll-proportion="-4.6666665" vertical-offset="863" max-vertical-offset="1545">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new_feed.js.coffee" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/feeds/new_feed.js.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="37" selection-start="618" selection-end="618" vertical-scroll-proportion="0.516129" vertical-offset="164" max-vertical-offset="675">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="entry.js.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/feeds/entry.js.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="19" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+            <state line="18" column="24" selection-start="475" selection-end="475" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
               <folding />
             </state>
           </provider>
@@ -53,16 +35,70 @@
       <file leaf-file-name="feed.js.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/feeds/feed.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="4" selection-start="646" selection-end="646" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+            <state line="3" column="16" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.js.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/menu.js.coffee">
+      <file leaf-file-name="feeds_router.js.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/routers/feeds_router.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="34" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+            <state line="14" column="0" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/index.js.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="8" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="entries.js.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/feeds/entries.js.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="0" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="entry.js.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/feeds/entry.js.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="10" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/main/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="12" selection-start="837" selection-end="837" vertical-scroll-proportion="-7.4583335" vertical-offset="286" max-vertical-offset="795">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="entry.jst.eco" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/templates/feeds/entry.jst.eco">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="31" selection-start="336" selection-end="336" vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="285">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reader.scss" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/reader.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="5" selection-start="920" selection-end="920" vertical-scroll-proportion="0.3674833" vertical-offset="570" max-vertical-offset="1620">
               <folding />
             </state>
           </provider>
@@ -93,7 +129,6 @@
         <option value="$PROJECT_DIR$/log/development.log" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/routers/feeds_router.js.coffee" />
         <option value="$PROJECT_DIR$/db/migrate/20140114033155_create_feeds_and_entries.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/models/feed.js.coffee" />
         <option value="$PROJECT_DIR$/Gemfile" />
@@ -109,10 +144,7 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/entries_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/collections/entries.js.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/templates/feeds/entry.jst.eco" />
         <option value="$PROJECT_DIR$/app/assets/templates/feeds/entries.jst.eco" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/views/feeds/entries.js.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/views/feeds/entry.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/views/feeds/article.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/templates/feeds/article.jst.eco" />
         <option value="$PROJECT_DIR$/app/assets/templates/index.jst.eco" />
@@ -124,17 +156,21 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/routers/menu_router.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/reader.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/views/index.js.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/views/menu.js.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/views/feeds/feed.js.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/reader.scss" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/views/feeds/new_feed.js.coffee" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/views/menu.js.coffee" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/views/feeds/entry.js.coffee" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/views/feeds/feed.js.coffee" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/views/feeds/entries.js.coffee" />
+        <option value="$PROJECT_DIR$/app/assets/templates/feeds/entry.jst.eco" />
         <option value="$PROJECT_DIR$/app/views/main/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/routers/feeds_router.js.coffee" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/reader.scss" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="71" />
-    <option name="y" value="120" />
+    <option name="x" value="76" />
+    <option name="y" value="185" />
     <option name="width" value="1132" />
     <option name="height" value="590" />
   </component>
@@ -732,7 +768,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="SearchEverywhereHistory" value="reader.scss&#10;reader.sc&#10;index.js&#10;entry&#10;entries&#10;feed.js.co&#10;index&#10;index.jst&#10;routes.&#10;user&#10;e&#10;sessionscon&#10;entr&#10;feed.rb&#10;users&#10;sessioncon&#10;sesscon&#10;userco&#10;usercon&#10;userscon&#10;feedscontr&#10;user.rb&#10;gemf&#10;routes&#10;feeds_and&#10;deve&#10;en&#10;login&#10;session&#10;session_logi&#10;sessions_reg&#10;schem&#10;schema&#10;sche&#10;enhance&#10;gem&#10;data&#10;userc" />
+    <property name="SearchEverywhereHistory" value="readers&#10;reader.scss&#10;reader.sc&#10;index.js&#10;entry&#10;entries&#10;feed.js.co&#10;index&#10;index.jst&#10;routes.&#10;user&#10;e&#10;sessionscon&#10;entr&#10;feed.rb&#10;users&#10;sessioncon&#10;sesscon&#10;userco&#10;usercon&#10;userscon&#10;feedscontr&#10;user.rb&#10;gemf&#10;routes&#10;feeds_and&#10;deve&#10;en&#10;login&#10;session&#10;session_logi&#10;sessions_reg&#10;schem&#10;schema&#10;sche&#10;enhance&#10;gem&#10;data&#10;userc" />
     <property name="LayoutCode.rearrangeEntriesCoffeeScript" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/dev/my/reader/app/models/feed.rb" />
   </component>
@@ -1015,11 +1051,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="71" y="120" width="1132" height="590" extended-state="0" />
+    <frame x="76" y="185" width="1132" height="590" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5846154" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5839695" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32633588" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1030,7 +1066,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29816514" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914925" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39913544" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39885497" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1278,45 +1314,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/templates/feeds/entries.jst.eco">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/templates/feeds/entry.jst.eco">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="36" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="338">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/feeds/entries.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="34" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <folding>
-            <marker date="1389706884000" expanded="true" signature="-1:-1" placeholder="tagName: &quot;ol&quot;..." />
-            <marker date="1389706884000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1389706884000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1389706884000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/feeds/article.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="22" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
           <folding>
             <marker date="1389708158000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/templates/feeds/article.jst.eco">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="69" selection-start="140" selection-end="140" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="225">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1348,23 +1351,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/routers/feeds_router.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="51" selection-end="51" vertical-scroll-proportion="0.030241935" vertical-offset="0" max-vertical-offset="496">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/routers/sessions_router.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="45" selection-start="1032" selection-end="1032" vertical-scroll-proportion="0.8185484" vertical-offset="164" max-vertical-offset="675">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/feeds/entry.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="19" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
           <folding />
         </state>
       </provider>
@@ -1390,9 +1379,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/index.js.coffee">
+    <entry file="file://$PROJECT_DIR$/app/assets/templates/feeds/entries.jst.eco">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="27" selection-start="386" selection-end="386" vertical-scroll-proportion="0.3726708" vertical-offset="0" max-vertical-offset="483">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/templates/feeds/article.jst.eco">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="69" selection-start="140" selection-end="140" vertical-scroll-proportion="0.100222714" vertical-offset="0" max-vertical-offset="449">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/feeds/new_feed.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="28" selection-start="580" selection-end="580" vertical-scroll-proportion="0.4858871" vertical-offset="164" max-vertical-offset="675">
           <folding />
         </state>
       </provider>
@@ -1404,37 +1407,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/index.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="8" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/menu.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="34" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+        <state line="18" column="24" selection-start="475" selection-end="475" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/feeds/entry.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="10" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/feeds/feed.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="4" selection-start="646" selection-end="646" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+        <state line="3" column="16" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/reader.scss">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/feeds/entries.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="5" selection-start="954" selection-end="954" vertical-scroll-proportion="-4.6666665" vertical-offset="863" max-vertical-offset="1545">
+        <state line="18" column="0" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/templates/feeds/entry.jst.eco">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="31" selection-start="336" selection-end="336" vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="285">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/main/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="10" selection-start="242" selection-end="242" vertical-scroll-proportion="0.298441" vertical-offset="16" max-vertical-offset="795">
+        <state line="31" column="12" selection-start="837" selection-end="837" vertical-scroll-proportion="-7.4583335" vertical-offset="286" max-vertical-offset="795">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/feeds/new_feed.js.coffee">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/routers/feeds_router.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="37" selection-start="618" selection-end="618" vertical-scroll-proportion="0.516129" vertical-offset="164" max-vertical-offset="675">
+        <state line="14" column="0" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/reader.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="5" selection-start="920" selection-end="920" vertical-scroll-proportion="0.3674833" vertical-offset="570" max-vertical-offset="1620">
           <folding />
         </state>
       </provider>

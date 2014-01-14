@@ -1,0 +1,1 @@
+class Reader.Models.Entry extends Backbone.Model

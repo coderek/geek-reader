@@ -41,6 +41,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    curb (0.8.5)
     diff-lcs (1.2.5)
     eco (1.0.0)
       coffee-script
@@ -50,6 +51,11 @@ GEM
     ejs (1.1.1)
     erubis (2.7.0)
     execjs (2.0.2)
+    feedzirra (0.2.1)
+      curb (~> 0.8.1)
+      loofah (~> 1.2.1)
+      nokogiri (~> 1.6.0)
+      sax-machine (~> 0.2.1)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -59,13 +65,18 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    loofah (1.2.1)
+      nokogiri (>= 1.4.4)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mini_portile (0.5.2)
     minitest (4.7.5)
     multi_json (1.8.4)
     mysql2 (0.3.13)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -102,6 +113,8 @@ GEM
       railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
+    sax-machine (0.2.1)
+      nokogiri (~> 1.6.0)
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
@@ -135,8 +148,10 @@ DEPENDENCIES
   backbone-on-rails
   bcrypt-ruby (~> 3.1.1)
   coffee-rails (~> 4.0.0)
+  feedzirra
   jbuilder (~> 1.2)
   jquery-rails
+  loofah
   mysql2
   rails (= 4.0.0)
   rspec-rails

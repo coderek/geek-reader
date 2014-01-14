@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   respond_to :json
+
   def index
     respond_with(current_user)
   end
@@ -17,7 +18,6 @@ class SessionsController < ApplicationController
   def destroy
     id = current_user.id
     session[:user_id] = nil
-    logger.debug "=============="+User.find(id).to_s
     respond_with(User.find(id))
   end
 

@@ -46,3 +46,5 @@ gem 'bcrypt-ruby', '~> 3.1.1', require: "bcrypt"
 
 gem "backbone-on-rails"
 gem "rspec-rails"
+gem 'feedzirra'
+gem 'loofah'

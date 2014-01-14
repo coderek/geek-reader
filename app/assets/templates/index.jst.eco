@@ -3,6 +3,17 @@
 <% if @session and @session.username: %>
 Welcome, <%= @session.username %>, <a href="#logout" class="btn">logout</a>
 
+    <form class="form-inline" role="form">
+        <div class="form-group ">
+            <label for="feed_source">Feed Source: </label>
+            <input type="text" name="feed_source" class="form-control"/>
+        </div>
+        <button class="btn new" data-loading-text="fetching feed..">Submit</button>
+    </form>
+    <div class="listings row">
+        <div class="feeds col-md-5"></div>
+        <div class="entries col-md-7"></div>
+    </div>
 <% else: %>
 <div class="welcome">
     <div>

@@ -12,6 +12,16 @@ class Reader.Routers.Sessions extends Backbone.Router
     @session.on "destroy", =>
       @session.clear()
       @navigate("index", trigger:true)
+    @session.fetch
+      success: =>
+        if @session.has("id")
+          @navigate("index", trigger:true)
+        else
+          @navigate("login", trigger:true)
+        Backbone.history.start()
+      error: =>
+        @navigate("login", trigger:true)
+        Backbone.history.start()
 
   register: ->
     registerView = new Reader.Views.Register

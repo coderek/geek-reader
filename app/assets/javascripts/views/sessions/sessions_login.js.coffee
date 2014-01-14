@@ -10,6 +10,7 @@ class Reader.Views.Login extends Backbone.View
     ev.preventDefault()
     username = @$("[name=username]").val()
     password = @$("[name=password]").val()
+    @session.clear()
     @session.set {username: username, password: password}
     @session.save {},
       success: =>

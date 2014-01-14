@@ -5,6 +5,9 @@ Reader::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :sessions
+  resources :feeds do
+    resources :entries
+  end
   root "main#index"
 
   # You can have the root of your site routed with "root"

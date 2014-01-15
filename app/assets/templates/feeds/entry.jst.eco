@@ -6,6 +6,7 @@
 </div>
 <div class="detail">
     <h3><%= @entry.get("title") %></h3>
+    <span class="glyphicon glyphicon-minus close"></span>
     <div class="body">
         <% if @entry.has("content") and @entry.get("content") isnt "" : %>
             <%- @entry.get("content")%>

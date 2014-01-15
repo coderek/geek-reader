@@ -3,7 +3,12 @@ class Reader.Views.Login extends Backbone.View
   template: JST['sessions/login']
   events:
     "click button" : "login"
+    "click form a" : "close"
 
+  tagName: "div"
+  className: "login container"
+  close: ->
+    @remove()
   login: (ev)->
     ev.preventDefault()
     username = @$("[name=username]").val()
@@ -13,7 +18,9 @@ class Reader.Views.Login extends Backbone.View
     Reader.session.save {},
       success: =>
         Reader.session.trigger("logged_in")
+        @remove()
       error: ->
+        alert "Username or password is wrong."
   render: ->
     @$el.html(@template())
     @

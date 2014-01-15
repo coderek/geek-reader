@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     if @user.save()
       respond_with(@user)
     else
-      render status: 500, json: @user.errors
+      render status: 406, json: @user.errors
     end
   end
 

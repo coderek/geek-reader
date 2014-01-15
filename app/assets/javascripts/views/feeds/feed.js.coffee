@@ -4,6 +4,7 @@ class Reader.Views.Feed extends Backbone.View
   template: JST["feeds/index"]
   initialize: ->
     @listenTo @model, "destroy", @remove
+    @listenTo @model, "remove", @remove
 
   render: ->
     @$el.html @template(feed: @model)

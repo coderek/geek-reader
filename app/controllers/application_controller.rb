@@ -9,5 +9,11 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def authenticate
+    unless current_user
+      render status: 401, json: {}
+    end
+  end
+
   helper_method :current_user
 end

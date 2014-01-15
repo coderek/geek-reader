@@ -1,13 +1,18 @@
 class Reader.Views.Menu extends Backbone.View
   initialize: ->
     @listenTo Reader.feeds, "add", @add_new_feed
-    @shown = false
 
-  el: ".menu"
+  el: ".menu_col"
   events:
     "click .new_sub": "new_sub"
+    "click [role=logout] a":"logout"
+
+  logout: ->
+    Reader.session.destroy()
+
   new_sub: (ev)->
     ev.preventDefault()
+    debugger
     form = new Reader.Views.NewFeed
     $("body").append(form.render().el)
 
@@ -15,12 +20,6 @@ class Reader.Views.Menu extends Backbone.View
     @$(".feeds").append((new Reader.Views.Feed(model:feed)).render().el)
     @$(".btn.new").button('reset')
 
-  show: ->
-    Reader.feeds.fetch()
-    @$el.show()
-    @shown = true
-  hide: ->
-    @$el.hide()
-    @shown = false
-
-  is_shown: -> @shown
+  load_feeds: ->
+    @$(".feeds").empty()
+    Reader.feeds.each(@add_new_feed)

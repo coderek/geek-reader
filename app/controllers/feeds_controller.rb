@@ -1,5 +1,6 @@
 class FeedsController < ApplicationController
   respond_to :json
+  before_filter :authenticate
 
   def create
     f = Feedzirra::Feed.fetch_and_parse feed_params[:url]

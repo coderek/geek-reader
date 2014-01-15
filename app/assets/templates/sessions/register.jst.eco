@@ -1,20 +1,11 @@
-<form class="form-group" id="register_user">
-    <h3>User Registration</h3>
-    <div class="form-group">
-        <label for="username">Username: </label>
-        <input type="text" class="form-control" name="username" placeholder="User Name"/>
+<form class="form-signin" role="form">
+    <h2 class="form-signin-heading">Register Here</h2>
+    <input type="text" class="form-control" placeholder="Username" name="username" required autofocus>
+    <input type="password" class="form-control" placeholder="Password" name="password" required>
+    <input type="password" class="form-control" placeholder="Confirm password" name="password_confirmation" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Register Geek Reader</button>
+    <div>
+        Already have an account? <a href="#login">Login now</a>
     </div>
-    <div class="form-group">
-        <label for="password">Password: </label>
-        <input type="password" class="form-control" name="password" placeholder="Password"/>
-    </div>
-    <div class="form-group">
-        <label for="password_confirm">Confirm Password: </label>
-        <input type="password" class="form-control" name="password_confirmation" placeholder="Password"/>
-    </div>
-    <div class="form-group">
-        <button class="btn">Register</button>
-    </div>
-    Already have an account? <a href="#login">Login now</a>
 </form>
 

@@ -2,7 +2,11 @@ class SessionsController < ApplicationController
   respond_to :json
 
   def index
-    respond_with(current_user)
+    if current_user
+      respond_with(current_user)
+    else
+      render status: 401, json: {}
+    end
   end
 
   def create
@@ -11,7 +15,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       respond_with(user)
     else
-      render status: 404, json: {}
+      render status: 401, json: {}
     end
   end
 

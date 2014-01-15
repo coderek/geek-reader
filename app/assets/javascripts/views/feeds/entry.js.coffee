@@ -3,17 +3,16 @@ class Reader.Views.Entry extends Backbone.View
   tagName: "li"
   initialize: (options) ->
     @feed = options.feed
-    @opened = false
   events:
-    "click": "open"
+    "click .title": "open"
+    "click .close": "close"
+
+  close: ->
+    @$(".detail").removeClass("show")
+    @$(".title").show()
   open: ->
-    if @opened
-      @$(".detail").removeClass("show")
-      @$(".title").show()
-    else
-      @$(".detail").addClass("show")
-      @$(".title").hide()
-    @opened = !@opened
+    @$(".detail").addClass("show")
+    @$(".title").hide()
   render: ->
     @$el.html(@template(entry: @model, feed: @feed))
     @

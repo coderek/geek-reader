@@ -1,16 +1,30 @@
-<form class="form-group" id="login_user">
-    <h3>User Login</h3>
-    <div class="form-group">
-        <label for="username">Username: </label>
-        <input type="text" class="form-control" name="username" placeholder="User Name"/>
+<div class="about">
+    <div>
+        <h1>Geek Reader</h1>
+        <h4>awesome reader for geeks</h4>
+
+        <span>features</span>
+        <ul>
+            <li>code prettify, easy for reading blog with code
+            <li>fluid design, layout renders well on most devices
+            <li>nice text format, focus on reading experience
+            <li>optimization for <a href="http://news.ycombinator.com">hacker news</a>
+            <li>allow custom sass to apply to articles
+        </ul>
     </div>
-    <div class="form-group">
-        <label for="password">Password: </label>
-        <input type="password" class="form-control" name="password" placeholder="Password"/>
+
+</div>
+<form class="form-signin" role="form">
+
+    <h3 class="form-signin-heading">Please sign in</h3>
+    <input type="text" class="form-control" placeholder="Username" name="username" required autofocus>
+    <input type="password" class="form-control" placeholder="Password" name="password" required>
+    <label class="checkbox">
+        <input type="checkbox" value="remember-me"> Remember me
+    </label>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <div>
+        <a href="#register">or Register now... </a>
     </div>
-    <div class="form-group">
-        <button class="btn">Login</button>
-    </div>
-    <a href="#register">or Register... </a>
 </form>
 

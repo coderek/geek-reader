@@ -1,9 +1,10 @@
 class Reader.Views.Feed extends Backbone.View
   tagName: "li"
   className: "list-unstyled"
+  template: JST["feeds/index"]
   initialize: ->
     @listenTo @model, "destroy", @remove
 
   render: ->
-    @$el.html "<a href=\"#feeds/#{@model.get("id")}\">#{@model.get("title")}</a>"
+    @$el.html @template(feed: @model)
     @

@@ -1,2 +1,4 @@
-<li class="list-unstyled row">
-</li>
+<a href="#feeds/<%= @feed.get("id")%>">
+<%= @feed.get("title") %>
+</a>
+<div class="desc"><%= @feed.get("description")%></div>

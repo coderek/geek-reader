@@ -6,9 +6,11 @@
 </div>
 <div class="detail">
     <h3><%= @entry.get("title") %></h3>
-    <% if @entry.has("content") and @entry.get("content") isnt "" : %>
-        <%- @entry.get("content")%>
-    <% else : %>
-        <%- @entry.get("summary")%>
-    <% end %>
+    <div class="body">
+        <% if @entry.has("content") and @entry.get("content") isnt "" : %>
+            <%- @entry.get("content")%>
+        <% else : %>
+            <%- @entry.get("summary")%>
+        <% end %>
+    </div>
 </div>

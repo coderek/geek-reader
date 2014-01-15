@@ -10,6 +10,11 @@
     border-bottom: 1px solid black;
   }
 }
+@mixin h($i) {
+  h#{$i} {
+    font-size: 10pt + 5pt / $i;
+  }
+}
 
 .content_col {
   @include col_title;
@@ -24,7 +29,8 @@
       float: left;
       padding: 0;
       margin: 0;
-      li {
+      width: 100%;
+      >li {
         margin: 0;
         min-height: 50px;
         border-top: 1px solid #f3f3f3;
@@ -39,11 +45,27 @@
         position: relative;
 
         .detail {
-//          background-color:#afd9ee ;
           padding: 10px;
           display: none;
           &.show {
             display: block;
+          }
+          .body {
+            img, video, pre {
+              max-width: 100%;
+            }
+            img {
+              display: block;
+              margin: 10px auto;
+              border: 5px solid #fff;
+              border-radius: 5px;
+              box-shadow: 0 0 10px 1px #ddd;
+            }
+            @include h(1);
+            @include h(2);
+            @include h(3);
+            @include h(4);
+            @include h(5);
           }
         }
       }
@@ -81,6 +103,12 @@
         padding-left: 20px;
         border-left: none;
         border-right: none;
+        .desc {
+          margin: 0;
+          font-size: 50%;
+          font-style: italic;
+          color: #888;
+        }
       }
       li:first-child {
         border-top: none;

@@ -1,4 +1,6 @@
 class Feed < ActiveRecord::Base
+  include FeedsHelper
+
   belongs_to :user
   has_many :entries, :dependent => :destroy
   validates_uniqueness_of :feed_url
@@ -14,7 +16,7 @@ class Feed < ActiveRecord::Base
       hash[:categories] = e.categories.join(",") if e.respond_to? :categories
       hash[:uuid]       = e.id
       if e.respond_to? :content
-        hash[:content]    = e.content
+        hash[:content]    = parse_article e.content, e.url
       else
         hash[:content]    = ""
       end

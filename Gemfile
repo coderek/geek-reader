@@ -48,3 +48,4 @@ gem "backbone-on-rails"
 gem "rspec-rails"
 gem 'feedzirra'
 gem 'loofah'
+gem 'unicorn-rails'

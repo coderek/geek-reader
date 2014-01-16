@@ -36,6 +36,7 @@ class Reader.Routers.Sessions extends Backbone.Router
       Reader.menu = new Reader.Views.Menu
       Reader.menu.load_feeds()
       $(".session a").html("Welcome #{Reader.session.get("username")}!")
+      resize_height()
 
     $.when(load_session(), load_feeds()).then(
       =>
@@ -50,6 +51,12 @@ class Reader.Routers.Sessions extends Backbone.Router
     $(document).ajaxComplete (ev, req, options)=>
       if req.status is 401
         @navigate("login", trigger:true)  if Backbone.history.fragment isnt "register"
+
+    resize_height = ->
+      $(".menu").height($(window).height() - 70)
+      $(".content").height($(window).height() - 70)
+
+    $(window).resize (ev) -> resize_height()
 
   register: ->
     registerView = new Reader.Views.Register
@@ -66,6 +73,7 @@ class Reader.Routers.Sessions extends Backbone.Router
     $(".content").html("Please add subscription from left menu")
 
   show_feed: (fid)->
+    $(".menu .all").click() if Reader.menu.feeds_folder_closed
     feed = Reader.feeds.get(fid)
     return unless feed?
     entries = new Reader.Collections.Entries

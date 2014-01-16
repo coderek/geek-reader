@@ -7,7 +7,7 @@
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                     <li class="session"><a href="#"></a></li>
                     <li role="presentation" class="divider"></li>
-                    <li role="setting"><a role="menuitem" tabindex="-1" href="#settings">Settings</a></li>
+                    <li role="setting"><a role="menuitem" tabindex="-1" href="#settings">Settings (todo)</a></li>
                     <li role="logout"><a role="menuitem" tabindex="-1" href="#logout">Logout</a></li>
                 </ul>
             </div>
@@ -16,33 +16,35 @@
             <li>
                 <div>
                     <i class="glyphicon glyphicon-plus-sign"></i>
-                    <a href="#" class="new_sub">new subscription</a>
+                    <span class="new_sub">new subscription</span>
                 </div>
             </li>
             <li>
                 <div>
                     <i class="glyphicon glyphicon-unchecked"></i>
-                    <a href="#unread">unread</a>
+                    <!--<a href="#unread">unread</a>-->
+                    <span title="todo" >unread (todo)</span>
                 </div>
             </li>
             <li>
                 <div>
                     <i class="glyphicon glyphicon-star"></i>
-                    <a href="#starred">starred</a>
+                    <span title="todo">starred (todo)</span>
+                    <!--<a href="#starred">starred</a>-->
                 </div>
             </li>
             <li>
                 <div>
                     <i class="glyphicon glyphicon-search"></i>
-                    <input type="text" role="search" placeholder="search"/>
+                    <input type="text" role="search" placeholder="search (todo)" class="search"/>
                 </div>
             </li>
             <li>
-                <div>
+                <div class="all">
                     <i class="glyphicon glyphicon-folder-close"></i>
-                    <a href="#">all subscriptions</a>
+                    <span>all subscriptions</span>
                 </div>
-                <ul class="feeds"></ul>
+                <ul class="feeds" style="display: none"></ul>
             </li>
             <!--<li>groups</li>-->
         </ul>

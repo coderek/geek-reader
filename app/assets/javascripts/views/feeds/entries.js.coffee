@@ -7,6 +7,7 @@ class Reader.Views.Entries extends Backbone.View
     @listenTo @collection, "reset", @render_entries
 
   render_entries: (entries) ->
+    @$(".loader").remove()
     entries.each(@render_entry, @)
 
   render_entry: (entry)->
@@ -15,4 +16,5 @@ class Reader.Views.Entries extends Backbone.View
 
   render: ->
     @$el.attr("data-feed", @feed.get("id"))
+    @$el.prepend("<div class='loader'>Loading...</div>")
     @

@@ -17,13 +17,16 @@
   }
 }
 
+html, body {
+  min-width: 1000px;
+}
+
 .content_col {
   @include col_title;
   &>div:first-child {
     text-align: center;
   }
   .content {
-    max-height: 600px;
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
@@ -38,24 +41,39 @@
         border-top: 1px solid #f3f3f3;
         list-style: none;
         padding: 10px;
+        &:hover {
+          cursor: default;
+        }
         .title {
           font-size: 12pt;
         }
-        .feed.title {
+        .author.title {
           font-size: 10pt;
         }
         position: relative;
 
         .detail {
+          .ops {
+            background-color: #eeeeee;
+            padding: 5px;
+            height: 30px;
+            >* {
+              height: 20px;
+              margin-right: 5px;
+              line-height: 20px;
+            }
+            border-bottom: 1px solid darken(#eeeeee, 10%);
+          }
           padding: 10px;
           display: none;
           &.show {
             display: block;
           }
-          .close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
+          .close span {
+            color: #000000;
+            &:hover {
+              color: #000000;
+            }
           }
           .body {
             a {
@@ -97,7 +115,6 @@
     text-decoration: none;
   }
   .menu {
-    max-height: 600px;
     overflow-x: hidden;
     overflow-y: auto;
     width: 100%;
@@ -110,7 +127,17 @@
       >div {
         margin: 10px;
       }
-
+      input.search {
+        outline: none;
+      }
+    }
+    >li span:hover {
+      cursor: default;
+    }
+    div.all {
+      &:hover {
+        cursor: default;
+      }
     }
 
     [role=search] {

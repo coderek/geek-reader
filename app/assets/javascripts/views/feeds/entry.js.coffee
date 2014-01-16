@@ -1,15 +1,18 @@
 class Reader.Views.Entry extends Backbone.View
   template: JST["feeds/entry"]
   tagName: "li"
+  className: "entry"
   initialize: (options) ->
     @feed = options.feed
   events:
     "click .title": "open"
-    "click .close": "close"
+    "click .ops": "close"
 
-  close: ->
-    @$(".detail").removeClass("show")
-    @$(".title").show()
+  close: (ev)->
+    if $(ev.target).is(".ops")
+      @$(".detail").removeClass("show")
+      @$(".title").show()
+
   open: ->
     @$(".detail").addClass("show")
     @$(".title").hide()

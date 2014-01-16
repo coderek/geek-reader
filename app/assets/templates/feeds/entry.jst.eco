@@ -1,12 +1,17 @@
 <div class="title">
     <%= @entry.get("title")%>
 </div>
-<div class="feed title">
+<div class="author title">
     <%= @entry.get("author")%>
 </div>
 <div class="detail">
+    <div class="ops">
+        <a href="<%=@entry.get("url") %>" target=_blank class="glyphicon glyphicon-link"></a>
+        <i title="todo" class="glyphicon glyphicon-star"></i>
+        <span class="glyphicon glyphicon-minus close pull-right"></span>
+    </div>
     <h3><%= @entry.get("title") %></h3>
-    <span class="glyphicon glyphicon-minus close"></span>
+    <h5>- <%= @entry.get("author")%></h5>
     <div class="body">
         <% if @entry.has("content") and @entry.get("content") isnt "" : %>
             <%- @entry.get("content")%>

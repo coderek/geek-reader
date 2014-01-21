@@ -10,7 +10,7 @@ class EntriesController < ApplicationController
     feed = current_user.feeds.find params[:feed_id]
     if feed
       feed.fetch_feed
-      respond_with feed.entries
+      respond_with feed.entries.reverse
     end
   end
 end

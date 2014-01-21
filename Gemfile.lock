@@ -33,6 +33,9 @@ GEM
       jquery-rails
       rails (>= 3.1)
     bcrypt-ruby (3.1.2)
+    bourbon (3.1.8)
+      sass (>= 3.2.0)
+      thor
     builder (3.1.4)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -161,6 +164,7 @@ PLATFORMS
 DEPENDENCIES
   backbone-on-rails
   bcrypt-ruby (~> 3.1.1)
+  bourbon
   coffee-rails (~> 4.0.0)
   factory_girl_rails (~> 4.0)
   feedzirra

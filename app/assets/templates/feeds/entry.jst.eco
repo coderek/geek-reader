@@ -1,8 +1,9 @@
 <div class="title">
     <%= @entry.get("title")%>
 </div>
-<div class="author title">
+<div class="sub_title">
     <%= @entry.get("author")%>
+    <abbr class="timeago" title="<%= @entry.get("published") %>"></abbr>
 </div>
 <div class="detail">
 

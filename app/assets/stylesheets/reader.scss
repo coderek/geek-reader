@@ -1,3 +1,5 @@
+@import "bourbon";
+
 @mixin col_title {
   &>div:first-child {
     span, a[data-toggle] {
@@ -26,7 +28,15 @@ html, body {
   &>div:first-child {
     text-align: center;
     position: relative;
+  }
 
+  @include keyframes(loading) {
+    from {
+      @include transform(scale(0));
+    }
+    to {
+      @include transform(scale(1));
+    }
   }
   .content {
     width: 100%;
@@ -37,10 +47,23 @@ html, body {
       padding: 0;
       margin: 0;
       width: 100%;
-      [class$=refresh] {
+      .flash {
+        position: absolute;
+        top: 100px;
+        right: 50%;
+      }
+      .refresh {
         position: absolute;
         top: 30px;
         right: 20px;
+        &.loading {
+//          @include animation-play-state(running);
+        }
+        @include animation-play-state(running);
+        @include animation-name(loading);
+        @include animation-duration(2s);
+        @include animation-timing-function(ease);
+        @include animation-iteration-count(infinite);
       }
       >li {
         margin: 0;
@@ -54,7 +77,7 @@ html, body {
         .title {
           font-size: 12pt;
         }
-        .author.title {
+        .sub_title {
           font-size: 10pt;
         }
         position: relative;

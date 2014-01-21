@@ -8,19 +8,30 @@ class Reader.Views.Entries extends Backbone.View
     @collection.fetch(reset:true)
     @listenTo @collection, "reset", @render_entries
     @listenTo @collection, "add", @render_entry
+    @listenTo @collection, "refreshed", @refreshed
     $(".content").append(@el)
     @$el.attr("data-feed", @feed.get("id"))
 
   render_entries: (entries) ->
     @$(".loader").remove()
     entries.each(@render_entry, @)
-    @$el.append("<i class=\"glyphicon glyphicon-refresh\"></i>")
+    @$el.append("<i class=\"glyphicon glyphicon-refresh refresh\"></i>")
 
   events:
     "click [class$=refresh]": "refresh_feed"
 
+  refreshed: ->
+    @$(".refresh").removeClass("loading")
+    flash = $("<div class='flash alert alert-success'>feed is updated successfully! </div>")
+    flash.appendTo(@$el)
+    setTimeout(
+      -> flash.fadeOut()
+      4000
+    )
+
   refresh_feed: ->
     @collection.refresh()
+    @$(".refresh").addClass("loading")
 
   render_entry: (entry)->
     entryView = new Reader.Views.Entry({model:entry, feed: @feed})

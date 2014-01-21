@@ -22,4 +22,5 @@ class Reader.Views.Entry extends Backbone.View
 
   render: ->
     @$el.html(@template(entry: @model, feed: @feed))
+    @$(".timeago").timeago()
     @

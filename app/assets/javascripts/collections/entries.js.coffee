@@ -3,4 +3,6 @@ class Reader.Collections.Entries extends Backbone.Collection
 
   refresh: ->
     req = $.get(@url+"/refresh")
-    req.done (entries)=> @set(entries, {remove: false})
+    req.done (entries)=>
+      @set(entries, {remove: false})
+      @trigger("refreshed")

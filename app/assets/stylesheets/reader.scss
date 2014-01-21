@@ -19,6 +19,15 @@
   }
 }
 
+@include keyframes(loading) {
+  from {
+    @include transform(rotate(0));
+  }
+  to {
+    @include transform(rotate(360deg));
+  }
+}
+
 html, body {
 //  min-width: 1000px;
 }
@@ -30,14 +39,8 @@ html, body {
     position: relative;
   }
 
-  @include keyframes(loading) {
-    from {
-      @include transform(scale(0));
-    }
-    to {
-      @include transform(scale(1));
-    }
-  }
+
+
   .content {
     width: 100%;
     overflow-y: auto;
@@ -57,20 +60,23 @@ html, body {
         top: 30px;
         right: 20px;
         &.loading {
-//          @include animation-play-state(running);
+          @include animation-play-state(running);
         }
-        @include animation-play-state(running);
+        @include animation-play-state(paused);
         @include animation-name(loading);
         @include animation-duration(2s);
-        @include animation-timing-function(ease);
+        @include animation-timing-function(linear);
         @include animation-iteration-count(infinite);
       }
       >li {
         margin: 0;
         min-height: 50px;
-        border-top: 1px solid #f3f3f3;
+        border-top: 1px solid #dddddd;
         list-style: none;
         padding: 10px;
+        &.is_read {
+          background-color: #eeeeee;
+        }
         &:hover {
           cursor: default;
         }
@@ -83,10 +89,12 @@ html, body {
         position: relative;
 
         .detail {
+          border: 3px solid lightblue;
           .ops {
             background-color: #eeeeee;
             padding: 5px;
             height: 30px;
+            box-shadow: 0 0 20px 4px #aaaaaa;
             >* {
               height: 20px;
               margin-right: 5px;

@@ -2706,6 +2706,11 @@
       <index name="index_workflows_on_role_id" unique="false" columns="role_id"/>
       <index name="wkfs_role_tracker_old_status" unique="false" columns="role_id,tracker_id,old_status_id"/>
     </table>
+    <table name="temperatures" schema="" catalog="test" type="TABLE">
+      <column name="country" sqlType="LINESTRING" length="0" precision="0" nullable="false" jdbcType="1111"/>
+      <column name="region" sqlType="LINESTRING" length="0" precision="0" nullable="false" jdbcType="1111"/>
+      <column name="temp" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+    </table>
     <table name="wp_commentmeta" schema="" catalog="wordpress" type="TABLE">
       <column name="meta_id" sqlType="BIGINT UNSIGNED" length="20" precision="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
       <column name="comment_id" sqlType="BIGINT UNSIGNED" length="20" precision="0" nullable="false" jdbcType="-5" def="MA=="/>

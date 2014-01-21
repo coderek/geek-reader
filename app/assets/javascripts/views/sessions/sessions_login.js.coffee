@@ -13,9 +13,9 @@ class Reader.Views.Login extends Backbone.View
     ev.preventDefault()
     username = @$("[name=username]").val()
     password = @$("[name=password]").val()
+    remember = @$("[name=remember]").is(":checked")
     Reader.session.clear()
-    Reader.session.set {username: username, password: password}
-    Reader.session.save {},
+    Reader.session.save {username: username, password: password, remember: remember},
       success: =>
         Reader.session.trigger("logged_in")
         @remove()

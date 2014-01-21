@@ -12,7 +12,11 @@ class SessionsController < ApplicationController
   def create
     user = User.authenticate(session_params[:username], session_params[:password])
     if user
-      session[:user_id] = user.id
+      if session_params[:remember]
+        cookies.permanent[:auth_token] = user.auth_token
+      else
+        cookies[:auth_token] = user.auth_token
+      end
       respond_with(user)
     else
       render status: 401, json: {}
@@ -21,12 +25,12 @@ class SessionsController < ApplicationController
 
   def destroy
     id = current_user.id
-    session[:user_id] = nil
+    cookies.delete(:auth_token)
     respond_with(User.find(id))
   end
 
   private
   def session_params
-    params.permit(:username, :password)
+    params.permit(:username, :password, :remember)
   end
 end

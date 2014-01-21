@@ -36,16 +36,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  def add_feed c
-    feed = feeds.new
-    feed.url            = c.url
-    feed.title          = c.title
-    feed.description    = c.description
-    feed.etag           = c.etag
-    feed.feed_url       = c.feed_url
-    feed.last_modified  = c.last_modified
-    feed.save
-    feed.add_entries(c)
-    feed
+  def update_feeds
+    feeds.each(&:fetch_feed)
   end
 end

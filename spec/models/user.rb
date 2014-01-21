@@ -2,18 +2,23 @@ require "spec_helper"
 
 describe User do
   before do
-    @username = "zengqiang"
-    @password = "qiang"
-    @user = User.new
-  end
-  it "should create a user in correct way" do
-    @user.save({username: @username, password: @password, password_confirmation: @password})
-    @user.save({username: @username, password: @password, password_confirmation: @password})
-    User.count.should == 1
+    @user = create(:user_with_feed)
+    @feed = @user.feeds.first
   end
 
-  it "can login user" do
-    result = User.authenticate(@username, @password)
-    result.should be_true
+  it "should create a user" do
+    @user.should_not be_nil
+  end
+
+  it "can add feed to user object with feed_url" do
+    @feed.should_not be_nil
+  end
+
+  it "should fetch feeds after create" do
+    @feed.url.should_not be_nil
+  end
+
+  it "should have some entries" do
+    @feed.entries.count > 0
   end
 end

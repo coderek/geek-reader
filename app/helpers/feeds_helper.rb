@@ -43,8 +43,6 @@ module FeedsHelper
   end
 
   def parse_article original, base_url
-    puts "parsing ---"
-
     # change encoding
     if original =~ /gb2312/
       original = original.force_encoding('gb2312').encode('UTF-8')

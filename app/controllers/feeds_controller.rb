@@ -3,13 +3,11 @@ class FeedsController < ApplicationController
   before_filter :authenticate
 
   def create
-    f = Feedzirra::Feed.fetch_and_parse feed_params[:url]
 
-    if f and not f.is_a? Integer
-      feed = current_user.add_feed(f)
+    if feed = current_user.feeds.create({:feed_url => feed_params[:url]})
       respond_with(feed)
     else
-      render status: 404, json: {}
+      respond_with({}, status: 404)
     end
   end
 

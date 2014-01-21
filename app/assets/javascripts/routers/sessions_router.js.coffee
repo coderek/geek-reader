@@ -76,8 +76,4 @@ class Reader.Routers.Sessions extends Backbone.Router
     $(".menu .all").click() if Reader.menu.feeds_folder_closed
     feed = Reader.feeds.get(fid)
     return unless feed?
-    entries = new Reader.Collections.Entries
-    entries.url = "/feeds/#{feed.get("id")}/entries"
-    entriesView = new Reader.Views.Entries({collection: entries, feed: feed})
-    $(".content").html(entriesView.render().el)
-    $(".feed_title span").text(feed.get("title"))
+    feed.trigger("show_entries")

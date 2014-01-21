@@ -1,26 +1,47 @@
 class Feed < ActiveRecord::Base
   include FeedsHelper
+  after_create :fetch_feed
 
   belongs_to :user
   has_many :entries, :dependent => :destroy
   validates_uniqueness_of :feed_url
 
-  def add_entries c
-    c.entries.each do |e|
-      hash = {}
-      hash[:title]      = e.title
-      hash[:url]        = e.url
-      hash[:author]     = e.author
-      hash[:summary]    = e.summary
-      hash[:published]  = e.published
-      hash[:categories] = e.categories.join(",") if e.respond_to? :categories
-      hash[:uuid]       = e.id
-      if e.respond_to? :content
-        hash[:content]    = parse_article e.content, e.url
-      else
-        hash[:content]    = ""
+  def entries
+    super.order("published DESC")
+  end
+
+  def fetch_feed
+    raise "feed url is not valid" unless feed_url =~ /^http/
+    if last_modified != nil
+      f = Feedzirra::Feed.fetch_and_parse feed_url, {:if_modified_since => last_modified}
+    else
+      f = Feedzirra::Feed.fetch_and_parse feed_url
+    end
+
+    if f and not f.is_a? Integer
+      update_attributes({
+        :url            => f.url,
+        :title          => f.title,
+        :description    => f.description,
+        :etag           => f.etag,
+        :last_modified  => f.last_modified
+      })
+      f.entries.each do |e|
+        hash = {}
+        hash[:title]      = e.title
+        hash[:url]        = e.url
+        hash[:author]     = e.author
+        hash[:summary]    = e.summary
+        hash[:published]  = e.published
+        hash[:categories] = e.categories.join(",") if e.respond_to? :categories
+        hash[:uuid]       = e.id
+        if e.respond_to? :content
+          hash[:content]    = parse_article e.content, e.url
+        else
+          hash[:content]    = ""
+        end
+        entries.create(hash)
       end
-      entries.create(hash)
     end
   end
 end

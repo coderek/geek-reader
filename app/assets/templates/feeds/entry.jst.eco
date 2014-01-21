@@ -5,18 +5,5 @@
     <%= @entry.get("author")%>
 </div>
 <div class="detail">
-    <div class="ops">
-        <a href="<%=@entry.get("url") %>" target=_blank class="glyphicon glyphicon-link"></a>
-        <i title="todo" class="glyphicon glyphicon-star"></i>
-        <span class="glyphicon glyphicon-minus close pull-right"></span>
-    </div>
-    <h3><%= @entry.get("title") %></h3>
-    <h5>- <%= @entry.get("author")%></h5>
-    <div class="body">
-        <% if @entry.has("content") and @entry.get("content") isnt "" : %>
-            <%- @entry.get("content")%>
-        <% else : %>
-            <%- @entry.get("summary")%>
-        <% end %>
-    </div>
+
 </div>

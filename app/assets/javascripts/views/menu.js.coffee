@@ -8,6 +8,10 @@ class Reader.Views.Menu extends Backbone.View
     "click .new_sub": "new_sub"
     "click [role=logout] a":"logout"
     "click .all":"toggle_subs"
+    "click [class$=refresh]": "refresh_feeds"
+
+  refresh_feeds: ->
+    Reader.feeds.refresh()
 
   toggle_subs: (ev)->
     @$(".feeds").toggle()

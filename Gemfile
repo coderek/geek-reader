@@ -49,3 +49,4 @@ gem "rspec-rails"
 gem 'feedzirra'
 gem 'loofah'
 gem 'unicorn-rails'
+gem "factory_girl_rails", "~> 4.0"

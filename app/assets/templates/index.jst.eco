@@ -40,9 +40,9 @@
                 </div>
             </li>
             <li>
-                <div class="all">
+                <div>
                     <i class="glyphicon glyphicon-folder-close"></i>
-                    <span>all subscriptions</span>
+                    <span class="all">all subscriptions</span>
                 </div>
                 <ul class="feeds" style="display: none"></ul>
             </li>

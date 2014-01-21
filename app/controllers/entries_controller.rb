@@ -3,6 +3,14 @@ class EntriesController < ApplicationController
   before_filter :authenticate
 
   def index
-    respond_with(current_user.feeds.find(params[:feed_id]).entries)
+    respond_with(current_user.feeds.find(params[:feed_id]).entries.reverse)
+  end
+
+  def refresh
+    feed = current_user.feeds.find params[:feed_id]
+    if feed
+      feed.fetch_feed
+      respond_with feed.entries
+    end
   end
 end

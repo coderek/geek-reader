@@ -6,7 +6,11 @@ Reader::Application.routes.draw do
 
   resources :sessions
   resources :feeds do
-    resources :entries
+    resources :entries do
+      collection do
+        get "refresh"
+      end
+    end
   end
   root "main#index"
 

@@ -26,7 +26,7 @@
       <file leaf-file-name="entries_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/entries_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="13" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+            <state line="15" column="13" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
               <folding />
             </state>
           </provider>
@@ -35,7 +35,16 @@
       <file leaf-file-name="entries.js.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/feeds/entries.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="58" selection-start="810" selection-end="810" vertical-scroll-proportion="0.5482456" vertical-offset="0" max-vertical-offset="915">
+            <state line="58" column="42" selection-start="1921" selection-end="1921" vertical-scroll-proportion="0.7368421" vertical-offset="366" max-vertical-offset="1110">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="entries.js.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/collections/entries.js.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="0" selection-start="352" selection-end="352" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
               <folding />
             </state>
           </provider>
@@ -100,7 +109,6 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/collections/feeds.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/templates/feeds/entry_detail.jst.eco" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/collections/entries.js.coffee" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/vendor/assets/javascripts/jquery.timeago.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
@@ -108,8 +116,9 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/views/feeds/entry.js.coffee" />
         <option value="$PROJECT_DIR$/app/models/feed.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/entries_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/reader.scss" />
+        <option value="$PROJECT_DIR$/app/controllers/entries_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/collections/entries.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/views/feeds/entries.js.coffee" />
       </list>
     </option>
@@ -608,7 +617,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="SearchEverywhereHistory" value="reader&#10;reader.sc&#10;feed&#10;appl&#10;schema&#10;sch&#10;feedscon&#10;entriescon&#10;gemfi&#10;gemfile&#10;readersc&#10;r&#10;entrie&#10;routes&#10;feed.rb&#10;route&#10;usercon&#10;schem&#10;gemf&#10;add_last&#10;spec&#10;rea&#10;database&#10;production.rb&#10;application.rb&#10;database.&#10;reader.scss&#10;readers&#10;index.js&#10;entry&#10;entries&#10;feed.js.co&#10;index&#10;index.jst&#10;routes.&#10;user&#10;e&#10;sessionscon&#10;entr&#10;users&#10;sessioncon&#10;sesscon&#10;userco&#10;userscon&#10;feedscontr&#10;user.rb&#10;feeds_and&#10;deve&#10;en&#10;login" />
+    <property name="SearchEverywhereHistory" value="gemf&#10;reader&#10;reader.sc&#10;feed&#10;appl&#10;schema&#10;sch&#10;feedscon&#10;entriescon&#10;gemfi&#10;gemfile&#10;readersc&#10;r&#10;entrie&#10;routes&#10;feed.rb&#10;route&#10;usercon&#10;schem&#10;add_last&#10;spec&#10;rea&#10;database&#10;production.rb&#10;application.rb&#10;database.&#10;reader.scss&#10;readers&#10;index.js&#10;entry&#10;entries&#10;feed.js.co&#10;index&#10;index.jst&#10;routes.&#10;user&#10;e&#10;sessionscon&#10;entr&#10;users&#10;sessioncon&#10;sesscon&#10;userco&#10;userscon&#10;feedscontr&#10;user.rb&#10;feeds_and&#10;deve&#10;en&#10;login" />
     <property name="LayoutCode.rearrangeEntriesCoffeeScript" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/dev/my/reader/app/assets/stylesheets/opa/_mixins.scss" />
     <property name="dynamic.classpath" value="false" />
@@ -1041,13 +1050,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/collections/entries.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="24" selection-start="162" selection-end="162" vertical-scroll-proportion="0.113464445" vertical-offset="0" max-vertical-offset="661">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/dev/my/reader/app/assets/stylesheets/opa/loader.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="661">
@@ -1111,13 +1113,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="17" selection-start="1232" selection-end="1232" vertical-scroll-proportion="0.6" vertical-offset="435" max-vertical-offset="885">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/feeds_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="9" selection-start="436" selection-end="436" vertical-scroll-proportion="0.49924356" vertical-offset="0" max-vertical-offset="661">
@@ -1174,6 +1169,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="12" selection-start="175" selection-end="175" vertical-scroll-proportion="0.20930232" vertical-offset="0" max-vertical-offset="885">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/reader.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="46" column="19" selection-start="687" selection-end="687" vertical-scroll-proportion="-9.166667" vertical-offset="470" max-vertical-offset="4305">
@@ -1181,16 +1183,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/collections/entries.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="352" selection-end="352" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/entries_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+        <state line="15" column="13" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/feeds/entries.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="58" selection-start="810" selection-end="810" vertical-scroll-proportion="0.5482456" vertical-offset="0" max-vertical-offset="915">
+        <state line="58" column="42" selection-start="1921" selection-end="1921" vertical-scroll-proportion="0.7368421" vertical-offset="366" max-vertical-offset="1110">
           <folding />
         </state>
       </provider>

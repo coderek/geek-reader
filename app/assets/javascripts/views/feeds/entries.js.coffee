@@ -19,6 +19,18 @@ class Reader.Views.Entries extends Backbone.View
 
   events:
     "click [class$=refresh]": "refresh_feed"
+    "scroll": "scroll"
+
+  scroll: (ev)->
+    clearTimeout(@scroll_detector) if @scroll_detector?
+    @scroll_detector = setTimeout (=> @checkScroll()), 500
+
+  checkScroll: ->
+    scroll_bottom = @$el.scrollTop() + @$el.height()
+    actual_height = @el.scrollHeight
+    if actual_height - scroll_bottom  < 10 and @state isnt "loading"
+      @state = "loading"
+      @$el.append("<li class='more'>loading more</li>")
 
   refreshed: ->
     @$(".refresh").removeClass("loading")

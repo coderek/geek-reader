@@ -42,6 +42,8 @@ class Feed < ActiveRecord::Base
         end
         entries.create(hash)
       end
+    elsif f != 304
+      destroy
     end
   end
 end

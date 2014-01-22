@@ -3,7 +3,9 @@ class EntriesController < ApplicationController
   before_filter :authenticate
 
   def index
-    respond_with(current_user.feeds.find(params[:feed_id]).entries.reverse)
+    limit = 20
+    entries = current_user.feeds.find(params[:feed_id]).entries.limit(limit).reverse
+    respond_with(entries)
   end
 
   def refresh

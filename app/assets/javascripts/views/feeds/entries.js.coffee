@@ -13,6 +13,7 @@ class Reader.Views.Entries extends Backbone.View
     @$el.attr("data-feed", @feed.get("id"))
     @page = 0 # page start from 0
     @head = null
+    @$el.append("<div class='loader'>loading content...</div>")
 
   render_entries: (entries) ->
     @$(".loader").remove()

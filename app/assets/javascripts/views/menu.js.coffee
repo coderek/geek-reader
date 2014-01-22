@@ -24,7 +24,6 @@ class Reader.Views.Menu extends Backbone.View
 
   new_sub: (ev)->
     ev.preventDefault()
-    debugger
     form = new Reader.Views.NewFeed
     $("body").append(form.render().el)
 

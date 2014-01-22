@@ -171,7 +171,7 @@ html, body {
       }
     }
     >li span:hover {
-      cursor: default;
+      cursor: pointer;
     }
     div.all {
       &:hover {
@@ -213,6 +213,7 @@ form.new_feed {
   top: 0px;
   width: 100%;
   >div {
+    box-shadow: 0 0 10px 5px darken(#f3f3f3, 30%);
     margin: 200px auto;
     width: 400px;
     background-color: #f3f3f3;

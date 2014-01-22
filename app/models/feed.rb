@@ -33,7 +33,6 @@ class Feed < ActiveRecord::Base
         hash[:author]     = e.author
         hash[:summary]    = e.summary
         hash[:published]  = e.published
-        hash[:categories] = e.categories.join(",") if e.respond_to? :categories
         hash[:uuid]       = e.id
         if e.respond_to? :content
           hash[:content]    = parse_article e.content, e.url

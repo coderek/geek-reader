@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140121014457) do
+ActiveRecord::Schema.define(version: 20140122163220) do
 
   create_table "entries", force: true do |t|
     t.string   "title"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20140121014457) do
     t.string   "etag"
     t.string   "feed_url",      null: false
     t.datetime "last_modified"
-    t.string   "categories"
+    t.string   "category"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

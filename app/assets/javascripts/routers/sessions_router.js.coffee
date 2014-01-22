@@ -70,7 +70,7 @@ class Reader.Routers.Sessions extends Backbone.Router
     Reader.session.destroy({wait:true})
 
   index: ->
-    $(".content").html("Please add subscription from left menu")
+#    $(".content").html("Please add subscription from left menu")
 
   show_feed: (fid)->
     $(".menu .all").click() if Reader.menu.feeds_folder_closed

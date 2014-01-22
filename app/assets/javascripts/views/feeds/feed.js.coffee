@@ -20,5 +20,6 @@ class Reader.Views.Feed extends Backbone.View
     @entriesView = @entriesView || new Reader.Views.Entries({feed: @model})
     @entriesView.render()
 
+
   hide_entries: ->
     @entriesView.$el.hide() if @entriesView?

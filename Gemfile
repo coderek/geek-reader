@@ -4,7 +4,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use mysql as the database for Active Record
-gem 'mysql2'
+#gem 'mysql2'
+
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -51,3 +53,8 @@ gem 'loofah'
 gem 'unicorn-rails'
 gem "factory_girl_rails", "~> 4.0"
 gem 'bourbon'
+
+gem 'rails_12factor', group: :production
+
+
+ruby "2.1.0"

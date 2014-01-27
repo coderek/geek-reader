@@ -2858,4 +2858,13 @@
       <index name="user_nicename" unique="false" columns="user_nicename"/>
     </table>
   </data-source>
+  <data-source source="LOCAL" name="Rails Reader: production" uuid="55b6afca-53cc-4c09-84fb-e8b11f4f0deb">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails Reader: development" uuid="901dd1d5-104b-4939-9d32-8c2cc007ae94">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails Reader: test" uuid="641be5cf-3fd3-4afe-a0a9-f5fef7b8d9b9">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>

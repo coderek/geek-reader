@@ -13,12 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20140122163220) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "entries", force: true do |t|
     t.string   "title"
     t.string   "url"
     t.string   "author"
     t.text     "summary"
-    t.text     "content",    limit: 16777215
+    t.text     "content"
     t.datetime "published"
     t.string   "categories"
     t.string   "uuid"

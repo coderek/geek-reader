@@ -41,10 +41,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="production.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="production.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="40" selection-start="2504" selection-end="2504" vertical-scroll-proportion="0.4852941" vertical-offset="717" max-vertical-offset="1380">
+            <state line="61" column="40" selection-start="2504" selection-end="2504" vertical-scroll-proportion="0.0" vertical-offset="717" max-vertical-offset="1380">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/settings.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="7" selection-start="635" selection-end="635" vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="465">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="25" selection-start="1314" selection-end="1314" vertical-scroll-proportion="0.5588235" vertical-offset="567" max-vertical-offset="1020">
               <folding />
             </state>
           </provider>
@@ -63,24 +81,6 @@
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/collections/entries.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
             <state line="8" column="0" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="feeds_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/feeds_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="7" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="feed.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/feed.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="9" selection-start="608" selection-end="608" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
               <folding />
             </state>
           </provider>
@@ -123,7 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/javascripts/views/feeds/index.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/views/display.js.coffee" />
         <option value="$PROJECT_DIR$/db/migrate/20140127184839_create_category.rb" />
         <option value="$PROJECT_DIR$/app/models/category.rb" />
@@ -174,6 +173,7 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/reader.scss" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/views/feeds/new_feed.js.coffee" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -561,7 +561,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="SearchEverywhereHistory" value="production.r&#10;entry.rb&#10;feed.rb&#10;feed&#10;user.rb&#10;usercon&#10;userscon&#10;_form&#10;new.ht&#10;new.html&#10;menu.&#10;category.rb&#10;feeds&#10;settingscon&#10;routes&#10;maincon&#10;maincontr&#10;entriecon&#10;entriescon&#10;entr&#10;feedscontro&#10;entries&#10;category&#10;feedscon&#10;user&#10;app&#10;session&#10;appcon&#10;gemf&#10;new.htm&#10;sessioncon&#10;route&#10;reader&#10;readersc&#10;feedcon&#10;change_fee&#10;reader.sc&#10;appl&#10;schema&#10;sch&#10;gemfi&#10;gemfile&#10;r&#10;entrie&#10;schem&#10;add_last&#10;spec&#10;rea&#10;database&#10;production.rb" />
+    <property name="SearchEverywhereHistory" value="gemfile&#10;gemfi&#10;production.r&#10;entry.rb&#10;feed.rb&#10;feed&#10;user.rb&#10;usercon&#10;userscon&#10;_form&#10;new.ht&#10;new.html&#10;menu.&#10;category.rb&#10;feeds&#10;settingscon&#10;routes&#10;maincon&#10;maincontr&#10;entriecon&#10;entriescon&#10;entr&#10;feedscontro&#10;entries&#10;category&#10;feedscon&#10;user&#10;app&#10;session&#10;appcon&#10;gemf&#10;new.htm&#10;sessioncon&#10;route&#10;reader&#10;readersc&#10;feedcon&#10;change_fee&#10;reader.sc&#10;appl&#10;schema&#10;sch&#10;r&#10;entrie&#10;schem&#10;add_last&#10;spec&#10;rea&#10;database&#10;production.rb" />
     <property name="LayoutCode.rearrangeEntriesCoffeeScript" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../blog/Gemfile" />
     <property name="dynamic.classpath" value="false" />
@@ -795,20 +795,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.rvmrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="14" selection-end="14" vertical-scroll-proportion="0.022692889" vertical-offset="0" max-vertical-offset="661">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/models/category.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="17" selection-start="141" selection-end="141" vertical-scroll-proportion="0.11029412" vertical-offset="0" max-vertical-offset="408">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/collections/categories.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="0" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
@@ -834,7 +820,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="0" selection-start="676" selection-end="676" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -977,13 +963,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/settings/categories.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="37" selection-start="113" selection-end="113" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="405">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/settings.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="23" selection-start="255" selection-end="255" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="465">
           <folding />
         </state>
       </provider>
@@ -1151,7 +1130,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="40" selection-start="2504" selection-end="2504" vertical-scroll-proportion="0.4852941" vertical-offset="717" max-vertical-offset="1380">
+        <state line="61" column="40" selection-start="2504" selection-end="2504" vertical-scroll-proportion="0.0" vertical-offset="717" max-vertical-offset="1380">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.3.5/lib/bundler.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="8" selection-start="2264" selection-end="2264" vertical-scroll-proportion="0.33333334" vertical-offset="644" max-vertical-offset="5955">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/settings.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="7" selection-start="635" selection-end="635" vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="25" selection-start="1314" selection-end="1314" vertical-scroll-proportion="0.5588235" vertical-offset="567" max-vertical-offset="1020">
           <folding />
         </state>
       </provider>

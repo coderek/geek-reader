@@ -47,12 +47,14 @@ gem 'bcrypt-ruby', '~> 3.0.1', require: "bcrypt"
 # gem 'debugger', group: [:development, :test]
 
 gem "backbone-on-rails"
-gem "rspec-rails"
 gem 'feedzirra'
 gem 'loofah'
 gem 'unicorn-rails'
-gem "factory_girl_rails", "~> 4.0"
 gem 'bourbon'
+group :test, :development do
+  gem "rspec-rails"
+  gem "factory_girl_rails", "~> 4.0"
+end
 
 gem 'rails_12factor', group: :production
 

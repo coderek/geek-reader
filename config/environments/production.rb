@@ -59,7 +59,7 @@ Reader::Application.configure do
 
   # Precompile additional assets.
   # application.js, application.css.erb, and all non-JS/CSS in app/assets folder are already added.
-  config.assets.precompile += %w( reader.js )
+  config.assets.precompile += %w( reader.js settings.js settings.css)
 
   config.assets.precompile << Proc.new { |path|
     if path =~ /\.(eot|svg|ttf|woff)\z/

@@ -31,6 +31,8 @@ class Reader.Views.Entry extends Backbone.View
       memo += $(e).outerHeight(true)
     , 0
     @$el.parent().scrollTop(scroll_top)
+    @$('pre, code').each (i, e)-> hljs.highlightBlock(e)
+
 
   render: ->
     @$el.html(@template(entry: @model, feed: @feed))

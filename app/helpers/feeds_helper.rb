@@ -1,10 +1,4 @@
 module FeedsHelper
-  class Parser
-    def self.parse content
-      $parser = Feedzirra::Feed
-      feed = $parser.parse content
-    end
-  end
 
   class WhiteWatch < Loofah::Scrubber
     def initialize base_url
@@ -13,10 +7,14 @@ module FeedsHelper
     end
 
     def scrub(node)
+      # don't render object and iframe tag
       if node.name=="object" or node.name=="iframe"
+        node.remove
         return STOP
       end
+
       node.attributes.each do |attr|
+        # remove all unnecessary attributes
         unless (node.name == "img" and attr.first=="src") or (node.name=="a" and attr.first=="href")
           node.remove_attribute(attr.first)
         end
@@ -65,8 +63,8 @@ module FeedsHelper
 
 
   def get_domain url
-    splits = URI.split(url)
-    splits[0].to_s  + "://" + splits[2].to_s
+    url =~ /https?:\/\/[\w\.]+/
+    return $&
   end
 
 end

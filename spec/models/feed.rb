@@ -2,23 +2,19 @@ require "spec_helper"
 
 
 describe Feed do
+  include FeedsHelper
 
   before do
-    User.create({username: "zen", password: "zen"})
-    url = "http://codingnow.com/atom.xml"
-    f = Feedzirra::Feed.fetch_and_parse url
-    @feed = User.first.add_feed(f)
   end
 
-  it "fetch and store feed" do
-    @feed.should_not be_nil
-  end
-
-  it "has some entires " do
-    @feed.should have_at_least(1).entry
-  end
-
-  it "update from the source very well" do
-
+  it "scrub correct" do
+    dingding = Feed.find(8)
+    entry = dingding.entries.first
+    scrubber = FeedsHelper::WhiteWatch.new(dingding.url)
+    doc = Loofah.fragment(entry.content)
+    doc.scrub!(scrubber)
+    s = doc.to_s
+    p s[/<img.*>/]
+    s.should_not be_nil
   end
 end

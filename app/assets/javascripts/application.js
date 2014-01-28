@@ -16,3 +16,4 @@
 //= require bootstrap.min
 //= require underscore
 //= require backbone
+//= require highlight.pack

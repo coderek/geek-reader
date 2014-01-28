@@ -20,9 +20,11 @@ class Reader.Views.NewFeed extends Backbone.View
   new_feed: (ev)->
     @$(".btn.new").button('loading')
     ev.preventDefault()
-    feed = new Reader.Models.Feed
-    Reader.feeds.create(
-      {url: @$("[name=feed_source]").val()},
+
+    cat_id = @$("[name=feed_category]").val()
+    cat = Reader.categories.get(cat_id)
+    cat.feeds.create(
+      {url: @$("[name=feed_source]").val(), category: cat_id},
       {
         wait:true
         success: => @close()

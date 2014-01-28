@@ -1,23 +1,9 @@
 @import "bourbon";
+@import "mixins";
+@import "content";
+@import "menu";
 
-@mixin col_title {
-  &>div:first-child {
-    span, a[data-toggle] {
-      font-size: 12pt;
-      font-weight: bold;
-      line-height: 50px;
-    }
-    height: 50px;
-    padding: 10px 10px;
-    padding-right: 0;
-    border-bottom: 1px solid black;
-  }
-}
-@mixin h($i) {
-  h#{$i} {
-    font-size: 10pt + 5pt / $i;
-  }
-}
+
 
 @include keyframes(loading) {
   from {
@@ -29,117 +15,27 @@
 }
 
 html, body {
-//  min-width: 1000px;
+  width: 100%;
+  .container {
+    width: 100%;
+  }
+}
+
+.content_col, .menu_col {
+  float: left;
+  margin: 0;
+  padding: 0;
 }
 
 .content_col {
+  width: 69%;
+  margin-left: 1%;
   @include col_title;
-  &>div:first-child {
-    text-align: center;
-    position: relative;
-  }
-
-
-
-  .content {
-    width: 100%;
-    .entries {
-      height: 100%;
-      overflow-y: auto;
-      overflow-x: hidden;
-      float: left;
-      padding: 0;
-      margin: 0;
-      width: 100%;
-      .flash {
-        position: absolute;
-        top: 100px;
-        right: 50%;
-      }
-      .refresh {
-        position: absolute;
-        top: 30px;
-        right: 20px;
-        &.loading {
-          @include animation-play-state(running);
-        }
-        @include animation-play-state(paused);
-        @include animation-name(loading);
-        @include animation-duration(2s);
-        @include animation-timing-function(linear);
-        @include animation-iteration-count(infinite);
-      }
-      >li {
-        margin: 0;
-        min-height: 50px;
-        border-top: 1px solid #dddddd;
-        list-style: none;
-        padding: 10px;
-        &.is_read {
-          background-color: #eeeeee;
-        }
-        &:hover {
-          cursor: default;
-        }
-        .title {
-          font-size: 12pt;
-        }
-        .sub_title {
-          font-size: 10pt;
-        }
-        position: relative;
-
-        .detail {
-          border: 3px solid lightblue;
-          .ops {
-            background-color: #eeeeee;
-            padding: 5px;
-            height: 30px;
-            box-shadow: 0 0 20px 4px #aaaaaa;
-            >* {
-              height: 20px;
-              margin-right: 5px;
-              line-height: 20px;
-            }
-            border-bottom: 1px solid darken(#eeeeee, 10%);
-          }
-          padding: 10px;
-          display: none;
-          &.show {
-            display: block;
-          }
-          .close span {
-            color: #000000;
-            &:hover {
-              color: #000000;
-            }
-          }
-          .body {
-            a {
-              border-bottom: 1px dashed #999;
-            }
-            img, video, pre {
-              max-width: 100%;
-            }
-            img {
-              display: block;
-              margin: 10px auto;
-              border: 5px solid #fff;
-              border-radius: 5px;
-              box-shadow: 0 0 10px 1px #ddd;
-            }
-            @include h(1);
-            @include h(2);
-            @include h(3);
-            @include h(4);
-            @include h(5);
-          }
-        }
-      }
-    }
-  }
+  @include content;
 }
+
 .menu_col {
+  width: 30%;
   @include col_title;
   a[data-toggle] {
     &:hover {
@@ -153,59 +49,7 @@ html, body {
     }
     text-decoration: none;
   }
-  .menu {
-    overflow-x: hidden;
-    overflow-y: auto;
-    width: 100%;
-    li {
-      list-style: none;
-      margin: 0;
-      border-top: 1px solid #f3f3f3;
-      padding: 0;
-
-      >div {
-        margin: 10px;
-      }
-      input.search {
-        outline: none;
-      }
-    }
-    >li span:hover {
-      cursor: pointer;
-    }
-    div.all {
-      &:hover {
-        cursor: default;
-      }
-    }
-
-    [role=search] {
-      border: #f3f3f3;
-    }
-    ul {
-      margin: 0;
-      padding: 0;
-    }
-    div + ul {
-      li {
-        padding: 10px 0;
-        padding-left: 20px;
-        border-left: none;
-        border-right: none;
-        .desc {
-          margin: 0;
-          font-size: 50%;
-          font-style: italic;
-          color: #888;
-        }
-      }
-      li:first-child {
-        border-top: none;
-      }
-    }
-    margin: 0;
-    padding: 0;
-  }
+  @include menu;
 }
 
 form.new_feed {

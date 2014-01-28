@@ -3,8 +3,7 @@ class FeedsController < ApplicationController
   before_filter :authenticate
 
   def create
-
-    if feed = current_user.feeds.create({:feed_url => feed_params[:url]})
+    if feed = current_user.feeds.create({:feed_url => feed_params[:url], :category_id=>feed_params[:category]})
       respond_with(feed)
     else
       respond_with({}, status: 404)

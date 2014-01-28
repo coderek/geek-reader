@@ -23,8 +23,6 @@ class EntriesController < ApplicationController
 
   def update
     pa = params.permit(:is_read, :is_starred, :id)
-    logger.debug("--------update entry---------")
-    logger.debug(pa)
     respond_with(Entry.update(pa[:id], pa))
   end
 end

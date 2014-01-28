@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  respond_to :json
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -10,18 +9,19 @@ class UsersController < ApplicationController
   end
 
   def new
-    #@user = User.new
+    @user = User.new
   end
 
   def edit
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save()
-      respond_with(@user)
+    @user = User.create(user_params)
+    logger.debug @user
+    if @user
+      redirect_to :login
     else
-      render status: 406, json: @user.errors
+      redirect_to :register
     end
   end
 
@@ -42,6 +42,6 @@ class UsersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.permit(:username, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation)
   end
 end

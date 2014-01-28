@@ -1,0 +1,1 @@
+class Reader.Views.Display extends Backbone.View

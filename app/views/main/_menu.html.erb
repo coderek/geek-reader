@@ -1,0 +1,50 @@
+<div>
+  <span class="pull-left">Geek Reader</span>
+  <div class="dropdown pull-right" data-toggle="dropdown">
+    <a data-toggle="dropdown" class="glyphicon glyphicon-align-right pull-right" href="#"></a>
+    <ul class="dropdown-menu"  aria-labelledby="dropdownMenu1">
+      <li><a href="#"><%=current_user.email%></a></li>
+      <li class="divider"></li>
+      <li><a role="menuitem" tabindex="-1" href="#settings">Settings (todo)</a></li>
+      <li><%=link_to "logout", :logout, :method=>:delete %></li>
+    </ul>
+  </div>
+</div>
+<div id="menu">
+  <ul>
+    <li>
+      <div>
+        <i class="glyphicon glyphicon-plus-sign"></i>
+        <span class="new_sub">new subscription</span>
+      </div>
+    </li>
+    <li>
+      <div>
+        <i class="glyphicon glyphicon-unchecked"></i>
+        <!--<a href="#unread">unread</a>-->
+        <span title="todo" >unread (todo)</span>
+      </div>
+    </li>
+    <li>
+      <div>
+        <i class="glyphicon glyphicon-star"></i>
+        <span title="todo">starred (todo)</span>
+        <!--<a href="#starred">starred</a>-->
+      </div>
+    </li>
+    <li class="search">
+      <div>
+        <i class="glyphicon glyphicon-search"></i>
+        <input type="text" role="search" placeholder="search (todo)"/>
+      </div>
+    </li>
+    <li>
+      <div>
+        <i class="glyphicon glyphicon-folder-close"></i>
+        <span class="all">all subscriptions</span>
+      </div>
+    </li>
+    <!--<li>groups</li>-->
+  </ul>
+  <ul id="categories"></ul>
+</div>

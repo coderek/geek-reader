@@ -1,13 +1,13 @@
-window.Reader =
-  Models: {}
-  Collections: {}
-  Views: {}
-  Routers: {}
-  initialize: ->
-    Reader.session = new Reader.Models.Session
-    Reader.feeds = new Reader.Collections.Feeds
+#= require jquery
+#= require jquery.timeago
+#= require jquery_ujs
+#= require bootstrap.min
+#= require underscore
+#= require backbone
+#= require init
+#= require_tree ../templates
+#= require_tree ./models
+#= require_tree ./collections
+#= require_tree ./views
+#= require_tree ./routers
 
-    new Reader.Routers.Sessions()
-
-$(document).ready ->
-  Reader.initialize()

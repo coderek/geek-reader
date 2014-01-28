@@ -1,0 +1,4 @@
+<a href="#feeds/<%=@feed.get('category_id')%>/<%= @feed.get("id")%>">
+<%= @feed.get("title") %>
+</a>
+<!--<div class="desc"><%= @feed.get("description")%></div>-->

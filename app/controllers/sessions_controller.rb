@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
   respond_to :json
 
+  def new
+  end
+
   def index
     if current_user
       respond_with(current_user)
@@ -10,27 +13,25 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.authenticate(session_params[:username], session_params[:password])
-    if user
-      if session_params[:remember]
-        cookies.permanent[:auth_token] = user.auth_token
-      else
-        cookies[:auth_token] = user.auth_token
-      end
-      respond_with(user)
+    user = User.find_by_email(session_params[:email])
+    unless user
+      redirect_to :login, :notice=>"user not found"
+    end
+    if user.authenticate(session_params[:password])
+      session[:user] = user.id
+      redirect_to :root
     else
-      render status: 401, json: {}
+      redirect_to :login, :notice => "username or password is wrong"
     end
   end
 
   def destroy
-    id = current_user.id
-    cookies.delete(:auth_token)
-    respond_with(User.find(id))
+    session[:user] =nil
+    redirect_to :login
   end
 
   private
   def session_params
-    params.permit(:username, :password, :remember)
+    params.permit(:email, :password)
   end
 end

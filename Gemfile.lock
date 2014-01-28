@@ -32,7 +32,7 @@ GEM
       ejs
       jquery-rails
       rails (>= 3.1)
-    bcrypt-ruby (3.1.2)
+    bcrypt-ruby (3.0.1)
     bourbon (3.1.8)
       sass (>= 3.2.0)
       thor
@@ -168,7 +168,7 @@ PLATFORMS
 
 DEPENDENCIES
   backbone-on-rails
-  bcrypt-ruby (~> 3.1.1)
+  bcrypt-ruby (~> 3.0.1)
   bourbon
   coffee-rails (~> 4.0.0)
   factory_girl_rails (~> 4.0)

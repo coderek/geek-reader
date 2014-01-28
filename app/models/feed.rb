@@ -3,6 +3,7 @@ class Feed < ActiveRecord::Base
   after_create :fetch_feed
 
   belongs_to :user
+  has_one :category
   has_many :entries, :dependent => :destroy
   validates_uniqueness_of :feed_url
 

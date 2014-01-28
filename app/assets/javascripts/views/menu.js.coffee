@@ -1,26 +1,13 @@
 class Reader.Views.Menu extends Backbone.View
   initialize: ->
-    @listenTo Reader.feeds, "add", @add_new_feed
-    @feeds_folder_closed = true
-
-  el: ".menu_col"
+    @feeds_menu = new Reader.Views.Categories
+  el: "#menu"
   events:
     "click .new_sub": "new_sub"
-    "click [role=logout] a":"logout"
-    "click .all":"toggle_subs"
     "click [class$=refresh]": "refresh_feeds"
 
   refresh_feeds: ->
     Reader.feeds.refresh()
-
-  toggle_subs: (ev)->
-    @$(".feeds").toggle()
-    $(ev.currentTarget).find("i").toggleClass("glyphicon-folder-close")
-    $(ev.currentTarget).find("i").toggleClass("glyphicon-folder-open")
-    @feeds_folder_closed = !@feeds_folder_closed
-
-  logout: ->
-    Reader.session.destroy()
 
   new_sub: (ev)->
     ev.preventDefault()

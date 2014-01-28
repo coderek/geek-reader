@@ -1,21 +1,19 @@
-<ul>
-<% @categories.each do |cat| %>
-  <li>
-    <div>
-      <%= cat.name %>
-      <% unless cat.name =~ /others/i %>
-        <%=link_to "delete", category_path(cat), :method=>:delete %>
-      <% end %>
-    </div>
-    <ul>
-      <% cat.feeds.each do |feed| %>
-        <li>
-          <%= feed.title %>
-          <%=link_to "delete", feed_path(feed), :method=>:delete %>
-        </li>
-      <% end %>
-    </ul>
-  </li>
+<div>
+  <span class="alert alert-info">click category name to edit</span>
+</div>
+<div>
+  <span class="alert alert-warning">After removing a category, all feeds under it will be transfer to Default</span>
+</div>
+<%= form_for @category, url: :categories, :html=> {:class=>"form-inline", :role=>"form"} do |f| %>
+  <div class="form-group">
+    <%= f.label :name, "Category Name" %>
+    <%= f.text_field :name, class: "form-control" %>
+    <%= f.submit "Add", class: "form-control" %>
+  </div>
 <% end %>
-
-</ul>
+<ol class="categories">
+</ol>
+<script>
+  var cat_json = <%=@categories.to_json.html_safe%>;
+</script>
+<%=javascript_include_tag :settings %>

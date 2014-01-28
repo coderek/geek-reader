@@ -6,6 +6,7 @@ class SettingsController < ApplicationController
 
   def categories
     @categories = current_user.categories
+    @category = Category.new
   end
 
   def preference

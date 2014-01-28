@@ -1,0 +1,21 @@
+<ul>
+<% @categories.each do |cat| %>
+  <li>
+    <div>
+      <%= cat.name %>
+      <% unless cat.name =~ /others/i %>
+        <%=link_to "delete", category_path(cat), :method=>:delete %>
+      <% end %>
+    </div>
+    <ul>
+      <% cat.feeds.each do |feed| %>
+        <li>
+          <%= feed.title %>
+          <%=link_to "delete", feed_path(feed), :method=>:delete %>
+        </li>
+      <% end %>
+    </ul>
+  </li>
+<% end %>
+
+</ul>

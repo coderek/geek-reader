@@ -1,12 +1,12 @@
 <div>
-  <span class="pull-left">Geek Reader</span>
+  <span class="pull-left brand"><a href="/">Geek Reader</a></span>
   <div class="dropdown pull-right" data-toggle="dropdown">
     <a data-toggle="dropdown" class="glyphicon glyphicon-align-right pull-right" href="#"></a>
     <ul class="dropdown-menu"  aria-labelledby="dropdownMenu1">
-      <li><a href="#"><%=current_user.email%></a></li>
+      <li><%=link_to "settings", :settings, :method=>:get%></li>
       <li class="divider"></li>
-      <li><a role="menuitem" tabindex="-1" href="#settings">Settings (todo)</a></li>
-      <li><%=link_to "logout", :logout, :method=>:delete %></li>
+      <li><%=link_to "logout", :logout, :method=>:delete %>
+        <a href="#"><%=current_user.email%></a></li>
     </ul>
   </div>
 </div>

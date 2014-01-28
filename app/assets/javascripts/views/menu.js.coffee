@@ -1,6 +1,8 @@
 class Reader.Views.Menu extends Backbone.View
   initialize: ->
     @feeds_menu = new Reader.Views.Categories
+
+    $(".empty").click @new_sub
   el: "#menu"
   events:
     "click .new_sub": "new_sub"

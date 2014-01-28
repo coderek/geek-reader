@@ -21,7 +21,7 @@ class FeedsController < ApplicationController
 
   def destroy
     current_user.feeds.destroy(feed_params[:id])
-    render status: 200, json:{}
+    redirect_to :back
   end
 
   private

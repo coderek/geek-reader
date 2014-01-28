@@ -23,10 +23,14 @@ class Reader.Views.Entry extends Backbone.View
       @$(".title").show()
 
   open: ->
-    @$(".detail").html(@template_detail(entry: @model, feed: @feed)) if /\W/.test(@$(".detail").html())
     @$(".detail").addClass("show")
+    @$(".detail").html(@template_detail(entry: @model, feed: @feed)) if /\W/.test(@$(".detail").html())
     @$(".title").hide()
     @model.save({is_read: 1}, {patch: true})
+    scroll_top = _.reduce @$el.prevAll(), (memo, e)->
+      memo += $(e).outerHeight(true)
+    , 0
+    @$el.parent().scrollTop(scroll_top)
 
   render: ->
     @$el.html(@template(entry: @model, feed: @feed))

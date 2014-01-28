@@ -3,4 +3,8 @@ class MainController < ApplicationController
 
   def index
   end
+
+  def settings
+    render :layout=>"settings"
+  end
 end

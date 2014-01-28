@@ -9,6 +9,13 @@ Reader::Application.routes.draw do
   delete "sessions" => "sessions#destroy", as: "logout"
   get "register" => "users#new", as: "register"
 
+  resources :settings do
+    collection do
+      get "preference"
+      get "categories"
+    end
+  end
+
   resources :categories
   resources :feeds do
     resources :entries do

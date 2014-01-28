@@ -13,6 +13,7 @@ class Reader.Routers.Feeds extends Backbone.Router
     $(window).resize()
 
   show_feed: (cid, fid)->
+    $(".empty").remove()
     cat = Reader.categories.get(cid)
     feed = cat.feeds.get(fid)
     return unless feed?

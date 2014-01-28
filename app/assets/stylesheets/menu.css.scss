@@ -67,6 +67,9 @@ $left: 16pt;
           span:hover {
             cursor: pointer;
           }
+          span {
+            display: block;
+          }
         }
         input.search {
           outline: none;

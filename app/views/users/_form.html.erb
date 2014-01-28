@@ -1,32 +1,24 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @user, :html=>{:role=>"form"} do |f| %>
+  <% if flash[:notice]  %>
+    <div class="alert alert-warning">
+      <%= flash[:notice]  %>
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :email %><br>
-    <%= f.email_field :email%>
+    <%= f.email_field :email, :class=>"form-control"%>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :password %><br>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, :class=>"form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
+  <div class="field form-group">
+    <%= f.label :password_confirmation, "Type Again" %><br>
+    <%= f.password_field :password_confirmation, :class=>"form-control" %>
   </div>
-
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions form-group">
+    <%= f.submit "register", :class=>"form-control" %>
   </div>
 <% end %>

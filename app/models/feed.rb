@@ -5,7 +5,7 @@ class Feed < ActiveRecord::Base
   belongs_to :user
   has_one :category
   has_many :entries, :dependent => :destroy
-  validates_uniqueness_of :feed_url
+  validates_uniqueness_of :feed_url, :scope=>:user_id
 
   def entries
     super.order("published DESC")

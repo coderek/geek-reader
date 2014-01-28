@@ -15,6 +15,7 @@ class Reader.Views.Menu extends Backbone.View
     ev.preventDefault()
     form = new Reader.Views.NewFeed
     $("body").append(form.render().el)
+    $("[name=feed_source]").focus()
 
   add_new_feed: (feed)->
     @$(".feeds").append((new Reader.Views.Feed(model:feed)).render().el)

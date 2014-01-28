@@ -4,6 +4,12 @@ class User < ActiveRecord::Base
   has_secure_password
   validates_presence_of :email
   validates_uniqueness_of :email
+  after_create :create_category
+
+
+  def create_category
+    categories.create({:name=>"Default"})
+  end
 
   def as_json(options = {})
     super(options.merge({ except: [:auth_token, :password_hash, :password_salt] }))

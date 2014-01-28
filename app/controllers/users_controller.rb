@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate, except: [:new, :create]
 
   def index
     #@users = User.all
@@ -17,11 +18,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    logger.debug @user
-    if @user
+    if @user.persisted?
       redirect_to :login
     else
-      redirect_to :register
+      redirect_to :back, :notice=>"Invalid Information"
     end
   end
 

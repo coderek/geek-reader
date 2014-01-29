@@ -3,6 +3,7 @@
 @import "mixins";
 @import "content";
 @import "menu";
+@import "mobile";
 
 @include keyframes(loading) {
   from {
@@ -10,6 +11,24 @@
   }
   to {
     @include transform(rotate(360deg));
+  }
+}
+
+@include keyframes(slideIn) {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0%
+  }
+}
+
+@include keyframes(slideOut) {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -100%
   }
 }
 

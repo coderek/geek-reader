@@ -7,6 +7,7 @@ class Reader.Views.Menu extends Backbone.View
   events:
     "click .new_sub": "new_sub"
     "click [class$=refresh]": "refresh_feeds"
+    "click .feed": "toggle_menu"
 
   refresh_feeds: ->
     Reader.feeds.refresh()
@@ -24,3 +25,6 @@ class Reader.Views.Menu extends Backbone.View
   load_feeds: ->
     @$(".feeds").empty()
     Reader.feeds.each(@add_new_feed)
+
+  toggle_menu: ->
+    $("body>.container").toggleClass("show_menu")

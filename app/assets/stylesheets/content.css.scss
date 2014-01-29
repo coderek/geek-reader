@@ -2,6 +2,9 @@
   &>div:first-child {
     text-align: center;
     position: relative;
+    i {
+      display: none;
+    }
   }
 
   .content {

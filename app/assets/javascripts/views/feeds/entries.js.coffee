@@ -25,7 +25,6 @@ class Reader.Views.Entries extends Backbone.View
   events:
     "click [class$=refresh]": "refresh_feed"
     "scroll": "scroll"
-
   scroll: (ev)->
     clearTimeout(@scroll_detector) if @scroll_detector?
     @scroll_detector = setTimeout (=> @check_scroll()), 500

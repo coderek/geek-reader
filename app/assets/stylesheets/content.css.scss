@@ -40,63 +40,35 @@
         padding: 10px;
         &.is_read {
           background-color: #eeeeee;
+          .title {
+            font-weight: normal;
+          }
         }
         &:hover {
           cursor: default;
         }
         .title {
           font-size: 12pt;
+          font-weight: bold;
+          &:hover {
+            cursor: pointer;
+          }
         }
         .sub_title {
           font-size: 10pt;
         }
+        .timeago {
+          position: absolute;
+          right: 4px;
+          border-bottom: none;
+          color: #888;
+          &:hover {
+            cursor: default;
+          }
+        }
         position: relative;
-
         .detail {
-          border: 3px solid lightblue;
-          .ops {
-            background-color: #eeeeee;
-            padding: 5px;
-            height: 30px;
-            box-shadow: 0 0 20px 4px #aaaaaa;
-            >* {
-              height: 20px;
-              margin-right: 5px;
-              line-height: 20px;
-            }
-            border-bottom: 1px solid darken(#eeeeee, 10%);
-          }
-          padding: 10px;
-          display: none;
-          &.show {
-            display: block;
-          }
-          .close span {
-            color: #000000;
-            &:hover {
-              color: #000000;
-            }
-          }
-          .body {
-            a {
-              border-bottom: 1px dashed #999;
-            }
-            img, video, pre {
-              max-width: 100%;
-            }
-            img {
-              display: block;
-              margin: 10px auto;
-              border: 5px solid #fff;
-              border-radius: 5px;
-              box-shadow: 0 0 10px 1px #ddd;
-            }
-            @include h(1);
-            @include h(2);
-            @include h(3);
-            @include h(4);
-            @include h(5);
-          }
+          @include article_detail;
         }
       }
     }
@@ -111,4 +83,52 @@
     }
   }
 
+}
+
+@mixin article_detail {
+  border: 3px solid lightblue;
+  .ops {
+    background-color: #eeeeee;
+    padding: 5px;
+    height: 30px;
+    box-shadow: 0 0 20px 4px #aaaaaa;
+    >* {
+      height: 20px;
+      margin-right: 5px;
+      line-height: 20px;
+    }
+    border-bottom: 1px solid darken(#eeeeee, 10%);
+  }
+  padding: 10px;
+  display: none;
+  &.show {
+    display: block;
+  }
+  .close span {
+    color: #000000;
+    &:hover {
+      color: #000000;
+    }
+  }
+  .body {
+    a {
+      border-bottom: 1px dashed #999;
+      color: $body_text_color;
+    }
+    img, video, pre {
+      max-width: 100%;
+    }
+    img {
+      display: block;
+      margin: 10px auto;
+      border: 5px solid #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px 1px #ddd;
+    }
+    @include h(1);
+    @include h(2);
+    @include h(3);
+    @include h(4);
+    @include h(5);
+  }
 }

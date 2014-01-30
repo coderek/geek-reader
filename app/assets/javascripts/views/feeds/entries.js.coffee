@@ -23,6 +23,7 @@ class Reader.Views.Entries extends Backbone.View
     models = entries.models.reverse()
     @head = models[0]
     _.each(models, (e)=> @render_entry(e))
+    @check_scroll()
 
 #    "click [class$=refresh]": "refresh_feed"
   events:
@@ -46,10 +47,11 @@ class Reader.Views.Entries extends Backbone.View
     scroll_el = @$("ul.entries")
     scroll_bottom = scroll_el.scrollTop() + scroll_el.height()
     actual_height = scroll_el[0].scrollHeight
-    log "scroll_bottom: #{scroll_bottom} actual_height: #{actual_height}"
-    if actual_height >= scroll_bottom and @state isnt "loading"
+    log "scroll_bottom: #{scroll_bottom} actual_height: #{actual_height} state: #{@state}"
+    if actual_height - scroll_bottom < 4 and @state isnt "loading"
+      warn "getting more entries"
       @state = "loading"
-      scroll_el.append("<li class='more'>loading more</li>")
+      scroll_el.append("<li class='more'>loading more ...</li>")
       @page += 1
       req = $.getJSON(@collection.url+"?page="+@page)
       req.done (entries)=>

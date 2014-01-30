@@ -1,8 +1,14 @@
 @mixin content {
   .head {
     @include col_head;
+    >div {
+      display: inline-block;
+    }
     i {
       display: none;
+    }
+    &:hover {
+      cursor: pointer;
     }
   }
   height: 100%;
@@ -126,7 +132,7 @@
       max-width: 100%;
     }
     pre code {
-      white-space: pre-wrap;
+      white-space: prew;
       overflow-x: auto;
     }
     img {

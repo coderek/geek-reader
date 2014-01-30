@@ -18,7 +18,11 @@ Reader::Application.routes.draw do
     end
   end
 
-  resources :categories
+  resources :categories do
+    member do
+      get "feeds"
+    end
+  end
   resources :feeds do
     resources :entries do
       collection do

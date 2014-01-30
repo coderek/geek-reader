@@ -84,27 +84,27 @@ $left: 16pt;
     .category {
       &.open {
         >div {
-          i:nth-child(1) {
+          i:nth-child(2) {
             position: absolute;
             left: -1000px;
           }
-          i:nth-child(2) {
+          i:nth-child(1) {
             @include normal_icon;
           }
         }
+
       }
       >div {
-        @include hover_style;
-        @include item;
-        padding-left: 20px;
-
-        i:nth-child(2) {
+        i:nth-child(1) {
           position: absolute;
           left: -1000px;
         }
-        i:nth-child(1) {
+        i:nth-child(2) {
           @include normal_icon;
         }
+        @include hover_style;
+        @include item;
+        padding-left: 20px;
         &:hover {
           cursor: pointer;
         }

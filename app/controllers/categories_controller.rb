@@ -4,10 +4,14 @@ class CategoriesController < ApplicationController
 
   def index
     cats = []
-    Category.includes(:feeds).find_all_by_user_id(current_user.id).each do |c|
-      cats << {:category=>c, :feeds => c.feeds}
-    end
-    render json: cats
+    #Category.includes(:feeds).find_all_by_user_id(current_user.id).each do |c|
+    #  cats << {:category=>c, :feeds => c.feeds}
+    #end
+    render json: current_user.categories
+  end
+
+  def feeds
+    render json:  current_user.categories.find(params[:id]).feeds
   end
 
   def create

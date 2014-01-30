@@ -1,4 +1,7 @@
+window.debug = console.debug.bind(console)
 window.log = console.log.bind(console)
+window.warn = console.warn.bind(console)
+
 window.Reader =
   Models: {}
   Collections: {}

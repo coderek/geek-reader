@@ -38,7 +38,8 @@ html, body {
     width: 100%;
     padding: 0;
   }
-  font: 10pt/12pt 'trebuchet ms', verdana, helvetica, arial, sans-serif;
+//  ugly
+//  font: 10pt/12pt 'trebuchet ms', verdana, helvetica, arial, sans-serif;
 }
 
 .content_col, .menu_col {
@@ -74,6 +75,15 @@ html, body {
     text-decoration: none;
   }
   @include menu;
+}
+
+footer {
+//  text-align: center;
+  display: none;
+  padding-left: 10px;
+  border-top: 1px solid lightgrey;
+  color: lightgrey;
+  background-color: lighten($gr_blue, 30%);
 }
 
 form.new_feed {

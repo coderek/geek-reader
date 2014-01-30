@@ -5,15 +5,14 @@ class Reader.Views.Feed extends Backbone.View
   initialize: ->
     @listenTo @model, "destroy", @remove
     @listenTo @model, "remove", @remove
-    @listenTo @model, "show_entries", @show_entries
+    @$el.attr("data-id", @model.id)
 
   events:
     "click a": "open"
 
   open: ->
-    unless @$el.is(".open")
-      $(".feed.open").removeClass("open")
-    @$el.addClass("open")
+    log "called open feed"
+    @show_entries()
 
   render: ->
     @$el.html @template(feed: @model)

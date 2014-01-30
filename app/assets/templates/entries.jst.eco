@@ -1,9 +1,12 @@
 <div class="head dropdown">
     <i class="glyphicon glyphicon-th menu_toggle "></i><span class="brand"><%=@title %><b class="caret"></b></span>
     <ul class="dropdown-menu" role="menu">
-        <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Action</a></li>
+        <li role="presentation" class="dropdown-header">Mark as read</li>
+        <li><a href="#as_read_all">All</a></li>
+        <li><a href="#as_read_all">Older than 1 day</a></li>
+        <li><a href="#as_read_all">Older than 1 week</a></li>
         <li class="divider"></li>
-        <li><a href="#refresh" class="glyphicon glyphicon-refresh">Refresh</a></li>
+        <li><a href="#refresh"><span class="glyphicon glyphicon-refresh"></span>Refresh</a></li>
     </ul>
 </div>
 <ul class="entries body">

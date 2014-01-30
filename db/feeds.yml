@@ -1,0 +1,18 @@
+users:
+  - email: zen1986@gmail.com
+    password: zengqiang
+categories:
+  - Blogs
+  - News
+  - Watch List
+  - Default
+feeds:
+  - http://codingnow.com/atom.xml, blogs
+  - http://coolshell.cn/feed, blogs
+  - http://stackoverflow.com/feeds/tag/facebook-graph-api, watch
+  - http://techcrunch.cn/feed/, news
+  - http://feeds.feedburner.com/TechCrunch/, news
+  - http://feeds.feedburner.com/codinghorror/, blogs
+  - https://tech.dropbox.com/feed/, blogs
+  - http://blog.thousandeyes.com/feed/, blogs
+  - https://weworkremotely.com/categories/2/jobs.rss, watch

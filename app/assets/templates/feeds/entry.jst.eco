@@ -1,5 +1,6 @@
 <div class="title">
     <%= @entry.get("title")%>
+
 </div>
 <div class="sub_title title">
     <%= @entry.get("author")%>

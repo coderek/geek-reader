@@ -15,12 +15,11 @@ class Reader.Views.Entries extends Backbone.View
 
     @page = 0 # page start from 0
     @head = null
-    @$(".content").append("<div class='loader'>loading content...</div>")
     @$("ul.entries").on "scroll", => @scroll.apply(@)
 
   render_entries: (entries) ->
     @$(".loader").remove()
-    @$("ul").empty()
+    @$("ul.entries").empty()
     models = entries.models.reverse()
     @head = models[0]
     _.each(models, (e)=> @render_entry(e))
@@ -28,6 +27,10 @@ class Reader.Views.Entries extends Backbone.View
 #    "click [class$=refresh]": "refresh_feed"
   events:
     "click .menu_toggle": "toggle_menu"
+    "click .brand" : "toggle_feed_menu"
+
+  toggle_feed_menu: ->
+    @$(".head").toggleClass("open")
 
   toggle_menu: ->
     $("body>.container").toggleClass("show_menu")
@@ -68,12 +71,15 @@ class Reader.Views.Entries extends Backbone.View
     @$(".refresh").addClass("loading")
 
   render_entry: (entry)->
-    entryView = new Reader.Views.Entry({model:entry})
+    entryView = new Reader.Views.Entry({model:entry, parent: @})
     @$(".entries").append(entryView.render().el)
 
-  render: -> @
+  set_opened_entry: (entryView)->
+    @opened_entry?.close()
+    @opened_entry = entryView
+
+  render: ->
+    @
 
   load: ->
     @collection.fetch(reset: true)
-
-    log "render #{@title}"

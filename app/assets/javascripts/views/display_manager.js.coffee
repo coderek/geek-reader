@@ -13,9 +13,9 @@ class Reader.Views.DisplayManager extends Backbone.View
     log "current view is :", @current_view
 
     if @source instanceof Reader.Collections.UnreadEntries
-      @current_view = @unread_view ?= new Reader.Views.Entries({collection: @source, title: "unread"})
+      @current_view = @unread_view ?= new Reader.Views.Entries({collection: @source, title: "Unread"})
     else if @source instanceof Reader.Collections.StarredEntries
-      @current_view = @starred_view ?= new Reader.Views.Entries({collection: @source, title: "starred"})
+      @current_view = @starred_view ?= new Reader.Views.Entries({collection: @source, title: "Starred"})
     else if @source instanceof Reader.Models.Feed
       @source.entries ?= new Reader.Collections.Entries
       @source.entries.url = @source.url() + "/entries"

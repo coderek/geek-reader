@@ -125,6 +125,10 @@
     img, video, pre {
       max-width: 100%;
     }
+    pre code {
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
     img {
       display: block;
       margin: 10px auto;

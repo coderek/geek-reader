@@ -35,6 +35,5 @@ class Reader.Routers.Main extends Backbone.Router
     Reader.display_manager.render_entries(Reader.starred_entries)
 
   home: ->
-    # for mobile
-    Reader.menu_manager.show_menu()
+    @show_unread()
 

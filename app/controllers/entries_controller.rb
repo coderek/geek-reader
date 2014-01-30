@@ -7,7 +7,8 @@ class EntriesController < ApplicationController
   def index
     page = params[:page] || 0
     entries = current_user.feeds.find(params[:feed_id]).entries.limit(LIMIT).offset(LIMIT*page.to_i)
-
+    logger.debug current_user.inspect
+    logger.debug entries
     respond_paged_entries entries
   end
 

@@ -6,6 +6,7 @@ class Reader.Views.Entry extends Backbone.View
   className: "entry"
   initialize: (options) ->
     @listenTo @model, "change:is_read", @update_read_status
+    @parent = options.parent
 
   events:
     "click .title": "open"
@@ -29,20 +30,23 @@ class Reader.Views.Entry extends Backbone.View
       @$el.removeClass("is_read")
 
   close: (ev)->
-    if $(ev.target).is(".ops")
+    if not ev? or $(ev.target).is(".ops")
       @$(".detail").removeClass("show")
       @$(".title").show()
 
   open: ->
     @$(".detail").addClass("show")
+    @parent.set_opened_entry(@)
+
     @$(".detail").html(@template_detail(entry: @model)) if /\W/.test(@$(".detail").html())
     @$(".title").hide()
     @model.save({is_read: 1}, {patch: true})
     scroll_top = _.reduce @$el.prevAll(), (memo, e)->
       memo += $(e).outerHeight(true)
     , 0
+    @$('pre code, .prettyprint').each (i, e)-> hljs.highlightBlock(e)
+
     @$el.parent().scrollTop(scroll_top)
-    @$('pre, code').each (i, e)-> hljs.highlightBlock(e)
 
 
   render: ->

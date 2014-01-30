@@ -20,14 +20,4 @@ class Reader.Views.Feed extends Backbone.View
     @
 
   show_entries: ->
-    Reader.feed_shown?.hide_entries()
-    Reader.feed_shown = @
-
-    @model.entries = @model.entries || new Reader.Collections.Entries
-    @model.entries.url = "/feeds/#{@model.get("id")}/entries"
-    @entriesView = @entriesView || new Reader.Views.Entries({feed: @model})
-    @entriesView.render()
-
-
-  hide_entries: ->
-    @entriesView.$el.hide() if @entriesView?
+    Reader.display_manager.render_entries(@model)

@@ -1,10 +1,10 @@
-<% if flash[:notice]  %>
-  <div class="alert alert-warning">
-    <%= flash[:notice]  %>
-  </div>
-<% end %>
-
-<%=form_tag :login, :method=>:post, :role=>"form" do %>
+<%=form_tag :login, :method=>:post, :role=>"form", :class=>"login" do %>
+  <h3>Geek Reader Login</h3>
+  <% if flash[:notice]  %>
+    <div class="alert alert-warning">
+      <%= flash[:notice]  %>
+    </div>
+  <% end %>
   <div class="form-group">
     <%= label_tag :email %>
     <%= email_field_tag :email, nil, :class=>"form-control" %>

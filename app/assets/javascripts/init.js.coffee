@@ -1,20 +1,20 @@
+window.log = console.log.bind(console)
 window.Reader =
   Models: {}
   Collections: {}
   Views: {}
   Routers: {}
   initialize: ->
-    Reader.categories = new Reader.Collections.Categories
-    Reader.feeds = new Reader.Collections.Feeds
-
-    got_categories = ->
-      d = $.Deferred()
-      Reader.categories.fetch {parse: true, success: -> d.resolve()}
-      d.promise()
-
-    $.when(got_categories()).done ->
-      console.log Reader.categories
-      Reader.reader = new Reader.Views.Main
+    # initialize data objects
+    r = Reader
+    r.categories = new Reader.Collections.Categories
+    r.unread_entries = new Reader.Collections.UnreadEntries
+    r.starred_entries = new Reader.Collections.StarredEntries
+    # initialize view objects
+    r.menu_manager = new Reader.Views.MenuManager
+    r.display_manager = new Reader.Views.DisplayManager
+    # initialize router
+    r.router = new Reader.Routers.Main
 
 $(document).ready ->
   Reader.initialize()

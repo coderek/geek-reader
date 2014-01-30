@@ -8,6 +8,8 @@ Reader::Application.routes.draw do
   post "login" => "sessions#create"
   delete "sessions" => "sessions#destroy", as: "logout"
   get "register" => "users#new", as: "register"
+  get "entries/unread" => "entries#unread"
+  get "entries/starred" => "entries#starred"
 
   resources :settings do
     collection do

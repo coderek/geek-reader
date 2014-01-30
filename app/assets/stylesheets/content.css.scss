@@ -1,88 +1,89 @@
 @mixin content {
-  &>div:first-child {
-    text-align: center;
-    position: relative;
+  .head {
+    @include col_head;
     i {
       display: none;
     }
   }
-
-  .content {
+  height: 100%;
+  width: 100%;
+  .entries {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
     width: 100%;
-    .entries {
-      height: 100%;
-      overflow-y: auto;
-      overflow-x: hidden;
-      float: left;
-      padding: 0;
+    .flash {
+      position: absolute;
+      top: 100px;
+      right: 50%;
+    }
+    .refresh {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+      &.loading {
+        @include animation-play-state(running);
+      }
+      @include animation-play-state(paused);
+      @include animation-name(loading);
+      @include animation-duration(2s);
+      @include animation-timing-function(linear);
+      @include animation-iteration-count(infinite);
+    }
+    >li {
       margin: 0;
-      width: 100%;
-      .flash {
-        position: absolute;
-        top: 100px;
-        right: 50%;
-      }
-      .refresh {
-        position: absolute;
-        top: 30px;
-        right: 20px;
-        &.loading {
-          @include animation-play-state(running);
+      min-height: 50px;
+      border-top: 1px solid #dddddd;
+      list-style: none;
+      padding: 10px;
+      &.is_read {
+        background-color: #eeeeee;
+        .title {
+          font-weight: normal;
         }
-        @include animation-play-state(paused);
-        @include animation-name(loading);
-        @include animation-duration(2s);
-        @include animation-timing-function(linear);
-        @include animation-iteration-count(infinite);
       }
-      >li {
-        margin: 0;
-        min-height: 50px;
-        border-top: 1px solid #dddddd;
-        list-style: none;
-        padding: 10px;
-        &.is_read {
-          background-color: #eeeeee;
-          .title {
-            font-weight: normal;
-          }
+      &.is_starred {
+        .star {
+          color: blue;
         }
+      }
+      &:hover {
+        cursor: default;
+      }
+      .title {
+        font-size: 12pt;
+        font-weight: bold;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .sub_title {
+        font-size: 10pt;
+      }
+      .timeago {
+        position: absolute;
+        right: 4px;
+        border-bottom: none;
+        color: #888;
         &:hover {
           cursor: default;
         }
-        .title {
-          font-size: 12pt;
-          font-weight: bold;
-          &:hover {
-            cursor: pointer;
-          }
-        }
-        .sub_title {
-          font-size: 10pt;
-        }
-        .timeago {
-          position: absolute;
-          right: 4px;
-          border-bottom: none;
-          color: #888;
-          &:hover {
-            cursor: default;
-          }
-        }
-        position: relative;
-        .detail {
-          @include article_detail;
-        }
+      }
+      position: relative;
+      .detail {
+        @include article_detail;
       }
     }
-    >.empty {
-      font-size: 14pt;
-      font-weight: bold;
-      margin: 20px;
-      &:hover {
-        cursor: pointer;
-        color: #dddddd;
-      }
+  }
+  >.empty {
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 20px;
+    &:hover {
+      cursor: pointer;
+      color: #dddddd;
     }
   }
 

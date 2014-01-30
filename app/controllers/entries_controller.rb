@@ -2,15 +2,27 @@ class EntriesController < ApplicationController
   respond_to :json
   before_filter :authenticate
 
+  LIMIT = 20
+
   def index
-    limit = 20
     page = params[:page] || 0
-    entries = current_user.feeds.find(params[:feed_id]).entries.limit(limit).offset(limit*page.to_i)
-    if entries.count > 0
-      respond_with(entries)
-    else
-      respond_with(nil, status: 404)
-    end
+    entries = current_user.feeds.find(params[:feed_id]).entries.limit(LIMIT).offset(LIMIT*page.to_i)
+
+    respond_paged_entries entries
+  end
+
+  def unread
+    page = params[:page] || 0
+    fids =current_user.feeds.map(&:id)
+    entries = Entry.except(:content, :summary).limit(LIMIT).offset(LIMIT*page.to_i).find_all_by_feed_id_and_is_read(fids, nil)
+    respond_paged_entries entries
+  end
+
+  def starred
+    page = params[:page] || 0
+    fids =current_user.feeds.map(&:id)
+    entries = Entry.except(:content, :summary).limit(LIMIT).offset(LIMIT*page.to_i).find_all_by_feed_id_and_is_starred(fids, 1)
+    respond_paged_entries entries
   end
 
   def refresh
@@ -24,5 +36,14 @@ class EntriesController < ApplicationController
   def update
     pa = params.permit(:is_read, :is_starred, :id)
     respond_with(Entry.update(pa[:id], pa))
+  end
+
+  private
+  def respond_paged_entries entries
+    if entries.count > 0
+      respond_with(entries)
+    else
+      respond_with(nil, status: 404)
+    end
   end
 end

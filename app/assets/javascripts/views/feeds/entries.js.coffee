@@ -1,40 +1,52 @@
 class Reader.Views.Entries extends Backbone.View
-  tagName: "ul"
-  className: "entries"
+  tagName: "div"
+  className: "content"
+  template: JST["entries"]
 
   initialize: (options) ->
-    @feed = options.feed
-    @collection = @feed.entries
-    @collection.fetch(reset:true)
+    @title = options.title
+    @$el.html @template({title: @title})
+    @id = @title.toString().replace(/\s/g, "_")
+    @$el.attr("id", @id)
+
     @listenTo @collection, "reset", @render_entries
     @listenTo @collection, "add", @render_entry
     @listenTo @collection, "refreshed", @refreshed
-    $(".content").append(@el)
-    @$el.attr("data-feed", @feed.get("id"))
+
     @page = 0 # page start from 0
     @head = null
-    @$el.append("<div class='loader'>loading content...</div>")
+    @$(".content").append("<div class='loader'>loading content...</div>")
+    @$("ul.entries").on "scroll", => @scroll.apply(@)
 
   render_entries: (entries) ->
     @$(".loader").remove()
+    @$("ul").empty()
     models = entries.models.reverse()
     @head = models[0]
     _.each(models, (e)=> @render_entry(e))
-    @$el.append("<i class=\"glyphicon glyphicon-refresh refresh\"></i>")
 
+#    "click [class$=refresh]": "refresh_feed"
   events:
-    "click [class$=refresh]": "refresh_feed"
-    "scroll": "scroll"
+    "click .menu_toggle": "toggle_menu"
+
+  toggle_menu: ->
+    $("body>.container").toggleClass("show_menu")
+
   scroll: (ev)->
+    log "scroll event"
     clearTimeout(@scroll_detector) if @scroll_detector?
     @scroll_detector = setTimeout (=> @check_scroll()), 500
 
   check_scroll: ->
-    scroll_bottom = @$el.scrollTop() + @$el.height()
-    actual_height = @el.scrollHeight
-    if actual_height - scroll_bottom  < 10 and @state isnt "loading"
+    log "check scroll, state is #{@state}"
+    return if @state is "nomore"
+    scroll_el = @$("ul.entries")
+    scroll_bottom = scroll_el.scrollTop() + scroll_el.height()
+    actual_height = scroll_el[0].scrollHeight
+    log "scroll_bottom: #{scroll_bottom} actual_height: #{actual_height}"
+    if actual_height >= scroll_bottom and @state isnt "loading"
       @state = "loading"
-      @$el.append("<li class='more'>loading more</li>")
+      scroll_el.append("<li class='more'>loading more</li>")
       @page += 1
       req = $.getJSON(@collection.url+"?page="+@page)
       req.done (entries)=>
@@ -42,6 +54,7 @@ class Reader.Views.Entries extends Backbone.View
         @state = "loaded"
         @$("li.more").remove()
       req.fail (jXhr, text, status)=>
+        @state = "nomore"
         @$("li.more").html("No more") if status is "Not Found"
 
   refreshed: ->
@@ -55,14 +68,12 @@ class Reader.Views.Entries extends Backbone.View
     @$(".refresh").addClass("loading")
 
   render_entry: (entry)->
-    entryView = new Reader.Views.Entry({model:entry, feed: @feed})
-    if @head and entry.get("published") >= @head.get("published")
-      @$el.prepend(entryView.render().el)
-      @head = entry
-    else
-      @$el.append(entryView.render().el)
+    entryView = new Reader.Views.Entry({model:entry})
+    @$(".entries").append(entryView.render().el)
 
-  render: ->
-    $(".feed_title span").text(@feed.get("title"))
-    @$el.show()
-    @
+  render: -> @
+
+  load: ->
+    @collection.fetch(reset: true)
+
+    log "render #{@title}"

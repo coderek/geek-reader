@@ -5,13 +5,24 @@ class Reader.Views.Entry extends Backbone.View
   tagName: "li"
   className: "entry"
   initialize: (options) ->
-    @feed = options.feed
     @listenTo @model, "change:is_read", @update_read_status
+
   events:
     "click .title": "open"
     "click .ops": "close"
+    "click .star": "toggle_starred"
+
+  toggle_starred: ->
+    @model.urlRoot = "/feeds/#{@model.id}/entries"
+    if @model.get("is_starred") == 1
+      @model.save({is_starred: 0})
+      @$el.removeClass("is_starred")
+    else
+      @model.save({is_starred: 1})
+      @$el.addClass("is_starred")
 
   update_read_status: ->
+    @model.urlRoot = "/feeds/#{@model.id}/entries"
     if !!@model.get("is_read")
       @$el.addClass("is_read")
     else
@@ -24,7 +35,7 @@ class Reader.Views.Entry extends Backbone.View
 
   open: ->
     @$(".detail").addClass("show")
-    @$(".detail").html(@template_detail(entry: @model, feed: @feed)) if /\W/.test(@$(".detail").html())
+    @$(".detail").html(@template_detail(entry: @model)) if /\W/.test(@$(".detail").html())
     @$(".title").hide()
     @model.save({is_read: 1}, {patch: true})
     scroll_top = _.reduce @$el.prevAll(), (memo, e)->
@@ -35,7 +46,9 @@ class Reader.Views.Entry extends Backbone.View
 
 
   render: ->
-    @$el.html(@template(entry: @model, feed: @feed))
+    @$el.html(@template(entry: @model))
     @$(".timeago").timeago()
     @model.trigger("change:is_read")
+    if @model.get("is_starred") == 1
+      @$el.addClass("is_starred")
     @

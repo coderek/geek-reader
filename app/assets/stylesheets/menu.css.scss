@@ -42,12 +42,10 @@ $left: 16pt;
   }
 
 
-  .brand {
-    a {
-      color: #000000;
-      &:hover {
-        text-decoration: none;
-      }
+  a {
+    color: #000000;
+    &:hover {
+      text-decoration: none;
     }
   }
 

@@ -1,4 +1,4 @@
-<div>
+<div class="head">
   <span class="brand"><a href="/">Geek Reader</a></span>
   <div class="dropdown pull-right" data-toggle="dropdown">
     <a data-toggle="dropdown" class="glyphicon glyphicon-align-right pull-right" href="#"></a>
@@ -10,7 +10,7 @@
     </ul>
   </div>
 </div>
-<div id="menu">
+<div id="menu" class="body">
   <ul>
     <li>
       <div>
@@ -18,18 +18,22 @@
         <span class="new_sub">new subscription</span>
       </div>
     </li>
-    <li>
+    <li class="unread">
       <div>
-        <i class="glyphicon glyphicon-unchecked"></i>
-        <!--<a href="#unread">unread</a>-->
-        <span title="todo" >unread (todo)</span>
+        <a href="#unread">
+          <i class="glyphicon glyphicon-unchecked"></i>
+          <!--<a href="#unread">unread</a>-->
+          <span title="todo" >unread</span>
+        </a>
       </div>
     </li>
-    <li>
+    <li class="starred">
       <div>
-        <i class="glyphicon glyphicon-star"></i>
-        <span title="todo">starred (todo)</span>
-        <!--<a href="#starred">starred</a>-->
+        <a href="#starred">
+          <i class="glyphicon glyphicon-star"></i>
+          <span title="todo">starred</span>
+          <!--<a href="#starred">starred</a>-->
+        </a>
       </div>
     </li>
     <li class="search">

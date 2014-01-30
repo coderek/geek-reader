@@ -1,15 +1,11 @@
-@mixin col_title {
-  &>div:first-child {
-    span, a[data-toggle] {
-      font-size: 12pt;
-      font-weight: bold;
-      line-height: 50px;
-    }
-    height: 50px;
-    padding: 10px 10px;
-    padding-right: 0;
-    border-bottom: 1px solid black;
+@mixin col_head {
+  span, a[data-toggle] {
+    font-size: 12pt;
+    font-weight: bold;
   }
+  padding: 4px;
+  padding-right: 0;
+  border-bottom: 1px solid black;
 }
 @mixin h($i) {
   h#{$i} {

@@ -1,0 +1,2 @@
+<div class="head"><i class="glyphicon glyphicon-th menu_toggle "></i><span class="brand"><%=@title %></span></div>
+<ul class="entries body"></ul>

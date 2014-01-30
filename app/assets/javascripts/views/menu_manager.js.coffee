@@ -1,16 +1,13 @@
-class Reader.Views.Menu extends Backbone.View
+class Reader.Views.MenuManager extends Backbone.View
+  el: "#menu"
+
   initialize: ->
     @feeds_menu = new Reader.Views.Categories
 
-    $(".empty").click @new_sub
-  el: "#menu"
   events:
     "click .new_sub": "new_sub"
-    "click [class$=refresh]": "refresh_feeds"
-    "click .feed": "toggle_menu"
-
-  refresh_feeds: ->
-    Reader.feeds.refresh()
+    "click .feed, .unread, .starred": "toggle_menu"
+    "click .unread":"show_unread"
 
   new_sub: (ev)->
     ev.preventDefault()
@@ -24,7 +21,9 @@ class Reader.Views.Menu extends Backbone.View
 
   load_feeds: ->
     @$(".feeds").empty()
-    Reader.feeds.each(@add_new_feed)
 
   toggle_menu: ->
     $("body>.container").toggleClass("show_menu")
+
+  show_unread: ->
+

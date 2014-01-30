@@ -25,5 +25,11 @@ class Reader.Views.MenuManager extends Backbone.View
   toggle_menu: ->
     $("body>.container").toggleClass("show_menu")
 
+  show_menu: ->
+    $("body>.container").addClass("show_menu")
+
+  hide_menu: ->
+    $("body>.container").removeClass("show_menu")
+
   show_unread: ->
 

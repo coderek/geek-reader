@@ -38,8 +38,10 @@
       border-top: 1px solid #dddddd;
       list-style: none;
       padding: 10px;
+      border-left: 3px solid $gr_blue;
       &.is_read {
         background-color: #eeeeee;
+        border-left: none;
         .title {
           font-weight: normal;
         }
@@ -90,7 +92,8 @@
 }
 
 @mixin article_detail {
-  border: 3px solid lightblue;
+  background-color: white;
+  border: 3px solid $gr_blue;
   .ops {
     background-color: #eeeeee;
     padding: 5px;
@@ -114,7 +117,7 @@
       color: #000000;
     }
   }
-  .body {
+  .content_body {
     a {
       border-bottom: 1px dashed #999;
       color: $body_text_color;

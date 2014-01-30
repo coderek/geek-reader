@@ -5,7 +5,7 @@
 </div>
 <h3><%= @entry.get("title") %></h3>
 <h5>- <%= @entry.get("author")%></h5>
-<div class="body">
+<div class="article_body">
     <% if @entry.has("content") and @entry.get("content") isnt "" : %>
     <%- @entry.get("content")%>
     <% else : %>

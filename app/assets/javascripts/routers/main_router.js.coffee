@@ -34,3 +34,7 @@ class Reader.Routers.Main extends Backbone.Router
 #    Reader.starred_entries.fetch(reset: true)
     Reader.display_manager.render_entries(Reader.starred_entries)
 
+  home: ->
+    # for mobile
+    Reader.menu_manager.show_menu()
+

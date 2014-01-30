@@ -16,3 +16,4 @@ feeds:
   - https://tech.dropbox.com/feed/, blogs
   - http://blog.thousandeyes.com/feed/, blogs
   - https://weworkremotely.com/categories/2/jobs.rss, watch
+  - https://news.ycombinator.com/rss, news

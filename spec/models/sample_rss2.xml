@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+     xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:media="http://search.yahoo.com/mrss/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0"
+     version="2.0">
+
+  <channel>
+    <title>TechCrunch</title>
+
+    <link>http://techcrunch.com</link>
+    <description>TechCrunch is a group-edited blog that profiles the companies, products and events defining and
+      transforming the new web.
+    </description>
+    <lastBuildDate>Tue, 28 Jan 2014 01:31:24 +0000</lastBuildDate>
+    <language>en</language>
+    <item>
+      <title>Implisit Raises $3.3M For Self-Learning Service That Predicts Next Steps For Sales People</title>
+      <link>http://feedproxy.google.com/~r/Techcrunch/~3/-Lxfdfx0DiE/</link>
+      <comments>
+        http://techcrunch.com/2014/01/30/implisit-raises-3-3m-for-self-learning-service-that-predicts-next-steps-for-sales-people/#comments
+      </comments>
+      <pubDate>Tue, 28 Jan 2014 23:41:34 +0000</pubDate>
+      <dc:creator><![CDATA[Alex Williams]]></dc:creator>
+      <category><![CDATA[Enterprise]]></category>
+      <category><![CDATA[TC]]></category>
+      <category><![CDATA[implisit]]></category>
+      <category><![CDATA[CRM]]></category>
+
+      <guid isPermaLink="false">http://techcrunch.com/?p=947818</guid>
+      <description>
+        <![CDATA[<img width="100" height="70" src="http://tctechcrunch2011.files.wordpress.com/2014/01/8352256446_1c063e4d86_z.jpg?w=100&amp;h=70&amp;crop=1" class="attachment-tc-carousel-river-thumb wp-post-image" alt="8352256446_1c063e4d86_z" style="float: left; margin: 0 10px 7px 0;" />Implisit has raised $3.3 million from Gemini Israel Ventures for its self-learning platform that mines CRM data to help sales people close more deals and cut manual data entry.]]></description>
+      <content:encoded><![CDATA[<img width="640" height="360" src="http://tctechcrunch2011.files.wordpress.com/2014/01/8352256446_1c063e4d86_z.jpg?w=640" class="attachment-post-thumbnail wp-post-image" alt="8352256446_1c063e4d86_z" style="float: left; margin: 0 10px 7px 0;" /><p><a target="_blank" href="http://implisit.com">Implisit</a> has raised $3.3 million from <a target="_blank" href="http://www.crunchbase.com/financial-organization/gemini-israel-funds">Gemini Israel Ventures</a> for its self-learning platform that mines CRM data to help sales people close more deals and cut manual data entry.</p>
+<p>The service connects email, calendars and the contact information in the CRM platform, said Co-Founder Gilad Raichshtain. It offers follow-up steps for a prospective deal, the best approach and other intelligence. Over time, the service adapts to the business processes, updating the intelligence as the users go about their daily work.</p>
+<p>When a new customer joins Implisit, the service analyzes its historical sales data (both communications and their historical CRM data) to determine the customer&#8217;s specific sales patterns. From this, the engine creates tailor-made insights that fit the customer&#8217;s processes.</p>
+<p><img class="aligncenter size-full wp-image-950135" alt="implisit" src="http://tctechcrunch2011.files.wordpress.com/2014/01/screenshot-640x400.png?w=640&#038;h=400" width="640" height="400" /></p>
+<p>Implisit uses several methods for analyzing the data, including text clustering, machine-learning techniques to better understand reasons for deals success, natural language processing to analyze a deals&#8217; unstructured text, and algorithms to classify data.</p>
+<div>For example, one of Implisit&#8217;s customers is a top online advertising platform that had significant CRM data gaps, said co-founder Gilad Raichshtain in an email interview. Their 50 sales reps wouldn&#8217;t get around to entering their deals&#8217; data, and the sales managers would have to query everyone to know what&#8217;s going on. Several hours after signing up for Implisit, they saw a four times increase in the number of sales activities logged in their CRM. Implisit registered missing business contacts and deals. The customer&#8217;s sales teams now have up-to-date visibility of their customer interactions in their CRM, while entering 50 percent less data manually, and each sales person is now managing  about 20 percent more deals.</div>
+<div></div>
+<p>Implisit is the work of Raichshtain and fellow Co-Founder Elad Donsky who are known in Israel tech circles as some of the brightest technologists of their generation. Both started university at the age of 15. At the age of 16, Intel hired Raichstain, making him the youngest engineer ever to be hired by the chip maker. Raichstain and Donsky also spent several years working in the Israeli prime minister&#8217;s office.</p>
+<p>There&#8217;s a bounty of sales analytics platforms coming into the market. From one vector are the companies in the Hadoop ecosystem. The distributed computing technology is being used by companies like <a target="_blank" href="http://hortonworks.com/big-data-insights/using-hadoop-and-big-data-for-more-complete-crm-insights/">Hortonworks</a> to manage customers, analyze email and social media, blog posts, click-through rates and other information.<a href="http://techcrunch.com/2013/01/08/insidesales-com-raises-35m-from-us-ventures-for-predictive-analytics-platform/"> Inside Sales</a> is a more direct competitor that uses predictive analytics to help serve inside sales professionals. Its algorithms are designed to tell the sales professional who to contact, when to contact and how to tailor the message for the sales target.</p>
+<p>In comparison, Implisit keeps CRM interaction data automatically updated, with no need for human intervention. Using that information, Implisit improves sales efficiency and forecasting, Raichshtain said.</p>
+<p>Implisit has some of the most brilliant people in tech building its service. It has packaged technologies that show it is on the cutting edge of development. The problem is there are more companies that also have the talent to do similar technology development. The challenge will be in differentiation. Analytics providers will offer their own version of how to best get the most out of sales leads. Some of the companies have very deep pockets, which is why the simplicity of this service is so important. If it really is as easy as they say, then that should be the way they influence others to use this advanced analytics service.</p>
+<p>But the question becomes more about how it can differentiate in a field that is increasingly crowded with analytics providers.</p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/Techcrunch?a=-Lxfdfx0DiE:Nes_odbbUmk:2mJPEYqXBVI"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=2mJPEYqXBVI" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=-Lxfdfx0DiE:Nes_odbbUmk:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=-Lxfdfx0DiE:Nes_odbbUmk:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=-Lxfdfx0DiE:Nes_odbbUmk:-BTjWOF_DHI"><img src="http://feeds.feedburner.com/~ff/Techcrunch?i=-Lxfdfx0DiE:Nes_odbbUmk:-BTjWOF_DHI" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=-Lxfdfx0DiE:Nes_odbbUmk:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/Techcrunch?i=-Lxfdfx0DiE:Nes_odbbUmk:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=-Lxfdfx0DiE:Nes_odbbUmk:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=qj6IDK7rITs" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/Techcrunch/~4/-Lxfdfx0DiE" height="1" width="1"/>]]></content:encoded>
+      <wfw:commentRss>
+        http://techcrunch.com/2014/01/30/implisit-raises-3-3m-for-self-learning-service-that-predicts-next-steps-for-sales-people/feed/
+      </wfw:commentRss>
+      <slash:comments>0</slash:comments>
+      <media:content url="http://tctechcrunch2011.files.wordpress.com/2014/01/8352256446_1c063e4d86_z.jpg"
+                     type="image/jpeg" medium="image">
+        <media:title type="html">
+          Implisit%20Raises%20%243.3M%20For%20Self-Learning%20Service%20That%20Predicts%20Next%20Steps%20For%20Sales%26nbsp%3BPeople
+        </media:title>
+      </media:content>
+      <media:thumbnail url="http://tctechcrunch2011.files.wordpress.com/2014/01/8352256446_1c063e4d86_z.jpg?w=150"/>
+      <media:content url="http://tctechcrunch2011.files.wordpress.com/2014/01/8352256446_1c063e4d86_z.jpg?w=150"
+                     medium="image">
+        <media:title type="html">8352256446_1c063e4d86_z</media:title>
+      </media:content>
+
+      <media:content url="http://2.gravatar.com/avatar/b4e205744ae2f9b44921d103b4d80e54?s=96&amp;d=identicon&amp;r=G"
+                     medium="image">
+        <media:title type="html">Alex Williams</media:title>
+      </media:content>
+
+      <media:content url="http://tctechcrunch2011.files.wordpress.com/2014/01/screenshot-640x400.png" medium="image">
+        <media:title type="html">implisit</media:title>
+      </media:content>
+      <feedburner:origLink>
+        http://techcrunch.com/2014/01/30/implisit-raises-3-3m-for-self-learning-service-that-predicts-next-steps-for-sales-people/
+      </feedburner:origLink>
+    </item>
+    <item>
+      <title>Clinkle Gets Hacked Before It Even Launches</title>
+      <link>http://feedproxy.google.com/~r/Techcrunch/~3/bU8IaC6Hixo/</link>
+      <comments>http://techcrunch.com/2014/01/30/clinkle-gets-hacked-before-it-even-launches/#comments</comments>
+      <pubDate>Tue, 28 Jan 2014 23:09:13 +0000</pubDate>
+      <dc:creator><![CDATA[Jordan Crook]]></dc:creator>
+      <category><![CDATA[Apps]]></category>
+      <category><![CDATA[Mobile]]></category>
+      <category><![CDATA[Startups]]></category>
+      <category><![CDATA[TC]]></category>
+      <category><![CDATA[Clinkle]]></category>
+      <category><![CDATA[Lucas Duplan]]></category>
+
+      <guid isPermaLink="false">http://techcrunch.com/?p=949872</guid>
+      <description><![CDATA[<img width="100" height="70" src="http://tctechcrunch2011.files.wordpress.com/2014/01/lucas.png?w=100&amp;h=70&amp;crop=1" class="attachment-tc-carousel-river-thumb wp-post-image" alt="lucas" style="float: left; margin: 0 10px 7px 0;" />Clinkle is the hottest app around to have done mostly nothing. The stealth payments service, which has raised $30 million from big-name investors, has yet to publicly launch. But that doesn't mean it can't be hacked.
+
+Today, a guest user posted a list of 33 usernames, user IDs, profile photos, and phone numbers to PasteBin. Based on the data provided, it seems as though these users are Clinkle employees who are testing the app.
+]]></description>
+      <content:encoded><![CDATA[<img width="640" height="640" src="http://tctechcrunch2011.files.wordpress.com/2014/01/lucas.png?w=640" class="attachment-post-thumbnail wp-post-image" alt="lucas" style="float: left; margin: 0 10px 7px 0;" /><p><a href="http://techcrunch.com/tag/clinkle/">Clinkle</a> is the hottest app around to have done mostly nothing. The stealth payments service, which has raised <a href="http://techcrunch.com/2013/06/27/clinkle-raises-celebrity-filled-25m-round-as-it-gears-up-to-eliminate-the-physical-wallet/">$30 million from big-name investors</a>, has yet to publicly launch. But that doesn&#8217;t mean it can&#8217;t be hacked.</p>
+<p>Today, a guest user posted a list of 33 usernames, user IDs, profile photos, and phone numbers <a target="_blank" href="http://pastebin.com/2d8MNMa7">to PasteBin</a>. Based on the data provided, it seems as though these users are Clinkle employees who are testing the app.</p>
+<p>Founder Lucas Duplan is on the list (yep, that&#8217;s his Clinkle <a target="_blank" href="https://clinkle-member-photos.s3.amazonaws.com/13429ed4d53739796e1ffd34750cc4c574f110860265447954fb9130b276e470.png">profile pic</a>, shown above), as well as former Netflix CFO and <a href="http://techcrunch.com/2013/10/22/clinkle-barry-mccarthy-coo/">Clinkle COO Barry McCarthy</a>. Former PayPal exec <a href="http://techcrunch.com/2014/01/28/clinkle-liberatore-cfo/">Mike Liberatore</a>, now Clinkle CFO, is also listed.</p>
+<p>The data was seemingly accessed through a private API that Clinkle has in place. Referred to by the hacker as &#8220;typeahead&#8221;, the API appears to be the basis of an autocomplete tool, allowing uses to type a single letter (like &#8216;A&#8217;) and find all usernames starting with that letter (like &#8216;Adam&#8217; and &#8216;Andrew&#8217;). [Note: Twitter has a similar tool with the same name &#8212; it's unclear if they're one and the same.]</p>
+<p>Clinkle seems to use this API in their own app (presumably so users can find friends when making a payment), which has allowed one hacker to search user names, leading to the associated user IDs and phone numbers.</p>
+<p>Here&#8217;s what the hacker had to say:</p>
+<blockquote><p>Results from Clinkle typeahead API. It requires no authentication. The app stores writes results to disk automatically. This is much worse than Snapchat&#8217;s breach. Phone numbers masked as courtesy.</p></blockquote>
+<p>In other words, whoever broke into the app didn&#8217;t need a userID to access Clinkle&#8217;s list of testers or their personal information, which seems to be saved on a Clinkle server.</p>
+<p>But to be fair, Clinkle&#8217;s breach isn&#8217;t quite the same as Snapchat&#8217;s, considering the information of <a target="_blank" href="http://pastebin.com/2d8MNMa7">4.6 million Snapchat users was released</a>, as opposed a small group of employee testers.</p>
+<p>Here&#8217;s Clinkle&#8217;s explanation for the breach:</p>
+<blockquote><p>You&#8217;re describing visibility that was purposefully built into the system as part of our preliminary user testing and was always intended to be turned off. As you can see from the list, we&#8217;ve been testing internally and registrations have been limited to Clinkle employees. We were using an open API, which has now been closed. That said, only names, phone numbers, photos, and Clinkle unique IDs were accessible.</p></blockquote>
+<p>Clinkle points to a Stanford student as the alleged hacker but that has yet to be confirmed.</p>
+<p><img class="aligncenter size-full wp-image-950175" alt="Screenshot 2014-01-30 14.55.33" src="http://tctechcrunch2011.files.wordpress.com/2014/01/screenshot-2014-01-30-14-55-33.png?w=797&#038;h=350" width="797" height="350" /></p>
+<p>Clinkle, rumored to launch later this year, currently has both an <a target="_blank" href="https://itunes.apple.com/us/app/clinkle/id458523629?mt=8">iOS app</a> in iTunes and an <a target="_blank" href="https://play.google.com/store/apps/details?id=com.clinkle&amp;hl=en">Android app</a> available in the Google Play store for those who wish to join the waiting list.</p>
+<p>Based on the size of the app (52MB) and the unzipped files uncovered after downloading it, it seems like the full Clinkle app is out there, rather than a placeholder app built for wait list registrants.</p>
+<p>Right now, the app has a waiting list wall, which &#8220;VIP&#8221; members can bypass once an administrator grants permission. This likely allows Clinkle to demo the app to investors and partners without having to go through some cumbersome download process.</p>
+<p>During the process of fundraising, I&#8217;m sure that little trick came in handy. Not so much today, though.</p>
+<p>The hack produced some interesting data about the team that works on Clinkle.</p>
+<p>Founder Lucas Duplan is listed as the first user (User ID: 1), with a picture that very much resembles him holding cash money. The CFO, <a href="http://techcrunch.com/2013/10/22/clinkle-barry-mccarthy-coo/">Barry McCarthy</a>, is also listed with a legitimate profile photo, as is the Head Of Comms, who confirmed the validity of the images and the data.</p>
+<p>The photos from Clinkle&#8217;s <a target="_blank" href="https://www.clinkle.com/team">Team page</a>, where 22 unidentified Clinkle employees are pictured alongside goofy pseudonyms, also seem to resemble people in the leaked profile photos. Finally, we can put faces to names.</p>
+<p>So what are the implications?</p>
+<p>Well, Clinkle hasn&#8217;t actually launched yet, so it&#8217;s very possible that the team hasn&#8217;t been focusing on security. However, security and trust should be top priorities for a payments company. Especially for a company so young.</p>
+<p>Clinkle was founded by a group of more than a dozen Stanford students in 2011, and has stayed under the radar while key employees finish their degrees. The company was partially funded by Stanford professors before raising <a href="http://techcrunch.com/2013/06/27/clinkle-raises-celebrity-filled-25m-round-as-it-gears-up-to-eliminate-the-physical-wallet/">$25 million in a party round</a>. Over 18 investors participated.</p>
+<p>The <a target="_blank" href="http://online.wsj.com/news/articles/SB10001424127887324020504578396912443242512">WSJ</a>, followed by every other news outlet, proclaimed this the biggest Stanford startup exodus in history. Clinkle was all the rage.</p>
+<p>Seriously, <a target="_blank" href="http://valleywag.gawker.com/tag/clinkle">Silicon Valley wouldn&#8217;t shut up about it</a>.</p>
+<p>In fall, however, <a href="http://techcrunch.com/2013/12/09/payments-startup-clinkle-lays-off-a-quarter-of-its-staff/">two rounds of layoffs</a> left many wondering if the Stanford-fueled payments startup was really the Messiah of trade. The company slashed around 30 employees, and then another 16.</p>
+<p>Around the same time, <a href="http://techcrunch.com/2013/09/30/leaked-youtube-video-tumblr-blog-reveal-all-about-stealthy-payments-startup-clinkle/">screenshots and videos</a> of the app in action were leaked, letting Clinkle&#8217;s cat out of the bag.</p>
+<p><a target="_blank" href="http://valleywag.gawker.com/surprise-everyone-hates-working-for-the-22-year-olds-1471905201">Rumors</a> circulated that the company was going through leadership issues. That those promised equity weren&#8217;t getting it. That folks were overworked and underpaid. That there was no transparency about the product timeline, or the product itself. That 22-year-old Lucas Duplan was taking home a six-figure salary and mistreating employees.</p>
+<p>Today, the same questions as before creep back into our consciousness.</p>
+<p>What have they been doing with all that money this whole time? Posting profile photos that confirm <a target="_blank" href="https://clinkle-member-photos.s3.amazonaws.com/13429ed4d53739796e1ffd34750cc4c574f110860265447954fb9130b276e470.png">our worst fears</a>? Whether the breach was a result of intentional openness or unintentional laziness on the part of Clinkle is unclear, but the photo doesn&#8217;t lie.</p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/Techcrunch?a=bU8IaC6Hixo:9sEJLrdHLkg:2mJPEYqXBVI"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=2mJPEYqXBVI" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=bU8IaC6Hixo:9sEJLrdHLkg:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=bU8IaC6Hixo:9sEJLrdHLkg:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=bU8IaC6Hixo:9sEJLrdHLkg:-BTjWOF_DHI"><img src="http://feeds.feedburner.com/~ff/Techcrunch?i=bU8IaC6Hixo:9sEJLrdHLkg:-BTjWOF_DHI" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=bU8IaC6Hixo:9sEJLrdHLkg:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/Techcrunch?i=bU8IaC6Hixo:9sEJLrdHLkg:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=bU8IaC6Hixo:9sEJLrdHLkg:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=qj6IDK7rITs" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/Techcrunch/~4/bU8IaC6Hixo" height="1" width="1"/>]]></content:encoded>
+      <wfw:commentRss>http://techcrunch.com/2014/01/30/clinkle-gets-hacked-before-it-even-launches/feed/
+      </wfw:commentRss>
+      <slash:comments>0</slash:comments>
+      <media:content url="http://tctechcrunch2011.files.wordpress.com/2014/01/lucas.png" type="image/png"
+                     medium="image">
+        <media:title type="html">Clinkle%20Gets%20Hacked%20Before%20It%20Even%26nbsp%3BLaunches</media:title>
+      </media:content>
+      <media:thumbnail url="http://tctechcrunch2011.files.wordpress.com/2014/01/lucas.png?w=150"/>
+      <media:content url="http://tctechcrunch2011.files.wordpress.com/2014/01/lucas.png?w=150" medium="image">
+        <media:title type="html">lucas</media:title>
+      </media:content>
+
+      <media:content url="http://1.gravatar.com/avatar/123a4c264172746af556b0c74c72b308?s=96&amp;d=identicon&amp;r=G"
+                     medium="image">
+        <media:title type="html">biggsismyboss</media:title>
+      </media:content>
+
+      <media:content url="http://tctechcrunch2011.files.wordpress.com/2014/01/screenshot-2014-01-30-14-55-33.png"
+                     medium="image">
+        <media:title type="html">Screenshot 2014-01-30 14.55.33</media:title>
+      </media:content>
+      <feedburner:origLink>http://techcrunch.com/2014/01/30/clinkle-gets-hacked-before-it-even-launches/
+      </feedburner:origLink>
+    </item>
+    <item>
+      <title>Amazon Prime Could See $20 To $40 Price Hike</title>
+      <link>http://feedproxy.google.com/~r/Techcrunch/~3/oLrOb7bfyF4/</link>
+      <comments>http://techcrunch.com/2014/01/30/amazon-prime-could-see-20-to-40-price-hike/#comments</comments>
+      <pubDate>Tue, 28 Jan 2014 23:03:38 +0000</pubDate>
+      <dc:creator><![CDATA[Matt Burns]]></dc:creator>
+      <category><![CDATA[TC]]></category>
+
+      <guid isPermaLink="false">http://techcrunch.com/?p=950337</guid>
+      <description>
+        <![CDATA[<img width="100" height="70" src="http://tctechcrunch2011.files.wordpress.com/2013/12/upsamazon.jpg?w=100&amp;h=70&amp;crop=1" class="attachment-tc-carousel-river-thumb wp-post-image" alt="upsamazon" style="float: left; margin: 0 10px 7px 0;" />Amazon Prime might be getting more expensive. The retailer revealed during its quarterly earnings conference call that it might jack up the price of the yearly subscription by up to 50%. Prime currently costs $79 a year. It&#8217;s the best service a person could buy. Free two-day shipping on most everything Amazon sells? I don&#8217;t have to go to the store for toilet paper. Yes sir. Amazon is in a tough spot. After being the street&#8217;s darling for so many years, the company&#8217;s stock is tumbling thanks to a sub-par performance this holiday season. Analysts expected Amazon to report revenue of $26.06 billion, and earn $0.66 per share. Put another way, in a quarter of strong GDP growth, Amazon managed to miss expectations on both its top and bottom lines. As Amazon stated on its investor relations conference call, the cost of shipping is increasing and Amazon is unsure if it can continue to offer Prime at $79. It said it was considering raising the price by $20 to $40 a year. Since its launch, Prime has become more than just a free shipping service. Amazon also bundles its video streaming and Kindle libraries with the subscription. As a long time subscriber, a price hike would put a frown on my face, but I would still re-subscribe. I simply hate going to the store.]]></description>
+      <content:encoded><![CDATA[<img width="630" height="420" src="http://tctechcrunch2011.files.wordpress.com/2013/12/upsamazon.jpg?w=630" class="attachment-post-thumbnail wp-post-image" alt="upsamazon" style="float: left; margin: 0 10px 7px 0;" /><p>Amazon Prime might be getting more expensive. The retailer revealed during its quarterly earnings conference call that it might jack up the price of the yearly subscription by up to 50%.</p>
+<p>Prime currently costs $79 a year. It&#8217;s the best service a person could buy. Free two-day shipping on most everything Amazon sells? I don&#8217;t have to go to the store for toilet paper. Yes sir.</p>
+<p>Amazon is in a tough spot. After being the street&#8217;s darling for so many years, the <a href="http://techcrunch.com/2014/01/30/amazon-sheds-10-in-after-hours-trading-erasing-19b-in-market-cap/">company&#8217;s stock is tumbling</a> thanks to a <a href="http://techcrunch.com/2014/01/30/amazon-falls-short-of-expectations-with-q4-revenue-of-25-59b-eps-of-0-51/">sub-par performance this holiday season</a>. Analysts expected Amazon to report revenue of $26.06 billion, and earn $0.66 per share. Put another way, in a quarter of strong GDP growth, Amazon managed to miss expectations on both its top and bottom lines.</p>
+<p>As Amazon stated on its investor relations conference call, the cost of shipping is increasing and Amazon is unsure if it can continue to offer Prime at $79. It said it was considering raising the price by $20 to $40 a year.</p>
+<p>Since its launch, Prime has become more than just a free shipping service. Amazon also bundles its video streaming and Kindle libraries with the subscription. As a long time subscriber, a price hike would put a frown on my face, but I would still re-subscribe. I simply hate going to the store.</p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/Techcrunch?a=oLrOb7bfyF4:KSRDk3DCgTY:2mJPEYqXBVI"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=2mJPEYqXBVI" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=oLrOb7bfyF4:KSRDk3DCgTY:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=oLrOb7bfyF4:KSRDk3DCgTY:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=oLrOb7bfyF4:KSRDk3DCgTY:-BTjWOF_DHI"><img src="http://feeds.feedburner.com/~ff/Techcrunch?i=oLrOb7bfyF4:KSRDk3DCgTY:-BTjWOF_DHI" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=oLrOb7bfyF4:KSRDk3DCgTY:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/Techcrunch?i=oLrOb7bfyF4:KSRDk3DCgTY:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=oLrOb7bfyF4:KSRDk3DCgTY:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=qj6IDK7rITs" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/Techcrunch/~4/oLrOb7bfyF4" height="1" width="1"/>]]></content:encoded>
+      <wfw:commentRss>http://techcrunch.com/2014/01/30/amazon-prime-could-see-20-to-40-price-hike/feed/</wfw:commentRss>
+      <slash:comments>0</slash:comments>
+      <media:content url="http://tctechcrunch2011.files.wordpress.com/2013/12/upsamazon.jpg" type="image/jpeg"
+                     medium="image">
+        <media:title type="html">Amazon%20Prime%20Could%20See%20%2420%20To%20%2440%20Price%26nbsp%3BHike</media:title>
+      </media:content>
+      <media:thumbnail url="http://tctechcrunch2011.files.wordpress.com/2013/12/upsamazon.jpg?w=150"/>
+      <media:content url="http://tctechcrunch2011.files.wordpress.com/2013/12/upsamazon.jpg?w=150" medium="image">
+        <media:title type="html">upsamazon</media:title>
+      </media:content>
+
+      <media:content url="http://0.gravatar.com/avatar/c921fdee122025b0436360dc6bb7322d?s=96&amp;d=identicon&amp;r=G"
+                     medium="image">
+        <media:title type="html">mjburnsy</media:title>
+      </media:content>
+      <feedburner:origLink>http://techcrunch.com/2014/01/30/amazon-prime-could-see-20-to-40-price-hike/
+      </feedburner:origLink>
+    </item>
+
+  </channel>
+</rss>

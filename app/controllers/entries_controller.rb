@@ -29,8 +29,14 @@ class EntriesController < ApplicationController
   def refresh
     feed = current_user.feeds.find params[:feed_id]
     if feed
-      feed.fetch_feed
-      respond_with feed.entries
+      entries = feed.fetch_feed
+      if entries.is_a? Array
+        respond_with entries
+      else
+        render :json => []
+      end
+    else
+      render :json => []
     end
   end
 

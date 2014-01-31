@@ -12,6 +12,12 @@
     }
   }
   height: 100%;
+  position: relative;
+  .flash {
+    position: absolute;
+    top: 100px;
+    right: 50%;
+  }
   width: 100%;
   .entries {
     height: 100%;
@@ -20,11 +26,6 @@
     padding: 0;
     margin: 0;
     width: 100%;
-    .flash {
-      position: absolute;
-      top: 100px;
-      right: 50%;
-    }
     .refresh {
       position: absolute;
       top: 30px;

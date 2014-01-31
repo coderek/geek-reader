@@ -6,6 +6,7 @@ categories:
   - News
   - Watch List
   - Default
+  - Forums
 feeds:
   - http://codingnow.com/atom.xml, blogs
   - http://coolshell.cn/feed, blogs
@@ -20,3 +21,4 @@ feeds:
   - http://feeds.feedburner.com/blogspot/hsDu, blogs
   - http://feeds.feedburner.com/GDBcode, blogs
   - https://developers.facebook.com/blog/feed, blogs
+  - http://ruby-china.org/topics/feed, forums

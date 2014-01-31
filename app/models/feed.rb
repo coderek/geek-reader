@@ -1,6 +1,6 @@
 class Feed < ActiveRecord::Base
   include FeedsHelper
-  after_create :fetch_feed
+  #after_create :fetch_feed
 
   belongs_to :user
   has_one :category
@@ -11,12 +11,14 @@ class Feed < ActiveRecord::Base
     super.order("published DESC")
   end
 
-  def fetch_feed
-    raise "feed url is not valid" unless feed_url =~ /^http/
-    if last_modified != nil
-      f = Feedzirra::Feed.fetch_and_parse feed_url, {:if_modified_since => last_modified}
-    else
-      f = Feedzirra::Feed.fetch_and_parse feed_url
+  def fetch_feed(f=nil)
+    if f==nil
+      raise "feed url is not valid" unless feed_url =~ /^http/
+      if last_modified != nil
+        f = Feedzirra::Feed.fetch_and_parse feed_url, {:if_modified_since => last_modified}
+      else
+        f = Feedzirra::Feed.fetch_and_parse feed_url
+      end
     end
 
     if f and not f.is_a? Integer
@@ -27,6 +29,8 @@ class Feed < ActiveRecord::Base
         :etag           => f.etag,
         :last_modified  => f.last_modified
       })
+
+      created_entries = []
       f.entries.each do |e|
         hash = {}
         hash[:title]      = e.title
@@ -40,9 +44,12 @@ class Feed < ActiveRecord::Base
         else
           hash[:content]    = ""
         end
-        entries.create(hash)
+        e = entries.new(hash)
+        created_entries << e if e.save
       end
+      created_entries
     elsif f != 304
+      # invalid feed
       destroy
     end
   end

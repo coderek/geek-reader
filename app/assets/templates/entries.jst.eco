@@ -8,7 +8,7 @@
             <li><a href="#" data-mark="1week">Older than 1 week</a></li>
             <li class="divider"></li>
         <% end %>
-        <li><a href="#refresh"><span class="glyphicon glyphicon-refresh"></span>Fetch Latest</a></li>
+        <li><a href="#" class="refresh"><span class="glyphicon glyphicon-refresh"></span>Fetch Latest</a></li>
     </ul>
 </div>
 <ul class="entries body">

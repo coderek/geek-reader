@@ -4,7 +4,11 @@
 </div>
 <div class="sub_title title">
     <%= @entry.get("author")%>
-    <abbr class="timeago" title="<%= @entry.get("published") %>"></abbr>
+    <% if @entry.get("published")? : %>
+        <abbr class="timeago" title="<%= @entry.get("published") %>"></abbr>
+    <% else : %>
+        <abbr class="timeago" title="<%= @entry.get("created_at") %>"></abbr>
+    <% end %>
 </div>
 <div class="detail">
 

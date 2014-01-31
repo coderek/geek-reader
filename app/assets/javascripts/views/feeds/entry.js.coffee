@@ -48,7 +48,6 @@ class Reader.Views.Entry extends Backbone.View
 
     @$el.parent().scrollTop(scroll_top)
 
-
   render: ->
     @$el.html(@template(entry: @model))
     @$(".timeago").timeago()

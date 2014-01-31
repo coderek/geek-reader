@@ -8,8 +8,10 @@ class Reader.Collections.Entries extends Backbone.Collection
       @trigger("refreshed")
 
   comparator: (m1, m2) ->
-    # newer will be put in front
-    if m1.get("published") > m2.get("published") then 1 else -1
+    if m1.get("published")? and m2.get("published")?
+      if m1.get("published") > m2.get("published") then -1 else 1
+    else
+      if m1.get("created_at") > m2.get("created_at") then -1 else 1
 
   mark_read: (age) ->
     post_path = @url.slice(0, - "entries".length - 1)+"/mark_read"

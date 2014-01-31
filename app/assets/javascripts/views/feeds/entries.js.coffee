@@ -17,10 +17,13 @@ class Reader.Views.Entries extends Backbone.View
     @head = null
     @$("ul.entries").on "scroll", => @scroll.apply(@)
 
+    # keep a reference to all views
+    @entry_views = {}
+
   render_entries: (entries) ->
     @$(".loader").remove()
     @$("ul.entries").empty()
-    models = entries.models.reverse()
+    models = entries.models
     @head = models[0]
     _.each(models, (e)=> @render_entry(e))
     @check_scroll()
@@ -29,12 +32,18 @@ class Reader.Views.Entries extends Backbone.View
   events:
     "click .menu_toggle": "toggle_menu"
     "click .brand" : "toggle_feed_menu"
-    "click ul.dropdown-menu" : "clicked_dropdown"
+    "click ul.dropdown-menu a[data-mark]" : "mark_read"
+    "click ul.dropdown-menu a.refresh" : "refresh_source"
 
-  clicked_dropdown: (ev)->
+  mark_read: (ev)->
     @$(".head").removeClass("open")
     age = $(ev.target).data("mark")
     @collection.mark_read(age)
+    return false
+
+  refresh_source: ->
+    @$(".head").removeClass("open")
+    @collection.refresh()
     return false
 
   toggle_feed_menu: ->
@@ -70,18 +79,32 @@ class Reader.Views.Entries extends Backbone.View
         @$("li.more").html("No more") if status is "Not Found"
 
   refreshed: ->
-    @$(".refresh").removeClass("loading")
+#    @$(".refresh").removeClass("loading")
     flash = $("<div class='flash alert alert-success'>feed is updated successfully! </div>")
     flash.appendTo(@$el)
     setTimeout ( -> flash.fadeOut()), 4000
 
   refresh_feed: ->
     @collection.refresh()
-    @$(".refresh").addClass("loading")
+#    @$(".refresh").addClass("loading")
 
   render_entry: (entry)->
-    entryView = new Reader.Views.Entry({model:entry, parent: @})
-    @$(".entries").append(entryView.render().el)
+    entry_view = new Reader.Views.Entry({model:entry, parent: @})
+    idx = @collection.indexOf(entry) + 1
+    insert_before = null
+    while idx < @collection.length
+      e = @collection.at(idx)
+      if @entry_views["entry_#{e.id}"]?
+        insert_before = @entry_views["entry_#{e.id}"]
+        break
+      idx = idx + 1
+    if insert_before?
+      @$(".entries").append(entry_view.render().el)
+      $(entry_view.render().el).insertBefore(insert_before.el)
+    else
+      @$(".entries").append(entry_view.render().el)
+
+    @entry_views["entry_#{entry.id}"] = entry_view
 
   set_opened_entry: (entryView)->
     @opened_entry?.close()

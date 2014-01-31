@@ -7,10 +7,14 @@ class Reader.Routers.Main extends Backbone.Router
 
   initialize: ->
     resize_height = ->
+      # f = $("#footer").outerHeight(true)
+      wh = $(window).outerHeight(true)
       h = $(".content:visible .head").outerHeight(true)
-      f = $("#footer").outerHeight(true)
-      b = $(window).outerHeight(true) - h
+      b = wh - h
       $(".content:visible .body").height(b)
+
+      h = $(".menu_col .head").outerHeight(true)
+      b = wh - h
       $("#menu").height(b)
     $(window).resize (ev) -> resize_height()
 

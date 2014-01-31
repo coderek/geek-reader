@@ -23,37 +23,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/main.html.erb">
+      <file leaf-file-name="main_router.js.coffee" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/routers/main_router.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="6" selection-start="342" selection-end="342" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="345">
+            <state line="16" column="16" selection-start="477" selection-end="477" vertical-scroll-proportion="0.55684453" vertical-offset="0" max-vertical-offset="690">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <file leaf-file-name="_menu.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/main/_menu.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="360">
+            <state line="50" column="0" selection-start="1540" selection-end="1540" vertical-scroll-proportion="-31.25" vertical-offset="0" max-vertical-offset="885">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="content.css.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/content.css.scss">
+      <file leaf-file-name="menu_manager.js.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/menu_manager.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="13" selection-start="144" selection-end="144" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="2340">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="menu.css.scss" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/menu.css.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="18" selection-start="1467" selection-end="1467" vertical-scroll-proportion="0.44226044" vertical-offset="1260" max-vertical-offset="2100">
+            <state line="3" column="16" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
               <folding />
             </state>
           </provider>
@@ -80,7 +71,6 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/views/main.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/mixins.css.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/mobile.css.scss" />
-        <option value="$PROJECT_DIR$/app/views/main/_menu.html.erb" />
         <option value="$PROJECT_DIR$/app/views/sessions/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/new.html.erb" />
@@ -100,8 +90,6 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/models/category.js.coffee" />
         <option value="$PROJECT_DIR$/app/controllers/categories_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/templates/feeds/category.jst.eco" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/views/menu_manager.js.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/routers/main_router.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/views/feeds/category.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/views/feeds/categories.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/views/feeds/feed.js.coffee" />
@@ -120,6 +108,9 @@
         <option value="$PROJECT_DIR$/app/views/layouts/main.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/content.css.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/menu.css.scss" />
+        <option value="$PROJECT_DIR$/app/views/main/_menu.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/views/menu_manager.js.coffee" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/routers/main_router.js.coffee" />
       </list>
     </option>
   </component>
@@ -545,7 +536,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="SearchEverywhereHistory" value="me&#10;content&#10;feeds.yml&#10;entries&#10;entryde&#10;seed.rb&#10;seed&#10;applicajs&#10;main.&#10;feedscontr&#10;entriescon&#10;routes&#10;routesr&#10;menusc&#10;categories&#10;contentsc&#10;categorcon&#10;user.rb&#10;maincon&#10;entry.rb&#10;feed.rb&#10;feedscon&#10;entriescontr&#10;menu&#10;backbone&#10;entricon&#10;sche&#10;schema&#10;sessioncon&#10;gemf&#10;database.yml&#10;database&#10;timeago&#10;production&#10;categorie&#10;caterb&#10;catecon&#10;categcon&#10;settingscon&#10;gemfile&#10;gemfi&#10;production.r&#10;feed&#10;usercon&#10;userscon&#10;_form&#10;new.ht&#10;new.html&#10;menu.&#10;category.rb" />
+    <property name="SearchEverywhereHistory" value="router&#10;mainrou&#10;me&#10;content&#10;feeds.yml&#10;entries&#10;entryde&#10;seed.rb&#10;seed&#10;applicajs&#10;main.&#10;feedscontr&#10;entriescon&#10;routes&#10;routesr&#10;menusc&#10;categories&#10;contentsc&#10;categorcon&#10;user.rb&#10;maincon&#10;entry.rb&#10;feed.rb&#10;feedscon&#10;entriescontr&#10;menu&#10;backbone&#10;entricon&#10;sche&#10;schema&#10;sessioncon&#10;gemf&#10;database.yml&#10;database&#10;timeago&#10;production&#10;categorie&#10;caterb&#10;catecon&#10;categcon&#10;settingscon&#10;gemfile&#10;gemfi&#10;production.r&#10;feed&#10;usercon&#10;userscon&#10;_form&#10;new.ht&#10;new.html" />
     <property name="LayoutCode.rearrangeEntriesCoffeeScript" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../blog/app/views/posts/show.html.erb" />
     <property name="dynamic.classpath" value="false" />
@@ -779,13 +770,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs21/regexp.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="695" column="14" selection-start="29405" selection-end="29415" vertical-scroll-proportion="0.0" vertical-offset="12014" max-vertical-offset="16605">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="34" selection-start="679" selection-end="679" vertical-scroll-proportion="0.5859375" vertical-offset="45" max-vertical-offset="465">
@@ -969,20 +953,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/routers/main_router.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="41" selection-start="350" selection-end="350" vertical-scroll-proportion="0.38283062" vertical-offset="0" max-vertical-offset="630">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/menu_manager.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="35" selection-start="378" selection-end="378" vertical-scroll-proportion="0.48723897" vertical-offset="0" max-vertical-offset="465">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/feeds/new_feed.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="32" selection-start="200" selection-end="200" vertical-scroll-proportion="0.27842227" vertical-offset="0" max-vertical-offset="705">
@@ -1122,6 +1092,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/menu.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="22" selection-start="1501" selection-end="1501" vertical-scroll-proportion="0.36855036" vertical-offset="1305" max-vertical-offset="2100">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/content.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="144" selection-end="144" vertical-scroll-proportion="0.33169532" vertical-offset="0" max-vertical-offset="2340">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="431">
@@ -1131,21 +1115,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/main.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="6" selection-start="342" selection-end="342" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="345">
+        <state line="10" column="6" selection-start="342" selection-end="342" vertical-scroll-proportion="0.36855036" vertical-offset="0" max-vertical-offset="407">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/content.css.scss">
+    <entry file="file://$PROJECT_DIR$/app/views/main/_menu.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="144" selection-end="144" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="2340">
+        <state line="50" column="0" selection-start="1540" selection-end="1540" vertical-scroll-proportion="-31.25" vertical-offset="0" max-vertical-offset="885">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/menu.css.scss">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/menu_manager.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="18" selection-start="1467" selection-end="1467" vertical-scroll-proportion="0.44226044" vertical-offset="1260" max-vertical-offset="2100">
+        <state line="3" column="16" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/routers/main_router.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="16" selection-start="477" selection-end="477" vertical-scroll-proportion="0.55684453" vertical-offset="0" max-vertical-offset="690">
           <folding />
         </state>
       </provider>

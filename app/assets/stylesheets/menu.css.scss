@@ -12,7 +12,7 @@ $left: 16pt;
   padding-left: $left+4px;
   i {
     position: absolute;
-    top: $top ;
+    top: $top + 4px;
     left: 4px;
   }
 
@@ -92,21 +92,20 @@ $left: 16pt;
             @include normal_icon;
           }
         }
-
       }
       >div {
+        @include hover_style;
+        @include item;
+        padding-left: 20px;
+        &:hover {
+          cursor: pointer;
+        }
         i:nth-child(1) {
           position: absolute;
           left: -1000px;
         }
         i:nth-child(2) {
           @include normal_icon;
-        }
-        @include hover_style;
-        @include item;
-        padding-left: 20px;
-        &:hover {
-          cursor: pointer;
         }
       }
       .feeds {

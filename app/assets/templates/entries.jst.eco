@@ -1,11 +1,13 @@
 <div class="head dropdown">
     <i class="glyphicon glyphicon-th menu_toggle "></i><span class="brand"><%=@title %><b class="caret"></b></span>
     <ul class="dropdown-menu" role="menu">
-        <li role="presentation" class="dropdown-header">Mark as read</li>
-        <li><a href="#" data-mark="all">All</a></li>
-        <li><a href="#" data-mark="1day">Older than 1 day</a></li>
-        <li><a href="#" data-mark="1week">Older than 1 week</a></li>
-        <li class="divider"></li>
+        <% unless @entries instanceof Reader.Collections.UnreadEntries or @entries instanceof Reader.Collections.StarredEntries :%>
+            <li role="presentation" class="dropdown-header">Mark as read</li>
+            <li><a href="#" data-mark="all">All</a></li>
+            <li><a href="#" data-mark="1day">Older than 1 day</a></li>
+            <li><a href="#" data-mark="1week">Older than 1 week</a></li>
+            <li class="divider"></li>
+        <% end %>
         <li><a href="#refresh"><span class="glyphicon glyphicon-refresh"></span>Fetch Latest</a></li>
     </ul>
 </div>

@@ -5,7 +5,7 @@ class Reader.Views.Entries extends Backbone.View
 
   initialize: (options) ->
     @title = options.title
-    @$el.html @template({title: @title})
+    @$el.html @template({title: @title, entries: @collection})
     @id = @title.toString().replace(/\s/g, "_")
     @$el.attr("id", @id)
 
@@ -91,4 +91,4 @@ class Reader.Views.Entries extends Backbone.View
     @
 
   load: ->
-    @collection.fetch(reset: true)
+    @collection.fetch(reset: true, error: => @$(".entries").html("No entries available"))

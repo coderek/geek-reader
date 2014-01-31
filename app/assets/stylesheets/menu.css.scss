@@ -84,11 +84,11 @@ $left: 16pt;
     .category {
       &.open {
         >div {
-          i:nth-child(2) {
+          >i:nth-child(2) {
             position: absolute;
             left: -1000px;
           }
-          i:nth-child(1) {
+          >i:nth-child(1) {
             @include normal_icon;
           }
         }
@@ -100,11 +100,11 @@ $left: 16pt;
         &:hover {
           cursor: pointer;
         }
-        i:nth-child(1) {
+        >i:nth-child(1) {
           position: absolute;
           left: -1000px;
         }
-        i:nth-child(2) {
+        >i:nth-child(2) {
           @include normal_icon;
         }
       }

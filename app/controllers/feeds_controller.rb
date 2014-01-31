@@ -24,6 +24,22 @@ class FeedsController < ApplicationController
     redirect_to :back
   end
 
+  def mark_read
+    feed = current_user.feeds.find(feed_params[:id])
+    render :status=> 404 unless feed
+    if params[:age] == nil
+      render :json=>feed.entries.update_all({is_read: 1})
+    elsif params[:age] == "1day"
+      entries = feed.entries.where(["published < ?", Time.now - 1.day])
+      entries.update_all({is_read: 1})
+      render :json => entries.map(&:id)
+    elsif params[:age] == "1week"
+      entries = feed.entries.where(["published < ?", Time.now - 1.week])
+      entries.update_all({is_read: 1})
+      render :json => entries.map(&:id)
+    end
+  end
+
   private
   def feed_params
     params.permit(:url, :id, :category)

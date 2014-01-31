@@ -4,7 +4,19 @@
     <i class="glyphicon glyphicon-minus close pull-right"></i>
 </div>
 <h3><%= @entry.get("title") %></h3>
-<h5>- <%= @entry.get("author")%></h5>
+<h5>
+    <% a = [] %>
+    <% if @entry.get("author")? : %>
+        <% a.push @entry.get("author")%>
+    <% end %>
+
+    <% if @entry.get("published")? : %>
+        <% a.push strftime('%d %b %Y', new Date(@entry.get("published"))) %>
+    <% else if @entry.get("created_at")? :%>
+        <% a.push strftime('%d %b %Y', new Date(@entry.get("created_at"))) %>
+    <% end %>
+    - <%= a.join(" / ") %>
+</h5>
 <div class="article_body">
     <% if @entry.has("content") and @entry.get("content") isnt "" : %>
     <%- @entry.get("content")%>

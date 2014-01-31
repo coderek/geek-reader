@@ -29,6 +29,13 @@ class Reader.Views.Entries extends Backbone.View
   events:
     "click .menu_toggle": "toggle_menu"
     "click .brand" : "toggle_feed_menu"
+    "click ul.dropdown-menu" : "clicked_dropdown"
+
+  clicked_dropdown: (ev)->
+    @$(".head").removeClass("open")
+    age = $(ev.target).data("mark")
+    @collection.mark_read(age)
+    return false
 
   toggle_feed_menu: ->
     @$(".head").toggleClass("open")

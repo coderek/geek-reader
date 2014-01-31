@@ -24,6 +24,9 @@ Reader::Application.routes.draw do
     end
   end
   resources :feeds do
+    member do
+      post "mark_read"
+    end
     resources :entries do
       collection do
         get "refresh"

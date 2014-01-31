@@ -17,3 +17,6 @@ feeds:
   - http://blog.thousandeyes.com/feed/, blogs
   - https://weworkremotely.com/categories/2/jobs.rss, watch
   - https://news.ycombinator.com/rss, news
+  - http://feeds.feedburner.com/blogspot/hsDu, blogs
+  - http://feeds.feedburner.com/GDBcode, blogs
+  - https://developers.facebook.com/blog/feed, blogs

@@ -32,7 +32,7 @@ class Feed < ActiveRecord::Base
         hash[:title]      = e.title
         hash[:url]        = e.url
         hash[:author]     = e.author
-        hash[:summary]    = e.summary
+        hash[:summary]    = parse_article e.summary, get_domain(f.url)
         hash[:published]  = e.published
         hash[:uuid]       = e.id
         if e.respond_to? :content

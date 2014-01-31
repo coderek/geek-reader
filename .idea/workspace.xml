@@ -50,10 +50,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="content.css.scss" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="content.css.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/content.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="14" selection-start="441" selection-end="441" vertical-scroll-proportion="0.6363636" vertical-offset="0" max-vertical-offset="2355">
+            <state line="13" column="15" selection-start="193" selection-end="193" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="2355">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="feed.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spec/models/feed.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="43" selection-start="181" selection-end="181" vertical-scroll-proportion="0.34802786" vertical-offset="0" max-vertical-offset="570">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="feed.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/feed.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="36" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
               <folding />
             </state>
           </provider>
@@ -112,14 +130,14 @@
         <option value="$PROJECT_DIR$/db/feeds.yml" />
         <option value="$PROJECT_DIR$/spec/models/sample_rss1.xml" />
         <option value="$PROJECT_DIR$/spec/models/sample_rss2.xml" />
-        <option value="$PROJECT_DIR$/app/models/feed.rb" />
-        <option value="$PROJECT_DIR$/spec/models/feed.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/collections/entries.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/templates/feeds/entry.jst.eco" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/views/feeds/entry.js.coffee" />
         <option value="$PROJECT_DIR$/app/controllers/entries_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/views/feeds/entries.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/content.css.scss" />
+        <option value="$PROJECT_DIR$/app/models/feed.rb" />
+        <option value="$PROJECT_DIR$/spec/models/feed.rb" />
       </list>
     </option>
   </component>
@@ -525,7 +543,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="SearchEverywhereHistory" value="contens&#10;entries&#10;entriescon&#10;entry.jst&#10;feed.rb&#10;feeds.yml&#10;entriescontr&#10;manager&#10;feedhelper&#10;apphelper&#10;router&#10;mainrou&#10;me&#10;content&#10;entryde&#10;seed.rb&#10;seed&#10;applicajs&#10;main.&#10;feedscontr&#10;routes&#10;routesr&#10;menusc&#10;categories&#10;contentsc&#10;categorcon&#10;user.rb&#10;maincon&#10;entry.rb&#10;feedscon&#10;menu&#10;backbone&#10;entricon&#10;sche&#10;schema&#10;sessioncon&#10;gemf&#10;database.yml&#10;database&#10;timeago&#10;production&#10;categorie&#10;caterb&#10;catecon&#10;categcon&#10;settingscon&#10;gemfile&#10;gemfi&#10;production.r&#10;feed" />
+    <property name="SearchEverywhereHistory" value="feed&#10;feed.rb&#10;contens&#10;entries&#10;entriescon&#10;entry.jst&#10;feeds.yml&#10;entriescontr&#10;manager&#10;feedhelper&#10;apphelper&#10;router&#10;mainrou&#10;me&#10;content&#10;entryde&#10;seed.rb&#10;seed&#10;applicajs&#10;main.&#10;feedscontr&#10;routes&#10;routesr&#10;menusc&#10;categories&#10;contentsc&#10;categorcon&#10;user.rb&#10;maincon&#10;entry.rb&#10;feedscon&#10;menu&#10;backbone&#10;entricon&#10;sche&#10;schema&#10;sessioncon&#10;gemf&#10;database.yml&#10;database&#10;timeago&#10;production&#10;categorie&#10;caterb&#10;catecon&#10;categcon&#10;settingscon&#10;gemfile&#10;gemfi&#10;production.r" />
     <property name="LayoutCode.rearrangeEntriesCoffeeScript" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../blog/app/views/posts/show.html.erb" />
     <property name="dynamic.classpath" value="false" />
@@ -742,7 +760,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35533708" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35533708" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286517" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3244382" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1102,20 +1120,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/feed.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="28" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.8027842" vertical-offset="359" max-vertical-offset="915">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/models/feed.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="5" selection-start="81" selection-end="81" vertical-scroll-proportion="0.25735295" vertical-offset="0" max-vertical-offset="555">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/templates/feeds/entry.jst.eco">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="6" selection-start="380" selection-end="380" vertical-scroll-proportion="0.48951048" vertical-offset="0" max-vertical-offset="429">
@@ -1153,7 +1157,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/content.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="14" selection-start="441" selection-end="441" vertical-scroll-proportion="0.6363636" vertical-offset="0" max-vertical-offset="2355">
+        <state line="13" column="15" selection-start="193" selection-end="193" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="2355">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/feed.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="36" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/models/feed.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="43" selection-start="181" selection-end="181" vertical-scroll-proportion="0.34802786" vertical-offset="0" max-vertical-offset="570">
           <folding />
         </state>
       </provider>

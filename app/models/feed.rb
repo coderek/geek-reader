@@ -1,6 +1,6 @@
 class Feed < ActiveRecord::Base
   include FeedsHelper
-  #after_create :fetch_feed
+  after_create :fetch_feed
 
   belongs_to :user
   has_one :category

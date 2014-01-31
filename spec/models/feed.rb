@@ -8,6 +8,7 @@ describe Feed do
   end
 
   it "should be able to refresh the feed correctly" do
+    # need to disable after_create callback
     feed = Feedzirra::Feed.parse File.read(File.expand_path(File.dirname(__FILE__)+"/sample_rss2.xml"))
     f = Feed.create(:feed_url=>"http://codingc.om/feed")
     f.fetch_feed feed

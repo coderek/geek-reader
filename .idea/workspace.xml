@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="28" selection-start="1970" selection-end="1970" vertical-scroll-proportion="0.5673077" vertical-offset="516" max-vertical-offset="1140">
+            <state line="40" column="14" selection-start="1456" selection-end="1456" vertical-scroll-proportion="-3.5" vertical-offset="516" max-vertical-offset="1140">
               <folding />
             </state>
           </provider>
@@ -95,10 +95,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sessions_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="sessions_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="7" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+            <state line="20" column="50" selection-start="454" selection-end="454" vertical-scroll-proportion="0.45385778" vertical-offset="0" max-vertical-offset="661">
               <folding />
             </state>
           </provider>
@@ -168,12 +168,12 @@
         <option value="$PROJECT_DIR$/app/models/feed.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/sessions/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/main_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/users/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/main/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
       </list>
     </option>
   </component>
@@ -523,7 +523,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="SearchEverywhereHistory" value="sessioncon&#10;routes&#10;maincont&#10;fee&#10;feed.rb&#10;feedscon&#10;ind&#10;settings&#10;appli&#10;reader&#10;new.&#10;entriescon&#10;entries&#10;unre&#10;production&#10;appcss&#10;detaijs&#10;entry.js.co&#10;content&#10;schema&#10;user&#10;entry.rb&#10;entriescontro&#10;categories&#10;entriescontroller&#10;entries.con&#10;entry.&#10;variablescss&#10;detail&#10;entry.jst&#10;menu&#10;settingscon&#10;session&#10;maincontr&#10;content.&#10;feed&#10;contens&#10;feeds.yml&#10;entriescontr&#10;manager&#10;feedhelper&#10;apphelper&#10;router&#10;mainrou&#10;me&#10;entryde&#10;seed.rb&#10;seed&#10;applicajs&#10;main." />
+    <property name="SearchEverywhereHistory" value="session&#10;sessioncon&#10;routes&#10;maincont&#10;fee&#10;feed.rb&#10;feedscon&#10;ind&#10;settings&#10;appli&#10;reader&#10;new.&#10;entriescon&#10;entries&#10;unre&#10;production&#10;appcss&#10;detaijs&#10;entry.js.co&#10;content&#10;schema&#10;user&#10;entry.rb&#10;entriescontro&#10;categories&#10;entriescontroller&#10;entries.con&#10;entry.&#10;variablescss&#10;detail&#10;entry.jst&#10;menu&#10;settingscon&#10;maincontr&#10;content.&#10;feed&#10;contens&#10;feeds.yml&#10;entriescontr&#10;manager&#10;feedhelper&#10;apphelper&#10;router&#10;mainrou&#10;me&#10;entryde&#10;seed.rb&#10;seed&#10;applicajs&#10;main." />
     <property name="LayoutCode.rearrangeEntriesCoffeeScript" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../blog/app/views/posts/show.html.erb" />
     <property name="dynamic.classpath" value="false" />
@@ -1100,13 +1100,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="7" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/main_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
@@ -1151,7 +1144,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="28" selection-start="1970" selection-end="1970" vertical-scroll-proportion="0.5673077" vertical-offset="516" max-vertical-offset="1140">
+        <state line="40" column="14" selection-start="1456" selection-end="1456" vertical-scroll-proportion="-3.5" vertical-offset="516" max-vertical-offset="1140">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="50" selection-start="454" selection-end="454" vertical-scroll-proportion="0.45385778" vertical-offset="0" max-vertical-offset="661">
           <folding />
         </state>
       </provider>

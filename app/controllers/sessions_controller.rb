@@ -14,10 +14,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_email(session_params[:email])
-    unless user
-      redirect_to :root, :notice=>"user not found"
-    end
-    if user.authenticate(session_params[:password])
+    if user and user.authenticate(session_params[:password])
       session[:user] = user.id
       redirect_to :reader
     else

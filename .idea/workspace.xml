@@ -88,19 +88,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css.scss" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.css.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/index.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="0" selection-start="485" selection-end="485" vertical-scroll-proportion="2.0876288" vertical-offset="0" max-vertical-offset="540">
+            <state line="7" column="16" selection-start="172" selection-end="172" vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="540">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="entry.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/entry.rb">
+      <file leaf-file-name="production.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="3" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
+            <state line="61" column="79" selection-start="2543" selection-end="2543" vertical-scroll-proportion="0.47655067" vertical-offset="600" max-vertical-offset="1380">
               <folding />
             </state>
           </provider>
@@ -127,8 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/db/seeds.rb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/models/category.js.coffee" />
         <option value="$PROJECT_DIR$/app/controllers/categories_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/templates/feeds/category.jst.eco" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/views/feeds/category.js.coffee" />
@@ -178,6 +176,8 @@
         <option value="$PROJECT_DIR$/app/views/users/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/index.css.scss" />
+        <option value="$PROJECT_DIR$/log/production.log" />
+        <option value="$PROJECT_DIR$/config/environments/production.rb" />
       </list>
     </option>
   </component>
@@ -527,7 +527,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="SearchEverywhereHistory" value="appcss&#10;detaijs&#10;entry.js.co&#10;content&#10;schema&#10;user&#10;feed.rb&#10;entry.rb&#10;entriescontro&#10;entries&#10;categories&#10;entriescontroller&#10;entries.con&#10;entry.&#10;variablescss&#10;detail&#10;entry.jst&#10;menu&#10;settingscon&#10;session&#10;routes&#10;maincontr&#10;content.&#10;feed&#10;contens&#10;entriescon&#10;feeds.yml&#10;entriescontr&#10;manager&#10;feedhelper&#10;apphelper&#10;router&#10;mainrou&#10;me&#10;entryde&#10;seed.rb&#10;seed&#10;applicajs&#10;main.&#10;feedscontr&#10;routesr&#10;menusc&#10;contentsc&#10;categorcon&#10;user.rb&#10;maincon&#10;feedscon&#10;backbone&#10;entricon&#10;sche" />
+    <property name="SearchEverywhereHistory" value="production&#10;appcss&#10;detaijs&#10;entry.js.co&#10;content&#10;schema&#10;user&#10;feed.rb&#10;entry.rb&#10;entriescontro&#10;entries&#10;categories&#10;entriescontroller&#10;entries.con&#10;entry.&#10;variablescss&#10;detail&#10;entry.jst&#10;menu&#10;settingscon&#10;session&#10;routes&#10;maincontr&#10;content.&#10;feed&#10;contens&#10;entriescon&#10;feeds.yml&#10;entriescontr&#10;manager&#10;feedhelper&#10;apphelper&#10;router&#10;mainrou&#10;me&#10;entryde&#10;seed.rb&#10;seed&#10;applicajs&#10;main.&#10;feedscontr&#10;routesr&#10;menusc&#10;contentsc&#10;categorcon&#10;user.rb&#10;maincon&#10;feedscon&#10;backbone&#10;entricon" />
     <property name="LayoutCode.rearrangeEntriesCoffeeScript" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../blog/app/views/posts/show.html.erb" />
     <property name="dynamic.classpath" value="false" />
@@ -741,10 +741,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1276" height="778" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.622191" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.622191" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286517" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3244382" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -782,20 +782,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/collections/starred_entries.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="101" selection-end="101" vertical-scroll-proportion="0.06960557" vertical-offset="0" max-vertical-offset="431">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/collections/unread_entries.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="24" selection-start="98" selection-end="98" vertical-scroll-proportion="0.034802783" vertical-offset="0" max-vertical-offset="431">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="44" selection-start="651" selection-end="651" vertical-scroll-proportion="0.48723897" vertical-offset="30" max-vertical-offset="480">
@@ -1160,9 +1146,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/log/production.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="1" selection-end="1" vertical-scroll-proportion="0.07317073" vertical-offset="0" max-vertical-offset="26340">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/index.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="485" selection-end="485" vertical-scroll-proportion="2.0876288" vertical-offset="0" max-vertical-offset="540">
+        <state line="7" column="16" selection-start="172" selection-end="172" vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="79" selection-start="2543" selection-end="2543" vertical-scroll-proportion="0.47655067" vertical-offset="600" max-vertical-offset="1380">
           <folding />
         </state>
       </provider>

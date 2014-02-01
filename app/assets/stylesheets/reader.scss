@@ -84,14 +84,6 @@ html, body {
   text-align: center;
 }
 
-footer {
-//  text-align: center;
-  display: none;
-  padding-left: 10px;
-  border-top: 1px solid lightgrey;
-  color: lightgrey;
-  background-color: lighten($gr_blue, 30%);
-}
 
 form.new_feed {
   position: absolute;

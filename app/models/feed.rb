@@ -12,12 +12,13 @@ class Feed < ActiveRecord::Base
   end
 
   def fetch_feed(f=nil)
+    logger.info "fetching feed: #{feed_url}"
     if f==nil
       raise "feed url is not valid" unless feed_url =~ /^http/
       if last_modified != nil
-        f = Feedzirra::Feed.fetch_and_parse feed_url, {:if_modified_since => last_modified}
+        f = Feedzirra::Feed.fetch_and_parse feed_url, {:if_modified_since => last_modified, :timeout=> 30.seconds}
       else
-        f = Feedzirra::Feed.fetch_and_parse feed_url
+        f = Feedzirra::Feed.fetch_and_parse feed_url, {:timeout=> 30.seconds}
       end
     end
 

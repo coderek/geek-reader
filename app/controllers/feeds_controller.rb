@@ -1,6 +1,6 @@
 class FeedsController < ApplicationController
   respond_to :json
-  before_filter :authenticate
+  before_filter :authenticate, except: [:refresh]
 
   def create
     if feed = current_user.feeds.create({:feed_url => feed_params[:url], :category_id=>feed_params[:category]})
@@ -22,6 +22,14 @@ class FeedsController < ApplicationController
   def destroy
     current_user.feeds.destroy(feed_params[:id])
     redirect_to :back
+  end
+
+  def refresh
+    logger.info "starting to refresh all feeds at #{Time.now}"
+    Feed.all.each do |f|
+      f.fetch_feed
+    end
+    render text: "success"
   end
 
   def mark_read

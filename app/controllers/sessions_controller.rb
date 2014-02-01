@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
   respond_to :json
 
   def new
-    redirect_to :root
   end
 
   def index

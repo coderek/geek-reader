@@ -2,6 +2,7 @@ class MainController < ApplicationController
   before_filter :authenticate, except: [:index]
 
   def index
+    @user = User.new
     render :layout => "application"
   end
 

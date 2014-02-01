@@ -1,4 +1,6 @@
 <%= form_for @user, :html=>{:role=>"form"} do |f| %>
+  <h3>Signup Now</h3>
+
   <% if flash[:notice]  %>
     <div class="alert alert-warning">
       <%= flash[:notice]  %>
@@ -19,6 +21,7 @@
     <%= f.password_field :password_confirmation, :class=>"form-control" %>
   </div>
   <div class="actions form-group">
-    <%= f.submit "register", :class=>"form-control" %>
+    <%= f.submit "Signup", :class=>"form-control" %>
   </div>
+  <%= link_to "or login now", :login %>
 <% end %>

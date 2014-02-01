@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.persisted?
-      redirect_to :root
+      redirect_to :login, :notice=> "Please login now"
     else
       redirect_to :back, :notice=>"Invalid Information"
     end

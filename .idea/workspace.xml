@@ -54,7 +54,12 @@
         <entry file="file://$PROJECT_DIR$/app/views/sessions/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="19" column="25" selection-start="565" selection-end="611" vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="405">
-              <folding />
+              <folding>
+                <marker date="1391229725000" expanded="true" signature="157:197" placeholder="..." />
+                <marker date="1391229725000" expanded="true" signature="236:337" placeholder="..." />
+                <marker date="1391229725000" expanded="true" signature="364:473" placeholder="..." />
+                <marker date="1391229725000" expanded="true" signature="500:563" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,16 +68,13 @@
         <entry file="file://$PROJECT_DIR$/app/views/users/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="25" column="39" selection-start="772" selection-end="772" vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="495">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="300">
-              <folding />
+              <folding>
+                <marker date="1391269060000" expanded="true" signature="139:179" placeholder="..." />
+                <marker date="1391269060000" expanded="true" signature="225:319" placeholder="..." />
+                <marker date="1391269060000" expanded="true" signature="352:456" placeholder="..." />
+                <marker date="1391269060000" expanded="true" signature="490:634" placeholder="..." />
+                <marker date="1391269060000" expanded="true" signature="669:731" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,10 +97,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sessions_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="sessions_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="50" selection-start="454" selection-end="454" vertical-scroll-proportion="0.45385778" vertical-offset="0" max-vertical-offset="661">
+            <state line="18" column="25" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="585">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="53" selection-start="469" selection-end="469" vertical-scroll-proportion="0.3440367" vertical-offset="300" max-vertical-offset="855">
               <folding />
             </state>
           </provider>
@@ -150,7 +161,6 @@
         <option value="$PROJECT_DIR$/app/assets/templates/feeds/entry_detail.jst.eco" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/collections/categories.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/collections/entries.js.coffee" />
-        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/entry.rb" />
         <option value="$PROJECT_DIR$/app/assets/templates/feeds/entry.jst.eco" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/content.css.scss" />
@@ -174,6 +184,7 @@
         <option value="$PROJECT_DIR$/app/views/users/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
       </list>
     </option>
   </component>
@@ -523,7 +534,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="SearchEverywhereHistory" value="session&#10;sessioncon&#10;routes&#10;maincont&#10;fee&#10;feed.rb&#10;feedscon&#10;ind&#10;settings&#10;appli&#10;reader&#10;new.&#10;entriescon&#10;entries&#10;unre&#10;production&#10;appcss&#10;detaijs&#10;entry.js.co&#10;content&#10;schema&#10;user&#10;entry.rb&#10;entriescontro&#10;categories&#10;entriescontroller&#10;entries.con&#10;entry.&#10;variablescss&#10;detail&#10;entry.jst&#10;menu&#10;settingscon&#10;maincontr&#10;content.&#10;feed&#10;contens&#10;feeds.yml&#10;entriescontr&#10;manager&#10;feedhelper&#10;apphelper&#10;router&#10;mainrou&#10;me&#10;entryde&#10;seed.rb&#10;seed&#10;applicajs&#10;main." />
+    <property name="SearchEverywhereHistory" value="userscon&#10;session&#10;sessioncon&#10;routes&#10;maincont&#10;fee&#10;feed.rb&#10;feedscon&#10;ind&#10;settings&#10;appli&#10;reader&#10;new.&#10;entriescon&#10;entries&#10;unre&#10;production&#10;appcss&#10;detaijs&#10;entry.js.co&#10;content&#10;schema&#10;user&#10;entry.rb&#10;entriescontro&#10;categories&#10;entriescontroller&#10;entries.con&#10;entry.&#10;variablescss&#10;detail&#10;entry.jst&#10;menu&#10;settingscon&#10;maincontr&#10;content.&#10;feed&#10;contens&#10;feeds.yml&#10;entriescontr&#10;manager&#10;feedhelper&#10;apphelper&#10;router&#10;mainrou&#10;me&#10;entryde&#10;seed.rb&#10;seed&#10;applicajs" />
     <property name="LayoutCode.rearrangeEntriesCoffeeScript" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../blog/app/views/posts/show.html.erb" />
     <property name="dynamic.classpath" value="false" />
@@ -740,7 +751,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.622191" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.622191" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286517" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3244382" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -912,13 +923,6 @@
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="25" selection-start="1564" selection-end="1564" vertical-scroll-proportion="0.5688351" vertical-offset="284" max-vertical-offset="1020">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="35" selection-start="276" selection-end="276" vertical-scroll-proportion="0.2631579" vertical-offset="0" max-vertical-offset="855">
           <folding />
         </state>
       </provider>
@@ -1110,7 +1114,12 @@
     <entry file="file://$PROJECT_DIR$/app/views/sessions/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="25" selection-start="565" selection-end="611" vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="405">
-          <folding />
+          <folding>
+            <marker date="1391229725000" expanded="true" signature="157:197" placeholder="..." />
+            <marker date="1391229725000" expanded="true" signature="236:337" placeholder="..." />
+            <marker date="1391229725000" expanded="true" signature="364:473" placeholder="..." />
+            <marker date="1391229725000" expanded="true" signature="500:563" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1131,7 +1140,13 @@
     <entry file="file://$PROJECT_DIR$/app/views/users/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="39" selection-start="772" selection-end="772" vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="495">
-          <folding />
+          <folding>
+            <marker date="1391269060000" expanded="true" signature="139:179" placeholder="..." />
+            <marker date="1391269060000" expanded="true" signature="225:319" placeholder="..." />
+            <marker date="1391269060000" expanded="true" signature="352:456" placeholder="..." />
+            <marker date="1391269060000" expanded="true" signature="490:634" placeholder="..." />
+            <marker date="1391269060000" expanded="true" signature="669:731" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1151,7 +1166,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="50" selection-start="454" selection-end="454" vertical-scroll-proportion="0.45385778" vertical-offset="0" max-vertical-offset="661">
+        <state line="18" column="25" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="585">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="53" selection-start="469" selection-end="469" vertical-scroll-proportion="0.3440367" vertical-offset="300" max-vertical-offset="855">
           <folding />
         </state>
       </provider>

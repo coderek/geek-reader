@@ -10,7 +10,7 @@ class Reader.Views.Entry extends Backbone.View
 
   events:
     "click .title": "open"
-    "click .ops": "close"
+    "click .close": "close"
     "click .star": "toggle_starred"
 
   toggle_starred: ->
@@ -18,9 +18,11 @@ class Reader.Views.Entry extends Backbone.View
     if @model.get("is_starred") == 1
       @model.save({is_starred: 0})
       @$el.removeClass("is_starred")
+      Reader.starred_entries.remove(@model)
     else
       @model.save({is_starred: 1})
       @$el.addClass("is_starred")
+      Reader.starred_entries.add(@model)
 
   update_read_status: ->
     @model.urlRoot = "/feeds/#{@model.id}/entries"
@@ -30,23 +32,28 @@ class Reader.Views.Entry extends Backbone.View
       @$el.removeClass("is_read")
 
   close: (ev)->
-    if not ev? or $(ev.target).is(".ops")
-      @$(".detail").removeClass("show")
+    if not ev? or $(ev.currentTarget).is(".close")
       @$(".title").show()
+      @$(".detail").hide()
 
-  open: ->
-    @$(".detail").addClass("show")
-    @parent.set_opened_entry(@)
+  open: (ev)->
+    @parent.opened_entry?.close()
 
-    @$(".detail").html(@template_detail(entry: @model)) if /\W/.test(@$(".detail").html())
+    @$(".detail").show()
     @$(".title").hide()
-    @model.save({is_read: 1}, {patch: true})
+
+    if /\W/.test(@$(".detail").html())
+      @$(".detail").html(@template_detail(entry: @model))
+      @$('pre code, .prettyprint').each (i, e)-> hljs.highlightBlock(e)
+      @model.save({is_read: 1}, {patch: true})
+
     scroll_top = _.reduce @$el.prevAll(), (memo, e)->
       memo += $(e).outerHeight(true)
     , 0
-    @$('pre code, .prettyprint').each (i, e)-> hljs.highlightBlock(e)
 
     @$el.parent().scrollTop(scroll_top)
+
+    @parent.set_opened_entry(@)
 
   render: ->
     @$el.html(@template(entry: @model))

@@ -11,7 +11,13 @@ class Reader.Views.Entries extends Backbone.View
 
     @listenTo @collection, "reset", @render_entries
     @listenTo @collection, "add", @render_entry
+    @listenTo @collection, "remove", @remove_entry
     @listenTo @collection, "refreshed", @refreshed
+    if @collection.feed?
+      @listenTo @collection.feed, "destroy", =>
+        Reader.flashMessage("Feed is deleted successfully.")
+        Reader.menu_manager.show_menu()
+        @remove()
 
     @page = 0 # page start from 0
     @head = null
@@ -34,6 +40,11 @@ class Reader.Views.Entries extends Backbone.View
     "click .brand" : "toggle_feed_menu"
     "click ul.dropdown-menu a[data-mark]" : "mark_read"
     "click ul.dropdown-menu a.refresh" : "refresh_source"
+    "click ul.dropdown-menu a.delete" : "delete_source"
+
+  delete_source: ->
+    @collection.destroy()
+    return false
 
   mark_read: (ev)->
     @$(".head").removeClass("open")
@@ -79,16 +90,16 @@ class Reader.Views.Entries extends Backbone.View
         @$("li.more").html("No more") if status is "Not Found"
 
   refreshed: ->
+    Reader.flashMessage("feed is updated successfully! ")
 #    @$(".refresh").removeClass("loading")
-    flash = $("<div class='flash alert alert-success'>feed is updated successfully! </div>")
-    flash.appendTo(@$el)
-    setTimeout ( -> flash.fadeOut()), 4000
 
   refresh_feed: ->
     @collection.refresh()
 #    @$(".refresh").addClass("loading")
 
   render_entry: (entry)->
+    @$("li.more").remove()
+    # always insert entries in the correct order
     entry_view = new Reader.Views.Entry({model:entry, parent: @})
     idx = @collection.indexOf(entry) + 1
     insert_before = null
@@ -107,8 +118,10 @@ class Reader.Views.Entries extends Backbone.View
     @entry_views["entry_#{entry.id}"] = entry_view
 
   set_opened_entry: (entryView)->
-    @opened_entry?.close()
     @opened_entry = entryView
+
+  remove_entry: (model)->
+    @entry_views["entry_#{model.id}"]?.remove()
 
   render: ->
     @

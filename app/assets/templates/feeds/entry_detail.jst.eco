@@ -3,7 +3,9 @@
     <i class="glyphicon glyphicon-star star"></i>
     <i class="glyphicon glyphicon-minus close pull-right"></i>
 </div>
-<h3><%= @entry.get("title") %></h3>
+<h3>
+    <a href="<%=@entry.get("url") %>" target=_blank><%= @entry.get("title") %></a>
+</h3>
 <h5>
     <% a = [] %>
     <% if @entry.get("author")? : %>

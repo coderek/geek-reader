@@ -7,6 +7,11 @@ window.Reader =
   Collections: {}
   Views: {}
   Routers: {}
+  flashMessage: (msg)->
+    flash = $("<div class='flash'><span class='alert alert-success'>#{msg}</span></div>")
+    flash.appendTo($("body"))
+    setTimeout ( -> flash.fadeOut(400, -> $(@).remove())), 4000
+
   initialize: ->
     # initialize data objects
     r = Reader

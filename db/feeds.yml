@@ -9,6 +9,7 @@ categories:
   - Forums
 feeds:
   - http://codingnow.com/atom.xml, blogs
+  - http://www.yinwang.org/atom.xml, blogs
   - http://coolshell.cn/feed, blogs
   - http://stackoverflow.com/feeds/tag/facebook-graph-api, watch
   - http://techcrunch.cn/feed/, news

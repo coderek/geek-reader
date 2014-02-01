@@ -18,6 +18,7 @@ class Reader.Views.DisplayManager extends Backbone.View
       @current_view = @starred_view ?= new Reader.Views.Entries({collection: @source, title: "Starred"})
     else if @source instanceof Reader.Models.Feed
       @source.entries ?= new Reader.Collections.Entries
+      @source.entries.feed = @source
       @source.entries.url = @source.url() + "/entries"
       if not @feeds_view["feed_#{@source.id}"]?
         @feeds_view["feed_#{@source.id}"] = new Reader.Views.Entries({collection: @source.entries, title: @source.get("title")})

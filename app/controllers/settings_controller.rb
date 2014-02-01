@@ -1,7 +1,8 @@
 class SettingsController < ApplicationController
   before_filter :authenticate
   def index
-    render "preference"
+    categories
+    render "categories"
   end
 
   def categories

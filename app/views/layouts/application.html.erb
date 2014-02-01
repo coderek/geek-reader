@@ -2,15 +2,61 @@
 <html>
 <head>
   <title>Reader</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => false %>
   <%= javascript_include_tag "application"%>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scale=no">
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <div class="container">
-  <%= yield %>
+  <div class="row">
+    <div class="col-lg-8">
+
+      <h1>Geek Reader</h1>
+      <summary>An awesome reader for Geeks like you!</summary>
+      <div class="screen_shot">
+        <%= image_tag("gr_screenshot.png") %>
+      </div>
+      <ul class="row">
+        <li class="col-md-4">
+          <h3>Code Highlighting</h3>
+          <p>
+            It uses Hightlight.js for highlighting code snippet.
+          </p>
+        </li>
+        <li class="col-md-4">
+          <h3>Custom Styles</h3>
+          <p>
+            You can customize the stylesheets of any feed, so you can hide those ignoring 1px images and more.
+          </p>
+        </li>
+        <li class="col-md-4">
+          <h3>Secondary Fetching</h3>
+          <p>
+            Feed sources like HackerNews can be set to fetch content from feed url. So you will not need to click the link to see it's content.
+          </p>
+        </li>
+      </ul>
+
+      <p>Besides those, you still get all the goodies of a normal reader app.</p>
+
+      <ul>
+        <li>Periodic updates</li>
+        <li>Email notifications</li>
+        <li>Mobile support</li>
+      </ul>
+
+      <p>Last but not least, it's <a href="https://github.com/coderek/geek-reader">open source!</a> You can modify it to suit your own needs.</p>
+    </div>
+    <div class="col-lg-4">
+      <p>
+        <%= yield %>
+
+      </p>
+    </div>
+  </div>
+
 </div>
 
 <%= render "common/tracking" %>

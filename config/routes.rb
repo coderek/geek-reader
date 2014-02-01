@@ -10,6 +10,7 @@ Reader::Application.routes.draw do
   get "register" => "users#new", as: "register"
   get "entries/unread" => "entries#unread"
   get "entries/starred" => "entries#starred"
+  get "reader"=>"main#reader", as: "reader"
 
   resources :settings do
     collection do

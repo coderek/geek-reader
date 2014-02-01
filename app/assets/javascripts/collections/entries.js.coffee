@@ -27,3 +27,8 @@ class Reader.Collections.Entries extends Backbone.Collection
         $.post post_path, {age: "1day"}, update_locals
       when "1week"
         $.post post_path, {age: "1week"}, update_locals
+
+  destroy: ->
+    @feed.destroy() if @feed?
+
+

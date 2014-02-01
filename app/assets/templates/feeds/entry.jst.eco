@@ -1,15 +1,20 @@
 <div class="title">
     <%= @entry.get("title")%>
+    <div class="sub_title">
+        <% if @entry.get("author")? : %>
+            <%= @entry.get("author")%>
+        <% end %>
+        <% if @entry.get("entry_title")? : %>
+            | <%= @entry.get("entry_title") %>
+        <% end %>
 
-</div>
-<div class="sub_title title">
-    <%= @entry.get("author")%>
-    <% if @entry.get("published")? : %>
-        <abbr class="timeago" title="<%= @entry.get("published") %>"></abbr>
-    <% else : %>
-        <abbr class="timeago" title="<%= @entry.get("created_at") %>"></abbr>
-    <% end %>
+        <% if @entry.get("published")? : %>
+            <abbr class="timeago pull-right" title="<%= @entry.get("published") %>"></abbr>
+        <% else : %>
+            <abbr class="timeago pull-right" title="<%= @entry.get("created_at") %>"></abbr>
+        <% end %>
+        <div class="clearfix"></div>
+    </div>
 </div>
 <div class="detail">
-
 </div>

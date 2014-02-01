@@ -9,6 +9,10 @@ class UsersController < ApplicationController
   def show
   end
 
+  def feeds
+    super.order("last_modified DESC")
+  end
+
   def new
     @user = User.new
   end
@@ -19,7 +23,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.persisted?
-      redirect_to :login
+      redirect_to :root
     else
       redirect_to :back, :notice=>"Invalid Information"
     end

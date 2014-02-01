@@ -76,6 +76,13 @@ html, body {
   }
   @include menu;
 }
+.flash {
+  z-index: 10;
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  text-align: center;
+}
 
 footer {
 //  text-align: center;

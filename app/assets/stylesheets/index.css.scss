@@ -1,0 +1,30 @@
+.container:not(#main) {
+//  max-width: 800px;
+  margin: 10px auto;
+  background-color: #ffffff;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  form {
+    width: 100%;
+    margin: 0 auto;
+    background-color: aliceblue;
+    border-radius: 4px;
+    padding: 4px 10px;
+    border: 1px solid #DDDDDD;
+  }
+  ul:first-of-type {
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    margin: 0;
+    padding: 0;
+  }
+
+  .screen_shot {
+    img {
+      width: 100%;
+    }
+  }
+}

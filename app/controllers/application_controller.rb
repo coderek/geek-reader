@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate
     unless current_user
-      redirect_to :login
+      redirect_to :root
     end
   end
 

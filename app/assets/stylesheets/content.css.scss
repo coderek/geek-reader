@@ -13,11 +13,6 @@
   }
   height: 100%;
   position: relative;
-  .flash {
-    position: absolute;
-    top: 100px;
-    right: 50%;
-  }
   width: 100%;
   .entries {
     height: 100%;
@@ -41,11 +36,10 @@
     }
     >li {
       margin: 0;
+      padding: 0;
       min-height: 50px;
-      border-top: 1px solid #dddddd;
+      border-top: 1px solid #ffffff;
       list-style: none;
-      padding: 10px;
-      border-left: 3px solid $gr_blue;
       &.is_read {
         background-color: #eeeeee;
         border-left: none;
@@ -62,18 +56,20 @@
         cursor: default;
       }
       .title {
+        border-left: 3px solid #DDDDDD;
+        border-bottom: 1px solid #DDDDDD;
+        padding: 10px;
         font-size: 12pt;
         font-weight: bold;
+
         &:hover {
           cursor: pointer;
         }
-      }
-      .sub_title {
-        font-size: 10pt;
+        .sub_title {
+          font-size: 10pt;
+        }
       }
       .timeago {
-        position: absolute;
-        right: 4px;
         border-bottom: none;
         color: #888;
         &:hover {
@@ -115,8 +111,13 @@
   }
   padding: 10px;
   display: none;
-  &.show {
-    display: block;
+  h3 {
+    a {
+      color: $body_text_color;
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
   .close span {
     color: #000000;

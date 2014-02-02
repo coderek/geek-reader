@@ -28,9 +28,6 @@ Reader::Application.routes.draw do
     member do
       post "mark_read"
     end
-    collection do
-      put "refresh"
-    end
     resources :entries do
       collection do
         get "refresh"

@@ -48,8 +48,10 @@ class Feed < ActiveRecord::Base
         e = entries.new(hash)
         created_entries << e if e.save
       end
+      logger.info "done: inserted #{created_entries.count} entries"
       created_entries
     elsif f != 304
+      logger.info "done: unchanged"
       # invalid feed
       destroy
     end

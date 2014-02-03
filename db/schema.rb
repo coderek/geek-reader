@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140127185623) do
+ActiveRecord::Schema.define(version: 20140203044340) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -24,13 +24,13 @@ ActiveRecord::Schema.define(version: 20140127185623) do
     t.string   "title"
     t.string   "url"
     t.string   "author"
-    t.text     "summary"
+    t.text     "summary",    limit: 16777215
     t.text     "content",    limit: 16777215
     t.datetime "published"
     t.string   "categories"
     t.string   "uuid"
-    t.integer  "is_read"
-    t.integer  "is_starred"
+    t.integer  "is_read",                     default: 0
+    t.integer  "is_starred",                  default: 0
     t.integer  "feed_id"
     t.datetime "created_at"
     t.datetime "updated_at"

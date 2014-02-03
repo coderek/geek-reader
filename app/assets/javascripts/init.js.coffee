@@ -12,6 +12,9 @@ window.Reader =
     flash.appendTo($("body"))
     setTimeout ( -> flash.fadeOut(400, -> $(@).remove())), 4000
 
+  update_unread: (feed_id, change)->
+    Reader.categories.find_feed(feed_id)?.trigger("update_unread", change)
+
   initialize: ->
     # initialize data objects
     r = Reader

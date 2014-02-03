@@ -31,6 +31,9 @@ class Reader.Views.Entry extends Backbone.View
     else
       @$el.removeClass("is_read")
 
+    if @model.previous("is_read") == 0 and @model.get("is_read") == 1
+      Reader.update_unread(@model.get("feed_id"), -1)
+
   close: (ev)->
     if not ev? or $(ev.currentTarget).is(".close")
       @$(".title").show()

@@ -4,6 +4,7 @@ class Reader.Views.Feed extends Backbone.View
   template: JST["feeds/feed"]
   initialize: ->
     @listenTo @model, "destroy", @remove
+    @listenTo @model, "update_unread", @update_unread
     @$el.attr("data-id", @model.id)
 
   events:
@@ -12,6 +13,8 @@ class Reader.Views.Feed extends Backbone.View
   open: ->
     log "called open feed"
     @show_entries()
+    @$el.addClass("selected")
+    $("li.feed.selected").removeClass(("selected"))
 
   render: ->
     @$el.html @template(feed: @model)
@@ -19,3 +22,7 @@ class Reader.Views.Feed extends Backbone.View
 
   show_entries: ->
     Reader.display_manager.render_entries(@model)
+
+  update_unread: (change)->
+    @model.set "unread_count", Math.max(parseInt(@model.get("unread_count"), 10) + change, 0)
+    @$(".unread").text(@model.get("unread_count"))

@@ -28,15 +28,22 @@ class FeedsController < ApplicationController
     feed = current_user.feeds.find(feed_params[:id])
     render :status=> 404 unless feed
     if params[:age] == nil
-      render :json=>feed.entries.update_all({is_read: 1})
+      entries = feed.entries.where("is_read = 0")
+      ids = entries.map(&:id)
+      entries.update_all({is_read: 1})
+      render :json => ids
     elsif params[:age] == "1day"
-      entries = feed.entries.where(["published < ?", Time.now - 1.day])
+      t = Time.now - 1.day
+      entries = feed.entries.where(["published < ? OR created_at < ? AND is_read = 0", t, t])
+      ids = entries.map(&:id)
       entries.update_all({is_read: 1})
-      render :json => entries.map(&:id)
+      render :json => ids
     elsif params[:age] == "1week"
-      entries = feed.entries.where(["published < ?", Time.now - 1.week])
+      t = Time.now - 1.week
+      entries = feed.entries.where(["published < ? OR created_at < ? AND is_read = 0", t, t])
+      ids = entries.map(&:id)
       entries.update_all({is_read: 1})
-      render :json => entries.map(&:id)
+      render :json => ids
     end
   end
 

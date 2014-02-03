@@ -112,6 +112,10 @@ $left: 16pt;
         .feed {
           @include hover_style;
           @include item;
+          .unread {
+            font-weight: bold;
+            color: #c0c0c0;
+          }
           padding-left: $left + 20px;
           a {
             color: black;

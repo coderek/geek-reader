@@ -15,18 +15,27 @@ class Reader.Collections.Entries extends Backbone.Collection
 
   mark_read: (age) ->
     post_path = @url.slice(0, - "entries".length - 1)+"/mark_read"
+
+    switch age
+      when "all"
+        req = $.post post_path
+      when "1day"
+        req = $.post post_path, {age: "1day"}
+      when "1week"
+        req = $.post post_path, {age: "1week"}
+
     update_locals = (ids)=>
       _.each ids, (id)=>
         e = @get(id)
         e.set({is_read: 1}) if e?
+      return
 
-    switch age
-      when "all"
-        $.post post_path, => @each (e)-> e.set({is_read: 1})
-      when "1day"
-        $.post post_path, {age: "1day"}, update_locals
-      when "1week"
-        $.post post_path, {age: "1week"}, update_locals
+    update_feed_unread_count = (ids)=>
+      decrement_count = _.difference(ids, @pluck("id")).length
+      log "update_feed_unread_count #{decrement_count}"
+      Reader.update_unread(@feed.id, - decrement_count  ) if @feed?
+
+    req.done(update_locals, update_feed_unread_count)
 
   destroy: ->
     @feed.destroy() if @feed?

@@ -7,6 +7,14 @@ class Feed < ActiveRecord::Base
   has_many :entries, :dependent => :destroy
   validates_uniqueness_of :feed_url, :scope=>:user_id
 
+  def unread_count
+    @unread_entries = entries.where({:is_read=> 0}).count
+  end
+
+  def attributes
+    super.merge({:unread_count=>nil})
+  end
+
   def entries
     super.order("published DESC")
   end

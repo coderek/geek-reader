@@ -5,9 +5,14 @@ class Reader.Views.Feed extends Backbone.View
     draggable:true
   template: JST["feeds/feed"]
   initialize: ->
-    @listenTo @model, "destroy remove", @remove
+    @listenTo @model, "remove destroy", @remove_feed
+    log @model._events
+    log "feed", @model.cid, @model.id
     @listenTo @model, "update_unread", @update_unread
     @$el.attr("data-id", @model.id)
+
+  remove_feed: ->
+    @remove()
 
   events:
     "click a": "open"

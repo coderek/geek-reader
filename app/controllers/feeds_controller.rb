@@ -20,8 +20,7 @@ class FeedsController < ApplicationController
   end
 
   def destroy
-    current_user.feeds.destroy(feed_params[:id])
-    redirect_to :back
+    render json: current_user.feeds.destroy(feed_params[:id])
   end
 
   def mark_read
@@ -51,5 +50,4 @@ class FeedsController < ApplicationController
   def feed_params
     params.permit(:url, :id, :category_id)
   end
-
 end

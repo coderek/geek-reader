@@ -9,11 +9,33 @@ class Reader.Views.SettingsCategories extends Backbone.View
     @listenTo Reader.categories, "destroy", @render
 
   events:
-    "click button": "add_category"
+    "click .add": "add_category"
     "click .edit" : "edit_category"
     "click .delete" : "delete_category"
 
-  edit_category: ->
+  edit_category: (ev)->
+    cat_li = @$(ev.target).closest("li")
+    cat = Reader.categories.get(cat_li.data("id"))
+    return if cat_li.find(".edit_name").length > 0
+    edit_form =
+      """
+      <div class='form-inline edit_name'>
+        <div class='form-group'>
+          <input type='text' class='form-control' placeholder='new name'/>
+          <button class='btn btn-primary save'>save</button>
+          <button class='btn cancel'>cancel</button>
+        </div>
+      </div>
+      """
+    cat_li.append(edit_form)
+
+    cat_li.find(".save").click =>
+      cat.save({name: cat_li.find("input").val()}, {patch: true, success:=> cat_li.find("span").text(cat.get("name"))})
+      cat_li.find(".edit_name").remove()
+
+    cat_li.find(".cancel").click =>
+      cat_li.find(".edit_name").remove()
+
 
   delete_category: (ev)->
     id = $(ev.target).parent().data("id")
@@ -37,10 +59,20 @@ class Reader.Views.SettingsFeeds extends Backbone.View
   initialize: ->
     @render()
 
+  events:
+    "click .edit" : "edit_feed"
+    "click .delete" : "delete_feed"
+
+  delete_feed: (ev)->
+    feed_li = $(ev.target).closest("li")
+    id = feed_li.data("id")
+    feed = @collection.get(id)
+    if feed?
+      feed.destroy({wait: true, success: => feed_li.remove()})
+      Reader.flashMessage("Feed #{feed.get("title")} is removed")
+
   render: ->
-    @$el.html "loading"
-    Reader.categories.load_all_feed().done =>
-      @$el.html @template(cats: Reader.categories)
+    @$el.html @template(feeds: @collection.models)
     @
 
 class Reader.Views.Settings extends Backbone.View
@@ -53,12 +85,18 @@ class Reader.Views.Settings extends Backbone.View
   events:
     "click .nav-tabs a": "toggle_tabs"
     "click .close" : "close"
+    "click" : "close"
 
-  close: ->
-    @remove()
+  close: (ev)->
+    @remove() if ev.target is ev.currentTarget
 
   initialize: ->
-    @render()
+    @feeds = []
+    Reader.categories.load_all_feed().done =>
+      Reader.categories.each (cat)=>
+        models = cat.feeds.models
+        @feeds = @feeds.concat models
+      @render()
 
   toggle_tabs: (ev)->
     $(ev.target).tab('show')
@@ -67,6 +105,6 @@ class Reader.Views.Settings extends Backbone.View
     @$el.html @template()
     settings_categories = new Reader.Views.SettingsCategories
     @$(".tab-content").append(settings_categories.el)
-    settings_feeds = new Reader.Views.SettingsFeeds
+    settings_feeds = new Reader.Views.SettingsFeeds(collection: new Backbone.Collection @feeds)
     @$(".tab-content").append(settings_feeds.el)
     @

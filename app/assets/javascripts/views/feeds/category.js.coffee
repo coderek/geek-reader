@@ -5,6 +5,7 @@ class Reader.Views.Category extends Backbone.View
   initialize: ->
     @$el.html @template(model: @model)
     @listenTo @model, "destroy", @remove
+    @listenTo @model, "change:name", @update_name
     @listenTo @model.feeds, "add", @add_feed
     @listenTo @model.feeds, "reset", @add_feeds
     @$(".feeds").hide()
@@ -15,6 +16,9 @@ class Reader.Views.Category extends Backbone.View
     "dragover":"dragover"
     "dragleave":"dragleave"
     "drop":"dropped"
+
+  update_name: ->
+    @$(".cat_name").text(@model.get("name"))
 
   dropped: (ev)->
     data = JSON.parse ev.originalEvent.dataTransfer.getData("application/json")

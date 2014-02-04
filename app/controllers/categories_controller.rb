@@ -26,8 +26,7 @@ class CategoriesController < ApplicationController
   def update
     pp = params.permit(:id, :name)
     cat = current_user.categories.find(pp[:id])
-    cat.update({name: params[:name]})
-    respond_with(cat)
+    render :json=>cat.update({name: params[:name]})
   end
 
   def destroy

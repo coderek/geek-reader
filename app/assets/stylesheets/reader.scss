@@ -104,10 +104,11 @@ form.login, .register {
   height: 100%;
   >div {
     box-shadow: 0 0 10px 5px darken(#f3f3f3, 30%);
-    margin: 30px auto;
-    width: 400px;
+    margin: 5% auto;
+    max-width: 500px;
+    height: 90%;
     background-color: #f3f3f3;
-    padding: 10px;
+    padding: 0px;
     border-radius: 5px;
   }
 }

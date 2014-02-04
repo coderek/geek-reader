@@ -18,10 +18,11 @@ class Reader.Collections.Categories extends Backbone.Collection
       default_cat.feeds.add(feed)
 
   load_all_feed: ->
-    count = @length
-    @each (cat)=>
+    cat_loaders = @map (cat)=>
       cat.load_feeds()
-      cat.feeds_are_loaded.done =>
-        count = count - 1
-        @all_feeds_are_loaded.resolve() if count is 0
+      cat.feeds_are_loaded
+
+    $.when.apply($, cat_loaders).done =>
+      @all_feeds_are_loaded.resolve()
+
     return @all_feeds_are_loaded

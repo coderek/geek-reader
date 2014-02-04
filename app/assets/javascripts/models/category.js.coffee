@@ -10,6 +10,6 @@ class Reader.Models.Category extends Backbone.Model
     data
 
   load_feeds: ->
-    if @feeds_are_loaded.state() isnt "resolve"
+    if @feeds_are_loaded.state() isnt "resolved"
       log "loading feeds for category: #{@get("name")}"
       @feeds.fetch reset: true

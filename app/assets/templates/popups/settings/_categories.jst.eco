@@ -1,13 +1,16 @@
-<div class="form-group">
-    <label for="">New Group</label>
-    <input type="text"/>
-    <button>Add</button>
+<div class="form-inline">
+    <div class="form-group">
+        <label for="">New Group</label>
+        <input type="text" class="form-control"/>
+        <button class="add btn btn-primary">Add</button>
+    </div>
 </div>
 <ol class="categories">
     <% for cat in @cats.models : %>
-    <li data-id="<%=cat.id%>"><%= cat.get("name") %>
+    <li data-id="<%=cat.id%>"><span><%= cat.get("name") %></span>
         <i class="pull-right glyphicon glyphicon-edit edit"></i>
         <i class="pull-right glyphicon glyphicon-remove delete"></i>
+        <label class="pull-right label label-default"><%=cat.feeds.length%> feeds</label>
     </li>
     <% end %>
 </ol>

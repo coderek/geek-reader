@@ -15,9 +15,11 @@ class Reader.Views.Entries extends Backbone.View
     @listenTo @collection, "refreshed", @refreshed
     if @collection.feed?
       @listenTo @collection.feed, "destroy", =>
-        Reader.flashMessage("Feed is deleted successfully.")
         Reader.menu_manager.show_menu()
         @remove()
+      log @collection.feed._events
+      log "entries", @collection.feed.cid, @collection.feed.id
+
 
     @page = 0 # page start from 0
     @head = null

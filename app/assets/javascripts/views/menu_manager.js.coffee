@@ -22,8 +22,9 @@ class Reader.Views.MenuManager extends Backbone.View
     $("body>.container").removeClass("show_menu")
 
   settings: ->
+    @hide_menu()
     Reader.settings = new Reader.Views.Settings
     if not $.contains($("body"), Reader.settings.el)
       $("body").append(Reader.settings.el)
-    @$("dropdown").removeClass("open")
+    @$(".dropdown").removeClass("open")
     return false

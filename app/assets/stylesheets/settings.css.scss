@@ -2,6 +2,8 @@ div#settings {
   @extend .popup;
   .tab-content {
     padding: 10px;
+    overflow-y: auto;
+    height: 80%;
   }
   >div {
     position: relative;
@@ -9,6 +11,18 @@ div#settings {
       position: absolute;
       right: 2px;
       top: 2px;
+    }
+    .glyphicon {
+      margin: 2px;
+    }
+    ol {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+    li {
+      border-bottom: 1px solid white;
+      margin: 0;
+      padding: 4px 10px;
     }
   }
 }

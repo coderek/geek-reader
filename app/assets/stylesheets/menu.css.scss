@@ -2,6 +2,24 @@
 $top: 8px;
 $left: 16pt;
 
+@mixin draggable_feed {
+  /* Prevent the text contents of draggable elements from being selectable. */
+  [draggable] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /* Required to make elements draggable in old WebKit */
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+  }
+  .feed {
+    padding: 10px;
+    display: block;
+    cursor: move;
+  }
+}
+
 @mixin  item {
   margin: 0;
   border-top: 1px solid #f3f3f3;
@@ -40,7 +58,6 @@ $left: 16pt;
     background-color: white;
     list-style: none;
   }
-
 
   a {
     color: #000000;
@@ -82,6 +99,10 @@ $left: 16pt;
 
   #categories {
     .category {
+      border:2px solid #ffffff;
+      &.over {
+        border: 2px dashed #000000;
+      }
       &.open {
         >div {
           >i:nth-child(2) {
@@ -109,6 +130,7 @@ $left: 16pt;
         }
       }
       .feeds {
+        @include draggable_feed;
         .feed {
           @include hover_style;
           @include item;

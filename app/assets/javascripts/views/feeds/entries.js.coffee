@@ -17,8 +17,8 @@ class Reader.Views.Entries extends Backbone.View
       @listenTo @collection.feed, "destroy", =>
         Reader.menu_manager.show_menu()
         @remove()
-      log @collection.feed._events
-      log "entries", @collection.feed.cid, @collection.feed.id
+      @listenTo @collection.feed, "change:title", =>
+        @$(".brand .title").text(@collection.feed.get("title"))
 
 
     @page = 0 # page start from 0

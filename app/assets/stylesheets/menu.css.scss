@@ -115,6 +115,7 @@ $left: 16pt;
         }
       }
       >div {
+        font-weight: bold;
         @include hover_style;
         @include item;
         padding-left: 20px;
@@ -145,6 +146,9 @@ $left: 16pt;
             &:hover {
               text-decoration: none;
             }
+          }
+          &.selected {
+            background-color: aliceblue;
           }
           font-weight: normal;
           &.open {

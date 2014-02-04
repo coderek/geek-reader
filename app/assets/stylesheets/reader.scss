@@ -78,15 +78,19 @@ html, body {
   @include menu;
 }
 .flash {
-  z-index: 10;
-  position: absolute;
-  top: 100px;
+  @extend .popup;
+  top: 4px;
   width: 100%;
   text-align: center;
+
 }
 
 
 form.new_feed {
+  height: auto ;
+  >div {
+    padding: 10px ;
+  }
 }
 
 form.login, .register {
@@ -99,6 +103,7 @@ form.login, .register {
 
 .popup {
   position: fixed;
+  z-index: 10;
   top: 0px;
   width: 100%;
   height: 100%;

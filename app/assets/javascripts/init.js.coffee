@@ -10,7 +10,7 @@ window.Reader =
   flashMessage: (msg)->
     flash = $("<div class='flash'><span class='alert alert-success'>#{msg}</span></div>")
     flash.appendTo($("body"))
-    setTimeout ( -> flash.fadeOut(400, -> $(@).remove())), 4000
+    setTimeout ( -> flash.fadeOut(400, -> $(@).remove())), 2000
 
   update_unread: (feed_id, change)->
     Reader.categories.find_feed(feed_id)?.trigger("update_unread", change)

@@ -11,7 +11,7 @@ class FeedsController < ApplicationController
   end
 
   def update
-    pparams = params.permit(:category_id, :id)
+    pparams = params.permit(:category_id, :id, :title)
     respond_with(Feed.update(pparams[:id], pparams))
   end
 
@@ -48,6 +48,6 @@ class FeedsController < ApplicationController
 
   private
   def feed_params
-    params.permit(:url, :id, :category_id)
+    params.permit(:url, :id, :category_id, :title)
   end
 end

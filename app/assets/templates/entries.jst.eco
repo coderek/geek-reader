@@ -1,5 +1,5 @@
 <div class="head dropdown">
-    <i class="glyphicon glyphicon-th menu_toggle "></i><span class="brand"><%=@title %><b class="caret"></b></span>
+    <i class="glyphicon glyphicon-th menu_toggle "></i><span class="brand"><span class="title"><%=@title %></span><b class="caret"></b></span>
     <ul class="dropdown-menu" role="menu">
         <% unless @entries instanceof Reader.Collections.UnreadEntries or @entries instanceof Reader.Collections.StarredEntries :%>
             <li role="presentation" class="dropdown-header">Mark as read</li>

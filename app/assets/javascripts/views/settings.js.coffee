@@ -13,21 +13,23 @@ class Reader.Views.SettingsCategories extends Backbone.View
     "click .edit" : "edit_category"
     "click .delete" : "delete_category"
 
+  edit_form :
+    """
+    <div class='form-inline edit_name'>
+      <div class='form-group'>
+        <input type='text' class='form-control' placeholder='new name'/>
+        <button class='btn btn-primary save'>save</button>
+        <button class='btn cancel'>cancel</button>
+      </div>
+    </div>
+    """
+
   edit_category: (ev)->
     cat_li = @$(ev.target).closest("li")
     cat = Reader.categories.get(cat_li.data("id"))
     return if cat_li.find(".edit_name").length > 0
-    edit_form =
-      """
-      <div class='form-inline edit_name'>
-        <div class='form-group'>
-          <input type='text' class='form-control' placeholder='new name'/>
-          <button class='btn btn-primary save'>save</button>
-          <button class='btn cancel'>cancel</button>
-        </div>
-      </div>
-      """
-    cat_li.append(edit_form)
+
+    cat_li.append(@edit_form)
 
     cat_li.find(".save").click =>
       cat.save({name: cat_li.find("input").val()}, {patch: true, success:=> cat_li.find("span").text(cat.get("name"))})
@@ -63,6 +65,31 @@ class Reader.Views.SettingsFeeds extends Backbone.View
     "click .edit" : "edit_feed"
     "click .delete" : "delete_feed"
 
+  edit_form :
+    """
+      <div class='form-inline edit_name'>
+        <div class='form-group'>
+          <input type='text' class='form-control' placeholder='new name'/>
+          <button class='btn btn-primary save'>save</button>
+          <button class='btn cancel'>cancel</button>
+        </div>
+      </div>
+      """
+
+  edit_feed: (ev)->
+    feed_li = $(ev.target).closest("li")
+    id = feed_li.data("id")
+    feed = @collection.get(id)
+    return if feed_li.find(".edit_name").length > 0
+    feed_li.append(@edit_form)
+    feed_li.find(".save").click =>
+      feed.save({title: feed_li.find("input").val()}, {patch: true, success:=> feed_li.find("span").text(feed.get("title"))})
+      feed_li.find(".edit_name").remove()
+
+    feed_li.find(".cancel").click =>
+      feed_li.find(".edit_name").remove()
+
+
   delete_feed: (ev)->
     feed_li = $(ev.target).closest("li")
     id = feed_li.data("id")
@@ -91,6 +118,7 @@ class Reader.Views.Settings extends Backbone.View
     @remove() if ev.target is ev.currentTarget
 
   initialize: ->
+    @$el.html @template()
     @feeds = []
     Reader.categories.load_all_feed().done =>
       Reader.categories.each (cat)=>
@@ -102,7 +130,7 @@ class Reader.Views.Settings extends Backbone.View
     $(ev.target).tab('show')
 
   render: ->
-    @$el.html @template()
+    @$(".tab-content").empty()
     settings_categories = new Reader.Views.SettingsCategories
     @$(".tab-content").append(settings_categories.el)
     settings_feeds = new Reader.Views.SettingsFeeds(collection: new Backbone.Collection @feeds)

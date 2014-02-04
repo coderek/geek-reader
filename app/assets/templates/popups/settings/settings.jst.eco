@@ -4,6 +4,7 @@
         <li><a href="#settings_feeds" data-toggle="tab">Manage Feeds</a></li>
     </ul>
     <div class="tab-content">
+        loading...
     </div>
     <i class="glyphicon glyphicon-remove-circle close"></i>
 </div>

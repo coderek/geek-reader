@@ -6,16 +6,15 @@ class Reader.Views.Feed extends Backbone.View
   template: JST["feeds/feed"]
   initialize: ->
     @listenTo @model, "remove destroy", @remove_feed
-    log @model._events
-    log "feed", @model.cid, @model.id
     @listenTo @model, "update_unread", @update_unread
+    @listenTo @model, "change:title", @render
     @$el.attr("data-id", @model.id)
 
   remove_feed: ->
     @remove()
 
   events:
-    "click a": "open"
+    "click": "open"
     "dragstart": "dragstart"
     "dragend":"dragend"
 
@@ -33,8 +32,8 @@ class Reader.Views.Feed extends Backbone.View
   open: ->
     log "called open feed"
     @show_entries()
-    @$el.addClass("selected")
     $("li.feed.selected").removeClass(("selected"))
+    @$el.addClass("selected")
 
   render: ->
     @$el.html @template(feed: @model)

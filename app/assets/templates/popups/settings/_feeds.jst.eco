@@ -1,7 +1,7 @@
 <div class="tab-pane active" id="settings_feeds">
     <ol class="feeds">
         <% for feed in @feeds: %>
-        <li data-id="<%=feed.id%>"><%= feed.get("title") %>
+        <li data-id="<%=feed.id%>"><span><%= feed.get("title") %></span>
             <i class="pull-right glyphicon glyphicon-edit edit"></i>
             <i class="pull-right glyphicon glyphicon-remove delete"></i>
         </li>

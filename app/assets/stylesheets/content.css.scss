@@ -80,6 +80,13 @@
       .detail {
         @include article_detail;
       }
+      &.more {
+        text-align: center;
+        padding: 10px;
+        font-size: 14pt;
+        font-weight: bold;
+        color: #c0c0c0;
+      }
     }
   }
   >.empty {

@@ -1,0 +1,14 @@
+div#settings {
+  @extend .popup;
+  .tab-content {
+    padding: 10px;
+  }
+  >div {
+    position: relative;
+    .close {
+      position: absolute;
+      right: 2px;
+      top: 2px;
+    }
+  }
+}

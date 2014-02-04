@@ -17,9 +17,9 @@ class CategoriesController < ApplicationController
   def create
     cat = current_user.categories.create(params.require(:category).permit(:name))
     if cat.persisted?
-      redirect_to :back, notice: "Success"
+      respond_with cat
     else
-      redirect_to :back, notice: "Fail"
+      render json:cat.errors, status: 401
     end
   end
 

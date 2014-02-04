@@ -2,16 +2,18 @@ class Reader.Views.Categories extends Backbone.View
   el: "#categories"
   initialize: ->
     @cat_views = {}
-    Reader.categories.on "reset", (cats)=>
-      cats.each (cat)=>
-        catView = new Reader.Views.Category(model: cat)
-        @$el.append catView.render().el
-        @cat_views["cat_#{cat.id}"] = catView
+    @listenTo Reader.categories, "reset", @render_cats
+    @listenTo Reader.categories, "add", @render_cat
+
+  render_cats: (cats)->
+    cats.each @render_cat.bind(@)
+
+  render_cat: (cat)->
+    catView = new Reader.Views.Category(model: cat)
+    @$el.append catView.render().el
+    @cat_views["cat_#{cat.id}"] = catView
 
   open_feed: (id, fid)->
-    log "setting defered object"
-    @cat_views["cat_#{id}"].loaded.done ->
-      log "category is loaded"
-      $(".feed[data-id=#{fid}] a").click()
-    # need to open it first
-    @cat_views["cat_#{id}"].open()
+    the_view = @cat_views["cat_#{id}"]
+    the_view.open()
+    the_view.rendered.done => $(".feed[data-id=#{fid}] a").click()

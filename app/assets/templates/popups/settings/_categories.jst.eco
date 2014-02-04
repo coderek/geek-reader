@@ -1,0 +1,13 @@
+<div class="form-group">
+    <label for="">New Group</label>
+    <input type="text"/>
+    <button>Add</button>
+</div>
+<ol class="categories">
+    <% for cat in @cats.models : %>
+    <li data-id="<%=cat.id%>"><%= cat.get("name") %>
+        <i class="pull-right glyphicon glyphicon-edit edit"></i>
+        <i class="pull-right glyphicon glyphicon-remove delete"></i>
+    </li>
+    <% end %>
+</ol>

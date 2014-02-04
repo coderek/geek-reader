@@ -3,6 +3,7 @@
 @import "mixins";
 @import "content";
 @import "menu";
+@import "settings";
 @import "mobile";
 
 @include keyframes(loading) {
@@ -86,9 +87,21 @@ html, body {
 
 
 form.new_feed {
-  position: absolute;
+}
+
+form.login, .register {
+  padding: 10px;
+}
+
+.glyphicon:hover {
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
   top: 0px;
   width: 100%;
+  height: 100%;
   >div {
     box-shadow: 0 0 10px 5px darken(#f3f3f3, 30%);
     margin: 30px auto;
@@ -97,8 +110,4 @@ form.new_feed {
     padding: 10px;
     border-radius: 5px;
   }
-}
-
-form.login, .register {
-  padding: 10px;
 }

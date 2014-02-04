@@ -1,0 +1,12 @@
+<div class="tab-pane active" id="settings_feeds">
+    <ol class="feeds">
+        <% for cat in @cats.models : %>
+            <% for feed in cat.feeds.models : %>
+            <li data-id="<%=feed.id%>"><%= feed.get("title") %>
+                <i class="pull-right glyphicon glyphicon-edit"></i>
+                <i class="pull-right glyphicon glyphicon-remove"></i>
+            </li>
+            <% end %>
+        <% end %>
+    </ol>
+</div>

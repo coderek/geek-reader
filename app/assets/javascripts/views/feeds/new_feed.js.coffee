@@ -24,7 +24,7 @@ class Reader.Views.NewFeed extends Backbone.View
     cat_id = @$("[name=feed_category]").val()
     cat = Reader.categories.get(cat_id)
     cat.feeds.create(
-      {url: @$("[name=feed_source]").val(), category: cat_id},
+      {feed_url: @$("[name=feed_source]").val(), category_id: cat_id},
       {
         wait:true
         success: => @close()

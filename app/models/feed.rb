@@ -11,8 +11,19 @@ class Feed < ActiveRecord::Base
     @unread_entries = entries.where({:is_read=> 0}).count
   end
 
+  def compiled_style
+    return "" if style.blank?
+    begin
+      Sass::Engine.new(".article_body[data-feed-id='#{id}'] {#{style}}", :syntax=>:scss).render
+    rescue Sass::SyntaxError => e
+      "// #{e.to_s}"
+    rescue
+      "// unknow error"
+    end
+  end
+
   def attributes
-    super.merge({:unread_count=>nil})
+    super.merge({:unread_count=>nil, :compiled_style=>nil})
   end
 
   def entries

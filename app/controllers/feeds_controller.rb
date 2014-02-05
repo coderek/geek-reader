@@ -3,7 +3,7 @@ class FeedsController < ApplicationController
   before_filter :authenticate
 
   def create
-    if feed = current_user.feeds.create({:feed_url => feed_params[:url], :category_id=>feed_params[:category]})
+    if feed = current_user.feeds.create(feed_params)
       respond_with(feed)
     else
       respond_with({}, status: 404)
@@ -11,8 +11,12 @@ class FeedsController < ApplicationController
   end
 
   def update
-    pparams = params.permit(:category_id, :id, :title)
-    respond_with(Feed.update(pparams[:id], pparams))
+    feed = current_user.feeds.find(feed_params[:id])
+    if feed and feed.update(feed_params)
+      render json: feed
+    else
+      render json: "error update", status: 500
+    end
   end
 
   def index
@@ -48,6 +52,6 @@ class FeedsController < ApplicationController
 
   private
   def feed_params
-    params.permit(:url, :id, :category_id, :title)
+    params.permit(:feed_url, :id, :category_id, :title, :style)
   end
 end

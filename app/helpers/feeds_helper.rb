@@ -8,7 +8,7 @@ module FeedsHelper
 
     def scrub(node)
       # don't render object and iframe tag
-      if node.name=="object" or node.name=="iframe"
+      if ["object", "iframe", "embed", "form"].include?(node.name)
         node.remove
         return STOP
       end

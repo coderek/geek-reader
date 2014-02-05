@@ -19,7 +19,8 @@
     <% end %>
     - <%= a.join(" / ") %>
 </h5>
-<div class="article_body">
+<style></style>
+<div class="article_body" data-feed-id="<%=@entry.get("feed_id")%>">
     <% if @entry.has("content") and @entry.get("content") isnt "" : %>
     <%- @entry.get("content")%>
     <% else : %>

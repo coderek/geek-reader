@@ -7,6 +7,9 @@ class Reader.Views.Entry extends Backbone.View
   initialize: (options) ->
     @listenTo @model, "change:is_read", @update_read_status
     @parent = options.parent
+    @feed = Reader.categories.find_feed(@model.get("feed_id"))
+    if @feed?
+      @listenTo @feed, "change:compiled_style", @render_style
 
   events:
     "click .title": "open"
@@ -39,9 +42,19 @@ class Reader.Views.Entry extends Backbone.View
       @$(".title").show()
       @$(".detail").hide()
 
+  render_style: ->
+    log "render style"
+    return unless @feed?
+    style_id = "style_for_feed_#{@model.id}"
+    if $("##{style_id}").length > 0
+      $("##{style_id}").text(@feed.get("compiled_style"))
+    else
+      style = $("<style id='#{style_id}'></style>").text(@feed.get("compiled_style"))
+      $("head").append(style)
+
   open: (ev)->
     @parent.opened_entry?.close()
-
+    @render_style()
     @$(".detail").show()
     @$(".title").hide()
 

@@ -23,7 +23,7 @@ class Reader.Views.Entries extends Backbone.View
 
     @page = 0 # page start from 0
     @head = null
-    @$("ul.entries").on "scroll", => @scroll.apply(@)
+    @$("ul.entries").on "scroll", @scroll.bind(@)
 
     # keep a reference to all views
     @entry_views = {}
@@ -43,13 +43,25 @@ class Reader.Views.Entries extends Backbone.View
     "click ul.dropdown-menu a[data-mark]" : "mark_read"
     "click ul.dropdown-menu a.refresh" : "refresh_source"
     "click ul.dropdown-menu a.delete" : "delete_source"
+    "click ul.dropdown-menu a.edit_style": "edit_style"
+
+  close_menu: ->
+    @$(".head").removeClass("open")
+
+  edit_style: (ev)->
+    @close_menu()
+    ev.preventDefault()
+    if @collection.feed?
+      Reader.style_editor ?= new Reader.Views.StyleEditor
+      editor = Reader.style_editor
+      editor.show(@collection.feed)
 
   delete_source: ->
     @collection.destroy()
     return false
 
   mark_read: (ev)->
-    @$(".head").removeClass("open")
+    @close_menu()
     age = $(ev.target).data("mark")
     @collection.mark_read(age)
     return false
@@ -69,6 +81,7 @@ class Reader.Views.Entries extends Backbone.View
     log "scroll event"
     clearTimeout(@scroll_detector) if @scroll_detector?
     @scroll_detector = setTimeout (=> @check_scroll()), 500
+    return true
 
   check_scroll: ->
     log "check scroll, state is #{@state}"

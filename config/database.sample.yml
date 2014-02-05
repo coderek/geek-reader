@@ -1,0 +1,23 @@
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: reader_test
+  pool: 5
+  username:
+  password:
+
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: reader_dev
+  pool: 5
+  username:
+  password:
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: reader
+  pool: 5
+#  username: root
+  password:

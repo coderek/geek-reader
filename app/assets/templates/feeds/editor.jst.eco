@@ -3,7 +3,6 @@
     <button class="btn btn-primary">Save</button>
     <button class="btn">Close</button>
 </div>
-<script src="assets/ace/ace.js"></script>
 <script type="text/template" id="template">// sample scss, all styles here will not affect other feed
 //#style_editor {
 //  margin: 0;

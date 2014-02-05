@@ -1,5 +1,5 @@
 class Reader.Views.NewFeed extends Backbone.View
-  template: JST["feeds/new_feed"]
+  template: JST["popups/new_feed"]
   tagName: "form"
   className: "new_feed popup"
   attributes:

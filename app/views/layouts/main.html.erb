@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => false %>
   <%= stylesheet_link_tag    "reader", media: "all", "data-turbolinks-track" => false %>
+  <script src="/assets/ace/ace.js"></script>
+  <script src="/assets/ace/mode-scss.js"></script>
+  <script src="/assets/ace/theme-twilight.js"></script>
   <%= javascript_include_tag "application"%>
   <%= javascript_include_tag "reader"%>
   <%= csrf_meta_tags %>
@@ -14,8 +17,5 @@
 <%= yield %>
 <%= render "common/tracking" %>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/ace.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/theme-twilight.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/mode-scss.js"></script>
 </body>
 </html>

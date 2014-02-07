@@ -5,13 +5,6 @@
 </div>
 <script type="text/template" id="template">// sample scss, all styles here will not affect other feed
 //#style_editor {
-//  margin: 0;
-//  position: fixed;
-//  padding: 0;
-//  top: 0;
-//  bottom: 0;
-//  left: 0;
-//  right: 0;
 //
 //  #editor {
 //    margin: 0;
@@ -23,10 +16,9 @@
 //  .controls {
 //    position: fixed;
 //    bottom: 10px;
-//    display: inline;
-//    right: 10px;
+//    display: inline !important;
+//    right: 10px !important;
 //  }
 //}
 //
-
 </script>

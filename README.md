@@ -17,8 +17,8 @@ It support secondary fetching. For sites like Hacker News, the feed source doesn
 ### Custom Feed Builder
 (planned)
 
-![alt text](https://github.com/coderek/geek-reader/blob/master/app/assets/images/demo2.png "Logo Title Text 1")
-![alt text](https://github.com/coderek/geek-reader/blob/master/app/assets/images/demo1.png "Logo Title Text 1")
+![alt text](https://raw2.github.com/coderek/geek-reader/master/app/assets/images/demo2.png "Logo Title Text 1")
+![alt text](https://raw2.github.com/coderek/geek-reader/master/app/assets/images/demo1.png "Logo Title Text 1")
 
 Besides, here are some standard features.
 

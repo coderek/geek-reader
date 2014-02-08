@@ -44,7 +44,7 @@ class Reader.Views.SettingsCategories extends Backbone.View
     cat = Reader.categories.get(id)
     if cat?
       cat.destroy()
-      Reader.flashMessage("Feeds under #{cat.get("name")} are moved to Deafult")
+      Reader.flash_message("Feeds under #{cat.get("name")} are moved to Deafult")
 
   add_category: ->
     Reader.categories.create({name: @$("input").val()}, {wait: true})
@@ -96,7 +96,7 @@ class Reader.Views.SettingsFeeds extends Backbone.View
     feed = @collection.get(id)
     if feed?
       feed.destroy({wait: true, success: => feed_li.remove()})
-      Reader.flashMessage("Feed #{feed.get("title")} is removed")
+      Reader.flash_message("Feed #{feed.get("title")} is removed")
 
   render: ->
     @$el.html @template(feeds: @collection.models)

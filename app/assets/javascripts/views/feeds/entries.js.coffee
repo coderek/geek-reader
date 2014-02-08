@@ -105,7 +105,7 @@ class Reader.Views.Entries extends Backbone.View
         @$("li.more").html("No more") if status is "Not Found"
 
   refreshed: ->
-    Reader.flashMessage("feed is updated successfully! ")
+    Reader.flash_message("feed is updated successfully! ")
 #    @$(".refresh").removeClass("loading")
 
   refresh_feed: ->

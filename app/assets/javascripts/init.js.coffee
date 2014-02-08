@@ -7,12 +7,13 @@ window.Reader =
   Collections: {}
   Views: {}
   Routers: {}
-  flashMessage: (msg)->
+  flash_message: (msg)->
     flash = $("<div class='flash'><span class='alert alert-success'>#{msg}</span></div>")
     flash.appendTo($("body"))
     setTimeout ( -> flash.fadeOut(400, -> $(@).remove())), 2000
 
   update_unread: (feed_id, change)->
+    # update unread counter
     Reader.categories.find_feed(feed_id)?.trigger("update_unread", change)
 
   initialize: ->

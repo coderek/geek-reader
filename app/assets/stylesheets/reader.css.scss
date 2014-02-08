@@ -3,7 +3,6 @@
 @import "mixins";
 @import "content";
 @import "menu";
-@import "settings";
 @import "mobile";
 @import "editor";
 @import "fullscreen";
@@ -119,3 +118,4 @@ form.login, .register {
     border-radius: 5px;
   }
 }
+@import "settings";

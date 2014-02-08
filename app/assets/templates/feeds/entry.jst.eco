@@ -12,7 +12,7 @@
             </span>
         <% end %>
 
-        <% if Backbone.history.fragment.match(/(unread)|(starred)/i) : %>
+        <% unless Backbone.history.fragment.match(/feeds/i) : %>
             (<a class="feed_title" href="<%=@entry.feed.get_url()%>"><%= @entry.feed.get("title") %></a>)
         <% end %>
 

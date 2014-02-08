@@ -8,8 +8,10 @@
 <ol class="categories">
     <% for cat in @cats.models : %>
     <li data-id="<%=cat.id%>"><span><%= cat.get("name") %></span>
-        <i class="pull-right glyphicon glyphicon-edit edit"></i>
-        <i class="pull-right glyphicon glyphicon-remove delete"></i>
+        <% unless cat.get("name").match(/Default/) :%>
+            <i class="pull-right glyphicon glyphicon-edit edit"></i>
+            <i class="pull-right glyphicon glyphicon-remove delete"></i>
+        <% end %>
         <label class="pull-right label label-default"><%=cat.feeds.length%> feeds</label>
     </li>
     <% end %>

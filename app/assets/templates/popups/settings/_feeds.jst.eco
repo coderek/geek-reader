@@ -4,6 +4,8 @@
         <li data-id="<%=feed.id%>"><span><%= feed.get("title") %></span>
             <i class="pull-right glyphicon glyphicon-edit edit"></i>
             <i class="pull-right glyphicon glyphicon-remove delete"></i>
+            <div class="feed_description"><%=feed.get("description")%></div>
+            <div class="feed_url"><%=feed.get("feed_url")%></div>
         </li>
         <% end %>
     </ol>

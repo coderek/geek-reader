@@ -2,10 +2,13 @@ class Reader.Collections.Entries extends Backbone.Collection
   model: Reader.Models.Entry
 
   refresh: ->
-    req = $.get(@url+"/refresh")
-    req.done (entries)=>
-      @set(entries, {remove: false})
-      @trigger("refreshed")
+    if @url.match /(unread)|(starred)/i
+      @fetch reset: true
+    else
+      req = $.get(@url+"/refresh")
+      req.done (entries)=>
+        @set(entries, {remove: false})
+        @trigger("refreshed")
 
   comparator: (m1, m2) ->
     if m1.get("published")? and m2.get("published")?

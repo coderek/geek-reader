@@ -99,9 +99,8 @@ $left: 16pt;
 
   #categories {
     .category {
-      border:2px solid #ffffff;
       &.over {
-        border: 2px dashed #000000;
+        border: 1px dashed #000000;
       }
       &.open {
         >div {

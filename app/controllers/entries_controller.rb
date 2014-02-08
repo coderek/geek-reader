@@ -15,14 +15,25 @@ class EntriesController < ApplicationController
   def unread
     page = params[:page] || 0
     fids =current_user.feeds.map(&:id)
-    entries = Entry.except(:content, :summary).limit(LIMIT).offset(LIMIT*page.to_i).order("published Desc, created_at Desc").find_all_by_feed_id_and_is_read(fids, 0)
+    entries = Entry
+      .except(:content, :summary)
+      .limit(LIMIT)
+      .offset(LIMIT*page.to_i)
+      .order("published Desc, created_at Desc")
+      .find_all_by_feed_id_and_is_read(fids, 0)
+
     respond_paged_entries entries.shuffle
   end
 
   def starred
     page = params[:page] || 0
     fids =current_user.feeds.map(&:id)
-    entries = Entry.except(:content, :summary).limit(LIMIT).offset(LIMIT*page.to_i).order("published Desc, created_at Desc").find_all_by_feed_id_and_is_starred(fids, 1)
+    entries = Entry
+      .except(:content, :summary)
+      .limit(LIMIT)
+      .offset(LIMIT*page.to_i)
+      .order("published Desc, created_at Desc")
+      .find_all_by_feed_id_and_is_starred(fids, 1)
     respond_paged_entries entries
   end
 

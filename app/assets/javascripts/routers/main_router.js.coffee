@@ -1,5 +1,6 @@
 class Reader.Routers.Main extends Backbone.Router
   routes:
+    # bookmarkable paths
     "" : "home"
     "feeds/:cid/:id" : "show_feed"
     "unread" : "show_unread"

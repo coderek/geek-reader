@@ -6,8 +6,17 @@ class Reader.Views.MenuManager extends Backbone.View
 
   events:
     "click #menu .new_sub": "new_sub"
-    "click #menu .feed, .unread, .starred": "hide_menu"
     "click .head .settings": "settings"
+    "click #menu .unread" : "show_unread"
+    "click #menu .starred" : "show_starred"
+
+  show_unread: ->
+    Backbone.history.navigate("unread", trigger: true)
+    return false
+
+  show_starred: ->
+    Backbone.history.navigate("starred", trigger: true)
+    return false
 
   new_sub: (ev)->
     ev.preventDefault()

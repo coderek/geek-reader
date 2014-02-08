@@ -27,7 +27,7 @@ class Reader.Views.DisplayManager extends Backbone.View
     if not $.contains(@el, @current_view.el)
       @$el.append(@current_view.render().el)
       @current_view.load()
-    log "after change view: ", @current_view
 
     @current_view.$el.show();
+    Reader.menu_manager.hide_menu()
     $(window).resize()

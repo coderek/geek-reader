@@ -53,6 +53,7 @@ class Reader.Views.Entry extends Backbone.View
       $("head").append(style)
 
   open: (ev)->
+    return if $(ev.target).is("a")
     @parent.opened_entry?.close()
     @render_style()
     @$(".detail").show()

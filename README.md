@@ -3,10 +3,18 @@
 This is yet another online feed reader. http://geek-reader.com
 The unique thing about Geek Reader is that its functions are designed towards geeky readers.
 
+![alt text](https://raw2.github.com/coderek/geek-reader/master/app/assets/images/demo2.png "Logo Title Text 1")
+
+
+
 Here I name a few:
 
 ### Custom Stylesheets
 User can set and edit stylesheet for each feed source. This can greatly improve the reading experience.
+
+
+
+![alt text](https://raw2.github.com/coderek/geek-reader/master/app/assets/images/demo1.png "Logo Title Text 1")
 
 ### Secondary Fetching
 It support secondary fetching. For sites like Hacker News, the feed source doesn't supply any meaningful text content. Geek Reader will fetch it from the given link and merge it with the feed.
@@ -19,8 +27,6 @@ It support secondary fetching. For sites like Hacker News, the feed source doesn
 ### Custom Feed Builder
 (planned)
 
-![alt text](https://github.com/coderek/geek-reader/blob/master/app/assets/images/demo2.png "Logo Title Text 1")
-![alt text](https://github.com/coderek/geek-reader/blob/master/app/assets/images/demo1.png "Logo Title Text 1")
 
 Besides, here are some standard features.
 

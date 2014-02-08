@@ -1,4 +1,3 @@
-
 class Feed < ActiveRecord::Base
   after_create :fetch_feed
 

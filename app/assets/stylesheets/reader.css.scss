@@ -6,6 +6,7 @@
 @import "settings";
 @import "mobile";
 @import "editor";
+@import "fullscreen";
 
 @include keyframes(loading) {
   from {
@@ -51,7 +52,7 @@ html, body {
 }
 
 .content_col {
-  width: 69%;
+  width: 100% - $menu_width - 1%;
   margin-left: 1%;
 //  @include col_title;
   .content {
@@ -60,7 +61,7 @@ html, body {
 }
 
 .menu_col {
-  width: 30%;
+  width: $menu_width;
   .head {
     @include col_head;
   }

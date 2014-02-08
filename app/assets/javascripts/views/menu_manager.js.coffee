@@ -7,8 +7,12 @@ class Reader.Views.MenuManager extends Backbone.View
   events:
     "click #menu .new_sub": "new_sub"
     "click .head .settings": "settings"
+    "click .head .toggle_fullscreen": "toggle_fullscreen"
     "click #menu .unread" : "show_unread"
     "click #menu .starred" : "show_starred"
+
+  toggle_fullscreen: ->
+    $("body").toggleClass("fullscreen")
 
   show_unread: ->
     Backbone.history.navigate("unread", trigger: true)

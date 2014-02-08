@@ -47,7 +47,7 @@ class Reader.Views.Category extends Backbone.View
   open: ->
     return if @$el.hasClass("open")
     @$el.addClass("open")
-    if @$(".feeds").children.length isnt @model.feeds.length
+    if @$(".feeds").children().length isnt @model.feeds.length
       @add_feeds(@model.feeds)
     @$(".feeds").show()
 

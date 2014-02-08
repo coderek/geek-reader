@@ -57,6 +57,7 @@ gem 'feedzirra'
 gem 'loofah'
 gem 'unicorn-rails'
 gem 'bourbon'
+gem "ruby-readability", :require => 'readability'
 group :test, :development do
   gem "rspec-rails"
   gem "factory_girl_rails", "~> 4.0"

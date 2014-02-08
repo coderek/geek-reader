@@ -8,6 +8,8 @@
             <li><a href="#" data-mark="1week">Older than 1 week</a></li>
             <li class="divider"></li>
             <li><a href="#" class="edit_style">Edit Feed Style</a></li>
+            <!--<li class="divider"></li>-->
+            <!--<li><a href="#" class="mark_fetch">Fetch Content</a></li>-->
             <li class="divider"></li>
             <li><a href="#" class="delete"><span class="glyphicon glyphicon-remove"></span>Delete Feed</a></li>
         <% end %>

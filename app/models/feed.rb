@@ -1,5 +1,5 @@
+
 class Feed < ActiveRecord::Base
-  include FeedsHelper
   after_create :fetch_feed
 
   belongs_to :user
@@ -56,14 +56,10 @@ class Feed < ActiveRecord::Base
         hash[:title]      = e.title
         hash[:url]        = e.url
         hash[:author]     = e.author
-        hash[:summary]    = parse_article e.summary, get_domain(f.url)
+        hash[:summary]    = (e.respond_to?(:summary )) ? e.summary : ""
         hash[:published]  = e.published
         hash[:uuid]       = e.id
-        if e.respond_to? :content
-          hash[:content]    = parse_article e.content, get_domain(f.url)
-        else
-          hash[:content]    = ""
-        end
+        hash[:content]    = (e.respond_to? (:content)) ? e.content : ""
         e = entries.new(hash)
         created_entries << e if e.save
       end

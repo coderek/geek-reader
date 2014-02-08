@@ -21,10 +21,14 @@ class Reader.Views.NewFeed extends Backbone.View
     @$(".btn.new").button('loading')
     ev.preventDefault()
 
-    cat_id = @$("[name=feed_category]").val()
+    cat_id = @$("#feed_category").val()
     cat = Reader.categories.get(cat_id)
     cat.feeds.create(
-      {feed_url: @$("[name=feed_source]").val(), category_id: cat_id},
+      {
+        feed_url: @$("#feed_source").val()
+        category_id: cat_id
+        secondary_fetch: ~~@$("#secondary_fetch").is(":checked")
+      },
       {
         wait:true
         success: => @close()

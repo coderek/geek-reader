@@ -52,6 +52,6 @@ class FeedsController < ApplicationController
 
   private
   def feed_params
-    params.permit(:feed_url, :id, :category_id, :title, :style)
+    params.permit(:feed_url, :id, :category_id, :title, :style, :secondary_fetch)
   end
 end

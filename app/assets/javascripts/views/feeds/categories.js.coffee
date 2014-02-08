@@ -16,8 +16,7 @@ class Reader.Views.Categories extends Backbone.View
   open_feed: (id, fid)->
     the_view = @cat_views["cat_#{id}"]
     the_view.open()
-    the_view.rendered.done =>
-      if $(".feed[data-id=#{fid}] a").length > 0
-        $(".feed[data-id=#{fid}] a").click()
-      else
-        Backbone.history.navigate("", trigger:true)
+    if $(".feed[data-id=#{fid}] a").length > 0
+      $(".feed[data-id=#{fid}] a").click()
+    else
+      Backbone.history.navigate("", trigger:true)

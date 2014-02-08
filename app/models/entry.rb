@@ -23,11 +23,11 @@ class Entry < ActiveRecord::Base
                 tags: Loofah::HTML5::WhiteList::ALLOWED_ELEMENTS,
                 attributes: Loofah::HTML5::WhiteList::ACCEPTABLE_ATTRIBUTES
             }).content, domain)
-        if feed.fetch_type == "append"
-          self.content = fetched_content + content + summary
-        else
-          self.content = fetched_content
-        end
+        #if feed.fetch_type == "append"
+        self.content = fetched_content + content + summary
+        #else
+        #  self.content = fetched_content
+        #end
         self.summary = "" # use only content
         self.secondary_fetched = 1
       rescue Exception => e
@@ -35,4 +35,5 @@ class Entry < ActiveRecord::Base
       end
     end
   end
+
 end

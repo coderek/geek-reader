@@ -30,7 +30,10 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    current_user.categories.find(params.permit(:id)[:id]).destroy()
-    redirect_to :back
+    if current_user.categories.find(params.permit(:id)[:id]).destroy
+      render :json=>{}
+    else
+      render :json=>{}, :status=> 403
+    end
   end
 end

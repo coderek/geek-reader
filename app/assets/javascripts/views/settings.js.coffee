@@ -120,11 +120,10 @@ class Reader.Views.Settings extends Backbone.View
   initialize: ->
     @$el.html @template()
     @feeds = []
-    Reader.categories.load_all_feed().done =>
-      Reader.categories.each (cat)=>
-        models = cat.feeds.models
-        @feeds = @feeds.concat models
-      @render()
+    Reader.categories.each (cat)=>
+      models = cat.feeds.models
+      @feeds = @feeds.concat models
+    @render()
 
   toggle_tabs: (ev)->
     $(ev.target).tab('show')

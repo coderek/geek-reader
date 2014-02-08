@@ -15,4 +15,9 @@ class Category < ActiveRecord::Base
       feed.update(:category_id => default.id)
     end
   end
+
+  def attributes
+    super.merge({:feeds=>feeds})
+  end
+
 end

@@ -3,13 +3,12 @@ class Reader.Views.Category extends Backbone.View
   tagName: "li"
   className: "category"
   initialize: ->
+    # now the feeds under this category are already loaded
     @$el.html @template(model: @model)
     @listenTo @model, "destroy", @remove
     @listenTo @model, "change:name", @update_name
     @listenTo @model.feeds, "add", @add_feed
     @listenTo @model.feeds, "reset", @add_feeds
-    @$(".feeds").hide()
-    @rendered = $.Deferred()
 
   events:
     "click >div":"toggle"
@@ -48,14 +47,13 @@ class Reader.Views.Category extends Backbone.View
   open: ->
     return if @$el.hasClass("open")
     @$el.addClass("open")
-    @model.load_feeds() if @model.feeds_are_loaded.state() isnt "resolved"
-    @model.feeds_are_loaded.done => @$(".feeds").show()
-
+    if @$(".feeds").children.length isnt @model.feeds.length
+      @add_feeds(@model.feeds)
+    @$(".feeds").show()
 
   add_feeds: (feeds)->
     @$(".feeds").empty()
     feeds.each @add_feed, @
-    @rendered.resolve()
 
   add_feed: (model)->
     @$(".feeds").append (new Reader.Views.Feed(model: model)).render().el

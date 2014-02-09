@@ -77,8 +77,17 @@
         }
       }
       position: relative;
+      &.open {
+        .detail {
+          display: block;
+          @include article_detail;
+        }
+        .title {
+          display: none;
+        }
+      }
       .detail {
-        @include article_detail;
+        display: none;
       }
       &.more {
         text-align: center;
@@ -109,6 +118,9 @@
     padding: 5px;
     height: 30px;
     box-shadow: 0 0 20px 4px #aaaaaa;
+    top: 36px;
+    z-index: 10;
+
     >* {
       height: 20px;
       margin-right: 5px;
@@ -117,7 +129,6 @@
     border-bottom: 1px solid darken(#eeeeee, 10%);
   }
   padding: 10px;
-  display: none;
   h3 {
     a {
       color: $body_text_color;
@@ -133,6 +144,8 @@
     }
   }
   .article_body {
+    position: relative;
+    z-index: 9;
     a {
       border-bottom: 1px dashed #999;
       color: $body_text_color;

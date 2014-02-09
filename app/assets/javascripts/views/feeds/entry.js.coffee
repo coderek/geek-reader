@@ -8,8 +8,8 @@ class Reader.Views.Entry extends Backbone.View
     @listenTo @model, "change:is_read", @update_read_status
     @parent = options.parent
     @feed = Reader.categories.find_feed(@model.get("feed_id"))
-    if @feed?
-      @listenTo @feed, "change:compiled_style", @render_style
+
+    @listenTo( @feed, "change:compiled_style", @render_style) if @feed?
 
   events:
     "click .title": "open"
@@ -38,9 +38,7 @@ class Reader.Views.Entry extends Backbone.View
       Reader.update_unread(@model.get("feed_id"), -1)
 
   close: (ev)->
-    if not ev? or $(ev.currentTarget).is(".close")
-      @$(".title").show()
-      @$(".detail").hide()
+    @$el.removeClass("open") if not ev? or $(ev.currentTarget).is(".close")
 
   render_style: ->
     log "render style"
@@ -56,8 +54,7 @@ class Reader.Views.Entry extends Backbone.View
     return if $(ev.target).is("a")
     @parent.opened_entry?.close()
     @render_style()
-    @$(".detail").show()
-    @$(".title").hide()
+    @$el.addClass("open")
 
     if /\W/.test(@$(".detail").html())
       @$(".detail").html(@template_detail(entry: @model))
@@ -70,6 +67,7 @@ class Reader.Views.Entry extends Backbone.View
 
     @$el.parent().scrollTop(scroll_top)
 
+    @ops_width = @$(".ops").width()
     @parent.set_opened_entry(@)
 
   render: ->
@@ -79,3 +77,30 @@ class Reader.Views.Entry extends Backbone.View
     if @model.get("is_starred") == 1
       @$el.addClass("is_starred")
     @
+  article_is_fully_displayed: (ev)->
+    p_top = $(ev.target).scrollTop()
+    el_top = _.reduce(@$el.prevAll("li"), ((memo, el)-> memo + $(el).outerHeight()), 0)
+    el_height = @$el.outerHeight()
+    log p_top, el_top, el_height
+    return p_top <= el_top
+
+  article_is_near_to_bottom: (ev)->
+    p_top = $(ev.target).scrollTop()
+    el_top = _.reduce(@$el.prevAll("li"), ((memo, el)-> memo + $(el).outerHeight()), 0)
+    el_height = @$el.outerHeight()
+    threshold = 40
+    return p_top + threshold > el_top + el_height
+
+  toggle_toolbar: (ev)->
+    return unless @parent.opened_entry is @
+    @$(".ops").width(@ops_width)
+
+    if @article_is_fully_displayed(ev)
+      @$(".ops").css("position", "static")
+    else
+      @$(".ops").css("position", "fixed")
+    if @article_is_near_to_bottom(ev)
+      @$(".ops").hide()
+    else
+      @$(".ops").show() unless @$(".ops").is(":visible")
+

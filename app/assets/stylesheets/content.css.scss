@@ -48,7 +48,7 @@
         }
       }
       &.is_starred {
-        .star {
+        .star_entry {
           color: blue;
         }
       }
@@ -114,19 +114,12 @@
   background-color: white;
   border: 3px solid $gr_blue;
   .ops {
-    background-color: #eeeeee;
     padding: 5px;
-    height: 30px;
-    box-shadow: 0 0 20px 4px #aaaaaa;
     top: 36px;
     z-index: 10;
-
-    >* {
-      height: 20px;
-      margin-right: 5px;
-      line-height: 20px;
+    .glyphicon {
+      margin-right: 4px;
     }
-    border-bottom: 1px solid darken(#eeeeee, 10%);
   }
   padding: 10px;
   h3 {

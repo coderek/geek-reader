@@ -13,8 +13,16 @@ class Reader.Views.Entry extends Backbone.View
 
   events:
     "click .title": "open"
-    "click .close": "close"
-    "click .star": "toggle_starred"
+    "click .close_entry": "close"
+    "click .star_entry": "toggle_starred"
+    "click .next_entry":"go_next"
+    "click .prev_entry":"go_prev"
+
+  go_next: ->
+    @$el.next("li.entry").find(".title").click()
+
+  go_prev: ->
+    @$el.prev("li.entry").find(".title").click()
 
   toggle_starred: ->
     @model.urlRoot = "/feeds/#{@model.id}/entries"
@@ -38,7 +46,7 @@ class Reader.Views.Entry extends Backbone.View
       Reader.update_unread(@model.get("feed_id"), -1)
 
   close: (ev)->
-    @$el.removeClass("open") if not ev? or $(ev.currentTarget).is(".close")
+    @$el.removeClass("open") if not ev? or $(ev.currentTarget).is(".close_entry")
 
   render_style: ->
     log "render style"
@@ -52,7 +60,7 @@ class Reader.Views.Entry extends Backbone.View
 
   open: (ev)->
     return if $(ev.target).is("a")
-    @parent.opened_entry?.close()
+    @parent.close_entry()
     @render_style()
     @$el.addClass("open")
 
@@ -77,30 +85,31 @@ class Reader.Views.Entry extends Backbone.View
     if @model.get("is_starred") == 1
       @$el.addClass("is_starred")
     @
-  article_is_fully_displayed: (ev)->
+
+  get_scroll_params: (ev)->
     p_top = $(ev.target).scrollTop()
     el_top = _.reduce(@$el.prevAll("li"), ((memo, el)-> memo + $(el).outerHeight()), 0)
     el_height = @$el.outerHeight()
-    log p_top, el_top, el_height
+    return [p_top, el_top, el_height]
+
+  article_is_fully_displayed: (p_top, el_top)->
     return p_top <= el_top
 
-  article_is_near_to_bottom: (ev)->
-    p_top = $(ev.target).scrollTop()
-    el_top = _.reduce(@$el.prevAll("li"), ((memo, el)-> memo + $(el).outerHeight()), 0)
-    el_height = @$el.outerHeight()
-    threshold = 40
+  article_is_near_to_bottom: (p_top, el_top, el_height)->
+    threshold = 50
     return p_top + threshold > el_top + el_height
 
   toggle_toolbar: (ev)->
     return unless @parent.opened_entry is @
     @$(".ops").width(@ops_width)
+    params = @get_scroll_params(ev)
 
-    if @article_is_fully_displayed(ev)
+    if @article_is_fully_displayed.apply(@, params)
       @$(".ops").css("position", "static")
     else
       @$(".ops").css("position", "fixed")
-    if @article_is_near_to_bottom(ev)
-      @$(".ops").hide()
+    if @article_is_near_to_bottom.apply(@, params)
+      @$(".ops").fadeOut(100)
     else
       @$(".ops").show() unless @$(".ops").is(":visible")
 

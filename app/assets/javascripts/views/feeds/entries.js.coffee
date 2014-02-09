@@ -142,6 +142,10 @@ class Reader.Views.Entries extends Backbone.View
   set_opened_entry: (entryView)->
     @opened_entry = entryView
 
+  close_entry: ()->
+    @opened_entry?.close()
+    @opened_entry = null
+
   remove_entry: (model)->
     @entry_views["entry_#{model.id}"]?.remove()
 

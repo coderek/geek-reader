@@ -97,12 +97,15 @@ class Reader.Views.Entries extends Backbone.View
       @page += 1
       req = $.getJSON(@collection.url+"?page="+@page)
       req.done (entries)=>
-        @collection.add(entries)
-        @state = "loaded"
-        @$("li.more").remove()
+        if entries.length > 0
+          @collection.add(entries)
+          @state = "loaded"
+          @$("li.more").remove()
+        else
+          @state = "nomore"
+          @$("li.more").html("No more")
       req.fail (jXhr, text, status)=>
-        @state = "nomore"
-        @$("li.more").html("No more") if status is "Not Found"
+        @$("li.more").html("Problem fetching feeds: status #{status}")
 
   refreshed: ->
     Reader.flash_message("feed is updated successfully! ")

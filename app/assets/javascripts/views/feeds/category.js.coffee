@@ -51,6 +51,9 @@ class Reader.Views.Category extends Backbone.View
       @add_feeds(@model.feeds)
     @$(".feeds").show()
 
+  open_feed: (fid)->
+    @model.feeds.get(fid).trigger("open")
+
   add_feeds: (feeds)->
     @$(".feeds").empty()
     feeds.each @add_feed, @

@@ -58,10 +58,6 @@ class EntriesController < ApplicationController
 
   private
   def respond_paged_entries entries
-    if entries.count > 0
-      respond_with(entries)
-    else
-      respond_with(nil, status: 404)
-    end
+    respond_with(entries)
   end
 end

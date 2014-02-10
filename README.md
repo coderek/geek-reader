@@ -3,7 +3,7 @@
 This is yet another online feed reader. http://geek-reader.com
 The unique thing about Geek Reader is that its functions are designed towards geeky readers.
 
-# ![Screenshot](http://geek-reader.com/assets/gr_screenshot-a31b1bfac0d5352798e01a8de86d6c30.gif)
+# ![Screenshot](https://raw2.github.com/coderek/geek-reader/master/app/assets/images/gr_screenshot.gif)
 
 
 Here I name a few:

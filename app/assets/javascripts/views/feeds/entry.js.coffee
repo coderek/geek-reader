@@ -101,13 +101,17 @@ class Reader.Views.Entry extends Backbone.View
 
   toggle_toolbar: (ev)->
     return unless @parent.opened_entry is @
-    @$(".ops").width(@ops_width)
     params = @get_scroll_params(ev)
 
     if @article_is_fully_displayed.apply(@, params)
-      @$(".ops").css("position", "static")
+      @$(".ops").css("position", "absolute")
+      @$(".ops").css("right", "3px")
+      @$(".ops").css("top", "3px")
     else
       @$(".ops").css("position", "fixed")
+      right = $(".content_col").width() - @$el.width()
+      @$(".ops").css("right", (right + 3 )+ "px")
+      @$(".ops").css("top", "33px")
     if @article_is_near_to_bottom.apply(@, params)
       @$(".ops").fadeOut(100)
     else

@@ -114,8 +114,9 @@
   background-color: white;
   border: 3px solid $gr_blue;
   .ops {
-    padding: 5px;
-    top: 36px;
+    position: absolute;
+    top: 3px;
+    right: 3px;
     z-index: 10;
     .glyphicon {
       margin-right: 4px;

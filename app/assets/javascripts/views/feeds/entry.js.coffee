@@ -105,13 +105,11 @@ class Reader.Views.Entry extends Backbone.View
 
     if @article_is_fully_displayed.apply(@, params)
       @$(".ops").css("position", "absolute")
-      @$(".ops").css("right", "3px")
-      @$(".ops").css("top", "3px")
+      @$(".ops").css({right: "3px", top: "3px"})
     else
       @$(".ops").css("position", "fixed")
-      right = $(".content_col").width() - @$el.width()
-      @$(".ops").css("right", (right + 3 )+ "px")
-      @$(".ops").css("top", "33px")
+      right = $(".content_col").width() - @$el.width() + $(".content_col").parent().width() - ($(".content_col").offset().left + $(".content_col").width()) - 1
+      @$(".ops").css({right: (right + 3 )+ "px", top: "30px"})
     if @article_is_near_to_bottom.apply(@, params)
       @$(".ops").fadeOut(100)
     else

@@ -52,14 +52,23 @@ class Reader.Views.Category extends Backbone.View
     @$(".feeds").show()
 
   open_feed: (fid)->
-    @model.feeds.get(fid).trigger("open")
+    feed = @model.feeds.get(fid)
+    if feed?
+      feed.trigger("open")
+    else
+      Backbone.history.navigate("#", trigger:true)
 
   add_feeds: (feeds)->
     @$(".feeds").empty()
     feeds.each @add_feed, @
 
-  add_feed: (model)->
-    @$(".feeds").append (new Reader.Views.Feed(model: model)).render().el
+  add_feed: (feed)->
+    idx = @model.feeds.indexOf(feed)
+    view = @$(".feeds >:nth-child(#{idx+1})")
+    if view.length>0
+      $((new Reader.Views.Feed(model: feed)).render().el).insertBefore view
+    else
+      @$(".feeds").append (new Reader.Views.Feed(model: feed)).render().el
 
   render: ->
 #    @add_feed(feed) for feed in @model.feeds.models

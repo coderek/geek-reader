@@ -9,30 +9,25 @@ class Entry < ActiveRecord::Base
 
 
   def process_article
-    domain = get_domain(feed.url)
-    content = parse_article content, domain
-    summary = parse_article summary, domain
+    feed_domain = get_domain(feed.url)
+    extended_content = content.to_s + summary.to_s
 
     logger.info "=========== secondary fetch: #{feed.secondary_fetch} ==================="
-    # check if this feed need to be fetched again
-    if feed.secondary_fetch == 1 and secondary_fetched != 1
+    if feed.secondary_fetch == 1
       begin
         source = open(url).read
-        fetched_content = parse_article(
-            Readability::Document.new(source, {
+        fetched_content = Readability::Document.new(source, {
                 tags: Loofah::HTML5::WhiteList::ALLOWED_ELEMENTS,
                 attributes: Loofah::HTML5::WhiteList::ACCEPTABLE_ATTRIBUTES
-            }).content, domain)
-        #if feed.fetch_type == "append"
-        self.content = fetched_content + content + summary
-        #else
-        #  self.content = fetched_content
-        #end
-        self.summary = "" # use only content
-        self.secondary_fetched = 1
+            }).content
+        compound_content = fetched_content + extended_content
+        write_attribute :content,  (parse_article compound_content, get_domain(url))
       rescue Exception => e
         logger.info "entry refetch error for #{title}:  #{e}"
+        write_attribute :content, (parse_article extended_content, feed_domain)
       end
+    else
+      write_attribute  :content, (parse_article extended_content, feed_domain)
     end
   end
 

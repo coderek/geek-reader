@@ -31,7 +31,9 @@ class Reader.Views.NewFeed extends Backbone.View
       },
       {
         wait:true
-        success: => @close()
+        success: (f)=>
+          Reader.menu_manager.cats_menu.open_feed(f.get("category_id"), f.id)
+          @close()
         error: (model, resp) => @error_add_feed(resp.status)
       }
     )

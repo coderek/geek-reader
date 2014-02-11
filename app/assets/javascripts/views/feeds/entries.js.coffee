@@ -122,6 +122,7 @@ class Reader.Views.Entries extends Backbone.View
   render_entry: (entry)->
     @$("li.more").remove()
     # always insert entries in the correct order
+    # need to cater updated entries (insert at top) and paged entries (insert at bottom)
     entry_view = new Reader.Views.Entry({model:entry, parent: @})
     idx = @collection.indexOf(entry) + 1
     insert_before = null

@@ -1,5 +1,6 @@
 @mixin category {
   .category {
+    @extend .non_selectable;
     &.over {
       border: 1px dashed #000000;
     }

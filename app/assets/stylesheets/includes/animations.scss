@@ -1,0 +1,27 @@
+
+@include keyframes(loading) {
+  from {
+    @include transform(rotate(0));
+  }
+  to {
+    @include transform(rotate(360deg));
+  }
+}
+
+@include keyframes(slideIn) {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0%
+  }
+}
+
+@include keyframes(slideOut) {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -100%
+  }
+}

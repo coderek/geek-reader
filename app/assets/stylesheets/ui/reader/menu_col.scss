@@ -1,0 +1,92 @@
+@mixin hover_style {
+  &:hover {
+    cursor: pointer;
+    background-color: #dddddd;
+  }
+}
+
+@mixin normal_icon {
+  position: relative;
+  top: 2px;
+  left: -4px;
+}
+
+@mixin menu {
+  position: relative;
+  ul, li {
+    @extend .slim;
+  }
+  li {
+    background-color: white;
+    list-style: none;
+  }
+
+  a {
+    color: #000000;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  #menu {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    >ul:first-child {
+      >li {
+        &.search:hover {
+          cursor: text;
+          background-color: #ffffff;
+        }
+        >div {
+          @extend .menu_item;
+        }
+        input.search {
+          outline: none;
+        }
+        @include hover_style;
+      }
+
+      [role=search] {
+        border: #f3f3f3;
+      }
+    }
+  }
+  .toggle_fullscreen {
+    margin-right: 10px;
+    position: absolute;
+    right: 20px;
+    top: 4px;
+    [class$=full] {
+      display: none;
+    }
+  }
+  #categories {
+    @include category;
+    .category:first-child {
+      border-top: none;
+    }
+  }
+}
+
+@mixin menu_col {
+  .menu_col {
+    width: $menu_width;
+    .head {
+      @include col_head;
+    }
+    a[data-toggle] {
+      &:hover {
+        background: none;
+        color: #000000;
+      }
+      &:focus {
+        outline: none;
+      }
+      &:visited {
+      }
+      text-decoration: none;
+    }
+    @include menu;
+  }
+}

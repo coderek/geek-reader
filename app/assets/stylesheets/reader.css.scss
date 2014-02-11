@@ -1,121 +1,115 @@
+@import "bootstrap_helper";
 @import "bourbon";
-@import "variables";
-@import "mixins";
-@import "content";
-@import "menu";
-@import "mobile";
-@import "editor";
-@import "fullscreen";
 
-@include keyframes(loading) {
-  from {
-    @include transform(rotate(0));
-  }
-  to {
-    @include transform(rotate(360deg));
-  }
-}
+@import "configs/**/*";
+@import "includes/**/*";
+@import "ui/reader/*";
 
-@include keyframes(slideIn) {
-  from {
-    left: -100%;
-  }
-  to {
-    left: 0%
-  }
-}
 
-@include keyframes(slideOut) {
-  from {
-    left: 0%;
-  }
-  to {
-    left: -100%
-  }
-}
 
 html, body {
   width: 100%;
-  .container {
-    width: 100%;
+  @include container;
+}
+
+@media (min-width: 600px) {
+  body.fullscreen {
+    .menu_col {
+      position: absolute;
+      left: - $menu_width;
+      .toggle_fullscreen {
+        right: -30px;
+        [class$=small] {
+          display: none;
+        }
+        [class$=full] {
+          display: block;
+        }
+      }
+    }
+    .content_col {
+      width: 90%;
+      margin: 0 5%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  form.new_feed {
+    z-index: 4;
+    >div {
+      width: 100% !important;
+    }
+  }
+
+  .toggle_fullscreen {
+    display: none;
+  }
+
+    div.container {
     padding: 0;
-  }
-//  ugly
-//  font: 10pt/12pt 'trebuchet ms', verdana, helvetica, arial, sans-serif;
-}
-
-.content_col, .menu_col {
-  float: left;
-  margin: 0;
-  padding: 0;
-}
-
-.content_col {
-  width: 100% - $menu_width - 1%;
-  margin-left: 1%;
-//  @include col_title;
-  .content {
-    @include content;
-  }
-}
-
-.menu_col {
-  width: $menu_width;
-  .head {
-    @include col_head;
-  }
-  a[data-toggle] {
-    &:hover {
-      background: none;
-      color: #000000;
+    .menu_col {
+      position: absolute;
+      width: 100%;
+      left: -100%;
+      z-index: 3;
+      @include animation-name(slideOut);
+      @include animation-duration(0.2s);
+      @include animation-timing-function(linear);
     }
-    &:focus {
-      outline: none;
+    i.refresh {
+      top: 10px !important;
+      right: 2px !important;
     }
-    &:visited {
+    .content_col {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      .content {
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+      }
+      .head {
+        i {
+          margin-right: 10px;
+          display: inline-block !important;
+        }
+      }
     }
-    text-decoration: none;
+    .content_col, .feed_title {
+      z-index: 2;
+    }
+
+    .content_col, .menu_col {
+      height: 100%;
+      background-color: #ffffff;
+
+      &>div:first-child {
+        padding: 8px 4px;
+        height: auto;
+        span {
+          display: inline;
+          line-height: 1.2em;
+        }
+        a[data-toggle] {
+          line-height: 1.2em;
+        }
+      }
+    }
   }
-  @include menu;
-}
-.flash {
-  @extend .popup;
-  top: 4px;
-  width: 100%;
-  text-align: center;
 
-}
-
-
-form.new_feed {
-  height: auto ;
-  >div {
-    padding: 10px ;
-  }
-}
-
-form.login, .register {
-  padding: 10px;
-}
-
-.glyphicon:hover {
-  cursor: pointer;
-}
-
-.popup {
-  position: fixed;
-  z-index: 10;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  >div {
-    box-shadow: 0 0 10px 5px darken(#f3f3f3, 30%);
-    margin: 5% auto;
-    max-width: 500px;
-    height: 90%;
-    background-color: #f3f3f3;
-    padding: 0px;
-    border-radius: 5px;
+  div.container.show_menu {
+    .menu_col {
+      @include animation-name(slideIn);
+      @include animation-duration(0.2s);
+      @include animation-timing-function(linear);
+      left: 0%;
+    }
+    .content_col {
+    }
   }
 }
-@import "settings";

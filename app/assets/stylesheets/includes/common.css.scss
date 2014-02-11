@@ -1,0 +1,50 @@
+img {
+  max-width: 100%;
+}
+
+.glyphicon:hover {
+  cursor: pointer;
+}
+
+.slim {
+  margin: 0;
+  padding: 0;
+}
+.menu_item {
+  margin: 0;
+  border-top: 1px solid #f3f3f3;
+  font-size: 11pt;
+  text-transform: capitalize;
+  padding: $top 4px;
+  position: relative;
+  padding-left: $left+4px;
+  i {
+    position: absolute;
+    top: $top + 4px;
+    left: 4px;
+  }
+}
+
+.popup {
+  position: fixed;
+  z-index: 10;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  >div {
+    box-shadow: 0 0 10px 5px darken(#f3f3f3, 30%);
+    margin: 5% auto;
+    max-width: 500px;
+    height: 90%;
+    background-color: #f3f3f3;
+    padding: 0px;
+    border-radius: 5px;
+  }
+}
+
+.flash {
+  @extend .popup;
+  top: 4px;
+  width: 100%;
+  text-align: center;
+}

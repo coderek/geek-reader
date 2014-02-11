@@ -1,4 +1,5 @@
-.container:not(#main) {
+// style for index page
+.container {
 //  max-width: 800px;
   margin: 10px auto;
   background-color: #ffffff;
@@ -28,9 +29,13 @@
     }
   }
 }
+
 footer {
   text-align: center;
   padding-bottom: 10px;
   color: lightgrey;
 }
 
+form.login, .register {
+  padding: 10px;
+}

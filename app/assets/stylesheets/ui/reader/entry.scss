@@ -1,0 +1,128 @@
+@mixin article_body {
+  .article_body {
+    position: relative;
+    z-index: 9;
+    a {
+      border-bottom: 1px dashed #999;
+      color: $body_text_color;
+    }
+    img, video, pre {
+      max-width: 100%;
+    }
+    pre code {
+      white-space: prew;
+      overflow-x: auto;
+    }
+    img {
+      display: block;
+      margin: 10px auto;
+      border: 5px solid #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px 1px #ddd;
+    }
+    @include h(1);
+    @include h(2);
+    @include h(3);
+    @include h(4);
+    @include h(5);
+  }
+}
+
+@mixin article_toolbar {
+  .ops {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    z-index: 10;
+    .glyphicon {
+      margin-right: 4px;
+    }
+  }
+}
+
+@mixin title {
+  .title {
+    border-left: 3px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+    padding: 10px;
+    font-size: 12pt;
+    font-weight: bold;
+
+    &:hover {
+      cursor: pointer;
+    }
+    .sub_title {
+      font-size: 10pt;
+    }
+  }
+}
+
+@mixin article_detail {
+  background-color: white;
+  border: 3px solid $gr_blue;
+  padding: 10px;
+
+  h3 {
+    a {
+      color: $body_text_color;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .close span {
+    color: #000000;
+    &:hover {
+      color: #000000;
+    }
+  }
+  @include article_toolbar;
+  @include article_body;
+}
+
+@mixin entry {
+  li.entry {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    border-top: 1px solid #ffffff;
+    list-style: none;
+
+    &.is_read {
+      background-color: #eeeeee;
+      border-left: none;
+      .title {
+        font-weight: normal;
+      }
+    }
+    &.is_starred {
+      .star_entry {
+        color: blue;
+      }
+    }
+    &:hover {
+      cursor: default;
+    }
+    .timeago {
+      border-bottom: none;
+      color: #888;
+      &:hover {
+        cursor: default;
+      }
+    }
+    &.open {
+      .detail {
+        display: block;
+        @include article_detail;
+      }
+      .title {
+        display: none;
+      }
+    }
+    .detail {
+      display: none;
+    }
+    @include title;
+
+  }
+}

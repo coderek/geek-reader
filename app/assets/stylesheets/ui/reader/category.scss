@@ -1,0 +1,39 @@
+@mixin category {
+  .category {
+    &.over {
+      border: 1px dashed #000000;
+    }
+    &.open {
+      >div {
+        >i:nth-child(2) {
+          position: absolute;
+          left: -1000px;
+        }
+        >i:nth-child(1) {
+          @include normal_icon;
+        }
+      }
+    }
+    >div {
+      font-weight: bold;
+      @include hover_style;
+      @extend .menu_item;
+
+      padding-left: 20px;
+      &:hover {
+        cursor: pointer;
+      }
+      >i:nth-child(1) {
+        position: absolute;
+        left: -1000px;
+      }
+      >i:nth-child(2) {
+        @include normal_icon;
+      }
+    }
+    .feeds {
+      @include draggable_feed;
+      @include feed;
+    }
+  }
+}

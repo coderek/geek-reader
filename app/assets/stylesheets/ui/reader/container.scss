@@ -1,0 +1,14 @@
+@mixin container {
+  .container {
+    width: 100%;
+    padding: 0;
+
+    .content_col, .menu_col {
+      @extend .slim;
+      float: left;
+    }
+
+    @include content_col;
+    @include menu_col;
+  }
+}

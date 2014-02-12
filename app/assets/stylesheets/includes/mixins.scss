@@ -15,7 +15,7 @@
 
 @mixin draggable_feed {
   [draggable] {
-    @extend .non_electable;
+    @extend .non_selectable;
   }
 }
 

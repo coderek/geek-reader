@@ -30,7 +30,7 @@ class Feed < ActiveRecord::Base
   end
 
   def fetch_feed(f=nil)
-    logger.info "fetching feed: #{feed_url}"
+    logger.info "user #{user_id}: fetching feed: #{feed_url}"
     if f==nil
       raise "feed url is not valid" unless feed_url =~ /^http/
       if last_modified != nil
@@ -48,6 +48,8 @@ class Feed < ActiveRecord::Base
         :etag           => f.etag,
         :last_modified  => f.last_modified
       })
+
+      logger.info "=========== secondary fetch: #{feed.secondary_fetch} ==================="
 
       created_entries = []
       f.entries.each do |e|

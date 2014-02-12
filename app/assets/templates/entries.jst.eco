@@ -1,7 +1,7 @@
 <div class="head dropdown">
     <i class="glyphicon glyphicon-th menu_toggle "></i><span class="brand"><span class="title"><%=@title %></span><b class="caret"></b></span>
     <ul class="dropdown-menu" role="menu">
-        <% unless @entries instanceof Reader.Collections.UnreadEntries or @entries instanceof Reader.Collections.StarredEntries :%>
+        <% unless @entries instanceof Reader.Collections.UnreadEntries or @entries instanceof Reader.Collections.StarredEntries or @entries instanceof Reader.Collections.CategoryEntries :%>
             <li role="presentation" class="dropdown-header">Mark as read</li>
             <li><a href="#" data-mark="all">All</a></li>
             <li><a href="#" data-mark="1day">Older than 1 day</a></li>

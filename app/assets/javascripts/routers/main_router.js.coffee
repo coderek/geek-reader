@@ -3,6 +3,7 @@ class Reader.Routers.Main extends Backbone.Router
     # bookmarkable paths
     "" : "home"
     "feeds/:cid/:id" : "show_feed"
+    "category/:cid" : "show_category_entries"
     "unread" : "show_unread"
     "starred" : "show_starred"
 
@@ -35,6 +36,10 @@ class Reader.Routers.Main extends Backbone.Router
 
   show_starred: ->
     Reader.display_manager.render_entries(Reader.starred_entries)
+
+  show_category_entries: (cid)->
+    cat = Reader.categories.get(cid)
+    Reader.display_manager.render_entries(cat.entries) if cat?
 
   home: ->
     @show_unread()

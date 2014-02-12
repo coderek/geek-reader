@@ -38,20 +38,29 @@ class Reader.Views.Category extends Backbone.View
     @$el.addClass("over")
     return false
 
-  toggle: ->
+  toggle: (ev)->
+    return true if $(ev.target).is("a")
     return @open() unless @$el.is(".open")
 
     @$el.removeClass("open")
     @$(".feeds").hide()
 
-  open: ->
+  open_category_entries: ->
+    Backbone.history.navigate("/category/#{@model.id}", trigger: true)
+
+  expand: ->
     return if @$el.hasClass("open")
     @$el.addClass("open")
     if @$(".feeds").children().length isnt @model.feeds.length
       @add_feeds(@model.feeds)
     @$(".feeds").show()
 
+  open: ->
+#    @open_category_entries()
+    @expand()
+
   open_feed: (fid)->
+    @expand()
     feed = @model.feeds.get(fid)
     if feed?
       feed.trigger("open")

@@ -12,7 +12,6 @@ class Entry < ActiveRecord::Base
     feed_domain = get_domain(feed.url)
     extended_content = content.to_s + summary.to_s
 
-    logger.info "=========== secondary fetch: #{feed.secondary_fetch} ==================="
     if feed.secondary_fetch == 1
       begin
         source = open(url).read

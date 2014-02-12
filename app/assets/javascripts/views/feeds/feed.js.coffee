@@ -45,7 +45,7 @@ class Reader.Views.Feed extends Backbone.View
     @
 
   show_entries: ->
-    Reader.display_manager.render_entries(@model)
+    Reader.display_manager.render_entries(@model.entries)
 
   update_unread: (change)->
     @model.set "unread_count", Math.max(parseInt(@model.get("unread_count"), 10) + change, 0)

@@ -8,6 +8,7 @@ Reader::Application.routes.draw do
   get "entries/unread" => "entries#unread"
   get "entries/starred" => "entries#starred"
   get "reader"=>"main#reader", as: "reader"
+  get "categories/:category_id/entries"=>"entries#category"
 
   resources :settings do
     collection do

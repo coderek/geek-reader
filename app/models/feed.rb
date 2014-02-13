@@ -49,8 +49,6 @@ class Feed < ActiveRecord::Base
         :last_modified  => f.last_modified
       })
 
-      logger.info "=========== secondary fetch: #{feed.secondary_fetch} ==================="
-
       created_entries = []
       f.entries.each do |e|
         hash = {}

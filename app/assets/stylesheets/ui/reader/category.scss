@@ -36,5 +36,10 @@
       @include draggable_feed;
       @include feed;
     }
+    .feed_count {
+      text-transform: none;
+      font-size: 7pt;
+      font-weight: normal;
+    }
   }
 }

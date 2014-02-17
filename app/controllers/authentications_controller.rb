@@ -34,7 +34,7 @@ class AuthenticationsController < ApplicationController
           flash[:notice] = "You have successfully created your account and logged in."
           redirect_to :reader
         else
-          redirect_to :root, :notice => "Authentication error. #{user.errors.full_messages}. If you have already register using a email address before, please login first then come to this page to bind a OAuth account."
+          redirect_to :login, :notice => "Authentication error. #{user.errors.full_messages}. If you have already register using a email address before, please login first then come to this page to bind a OAuth account."
         end
       end
     end

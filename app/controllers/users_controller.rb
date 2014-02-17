@@ -21,11 +21,29 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    if @user.persisted?
-      redirect_to :login, :notice=> "Please login now"
+    if session[:omniauth]
+      random_pass = SecureRandom.hex[0...8]
+      pm = user_params.merge({:password=>random_pass, :password_confirmation=>random_pass})
+      user = User.new(pm)
+      auth_hash = session[:omniauth]
+      if user.save
+        session[:user] = user.id
+        user.authentications.create({:provider=> auth_hash[:provider] , :uid=> auth_hash[:uid]})
+
+        session[:omniauth] = nil
+
+        flash[:notice] = "You have successfully created your account and logged in."
+        redirect_to :reader
+      else
+        redirect_to :register, :notice => "Authentication error. #{user.errors.full_messages}"
+      end
     else
-      redirect_to :back, :notice=>"Invalid Information"
+      @user = User.create(user_params)
+      if @user.persisted?
+        redirect_to :login, :notice=> "Please login now"
+      else
+        redirect_to :back, :notice=>"Invalid Information"
+      end
     end
   end
 

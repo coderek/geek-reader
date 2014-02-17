@@ -15,8 +15,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8">
-
-      <h1>Geek Reader</h1>
+      <%= link_to(content_tag("h1", "Geek Reader"), :root, class: "geek_reader") %>
       <summary>An awesome reader for Geeks like you!</summary>
       <div class="screen_shot">
         <%= image_tag("gr_screenshot.gif") %>
@@ -54,13 +53,7 @@
     </div>
     <div class="col-lg-4">
         <%= yield %>
-       <p>
-         For demo, login using:
-         <table class="table">
-           <tr><td>Email</td><td>demo@geek-reader.com</td></tr>
-           <tr><td>Password</td><td>demo</td></tr>
-         </table>
-       </p>
+
     </div>
   </div>
   <%= social_share_button_tag("Geek Reader", {:url => "http://geek-reader.com", :image=>image_path("gr_screenshot.gif")}) %>

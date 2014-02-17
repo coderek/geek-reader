@@ -15,16 +15,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'jquery-rails'
 
-gem 'turbolinks'
-
-gem 'jbuilder', '~> 1.2'
-
-group :doc do
-  gem 'sdoc', require: false
-end
-
 gem 'bcrypt-ruby', '~> 3.0.1', require: "bcrypt"
-
 
 gem "backbone-on-rails"
 gem 'feedzirra'
@@ -41,5 +32,10 @@ end
 gem "whenever", :require => false
 gem 'rails_12factor', group: :production
 gem 'social-share-button'
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem "omniauth-google-oauth2"
 
 ruby "2.1.0"

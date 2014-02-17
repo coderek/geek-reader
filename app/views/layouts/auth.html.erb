@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Geek Reader - Awesome reader for geeks</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Read technical blogs, Hacker News. Customize your reading experience and this is open source!">
+  <meta name="keywords" content="Geek Reader">
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => false %>
+  <%= javascript_include_tag "application"%>
+  <meta name="viewport" content="width=device-width, user-scale=no">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="container">
+  <%= yield %>
+  <footer class="footer">&copy; Derek Zeng 2014</footer>
+</div>
+<%= render "common/tracking" %>
+</body>
+</html>

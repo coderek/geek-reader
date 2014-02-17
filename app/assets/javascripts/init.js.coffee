@@ -30,3 +30,5 @@ window.Reader =
 
 $(document).ready ->
   Reader.initialize()
+  # clear any server flash
+  setTimeout ( -> $(".flash").fadeOut(400, -> $(@).remove())), 2000

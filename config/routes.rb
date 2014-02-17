@@ -1,4 +1,6 @@
 Reader::Application.routes.draw do
+  resources :authentications
+
   resources :users
 
   get "login" => "sessions#new", as: "login"
@@ -10,6 +12,8 @@ Reader::Application.routes.draw do
   get "reader"=>"main#reader", as: "reader"
   get "categories/:category_id/entries"=>"entries#category"
   post "import_feeds" => "feeds#import_feeds"
+
+  get "auth/:provider/callback" => "authentications#create"
 
   resources :settings do
     collection do

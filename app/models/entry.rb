@@ -7,6 +7,13 @@ class Entry < ActiveRecord::Base
 
   before_save :process_article
 
+  def social_share_button_tags
+    ApplicationController.helpers.social_share_button_tag(title, :url => url)
+  end
+
+  def attributes
+    super.merge({:social_share_button_tags=>nil})
+  end
 
   def process_article
     feed_domain = get_domain(feed.url)

@@ -29,3 +29,4 @@
     <%- @entry.get("summary")%>
     <% end %>
 </div>
+<%- @entry.get("social_share_button_tags")%>

@@ -6,7 +6,8 @@ class Reader.Views.MenuManager extends Backbone.View
 
   events:
     "click #menu .new_sub": "new_sub"
-    "click .head .settings": "settings"
+    "click .head .settings": "show_settings"
+    "click .head .import": "show_import"
     "click .head .toggle_fullscreen": "toggle_fullscreen"
     "click #menu .unread" : "show_unread"
     "click #menu .starred" : "show_starred"
@@ -34,10 +35,12 @@ class Reader.Views.MenuManager extends Backbone.View
   hide_menu: ->
     $("body>.container").removeClass("show_menu")
 
-  settings: ->
+  show_settings: (tab)->
     @hide_menu()
-    Reader.settings = new Reader.Views.Settings
-    if not $.contains($("body"), Reader.settings.el)
-      $("body").append(Reader.settings.el)
+    settings = new Reader.Views.Settings
+    $("body").append(settings.render(tab).el)
     @$(".dropdown").removeClass("open")
     return false
+
+  show_import: ->
+    @show_settings("import")

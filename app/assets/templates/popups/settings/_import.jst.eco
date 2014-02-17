@@ -1,0 +1,4 @@
+<div class="form-group form-inline">
+    <label for="">Import File:</label>
+    <input type="file" class="form-control"/>
+</div>

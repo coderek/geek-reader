@@ -1,11 +1,20 @@
 div#settings {
   @extend .popup;
   .tab-content {
-    padding: 10px;
+    padding: 0px;
     overflow-y: auto;
-    height: 80%;
+  }
+  .nav-tabs {
+    li {
+      padding: 0;
+      a {
+        border-radius: 0;
+      }
+    }
   }
   >div {
+    height: auto !important;
+    max-height: 80%;
     position: relative;
     .close {
       position: absolute;
@@ -16,8 +25,11 @@ div#settings {
       margin: 2px;
     }
     ol {
-      margin-top: 10px;
-      padding-left: 20px;
+      margin-top: 0px;
+      li {
+        list-style: none;
+      }
+      padding-left: 0px;
     }
     li {
       border-bottom: 1px solid white;
@@ -29,6 +41,9 @@ div#settings {
     }
     .feed_description {
       font-style: italic;
+    }
+    .form-group {
+      margin: 10px;
     }
   }
 }

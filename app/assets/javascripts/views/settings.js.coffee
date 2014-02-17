@@ -127,11 +127,20 @@ class Reader.Views.Settings extends Backbone.View
 
   toggle_tabs: (ev)->
     $(ev.target).tab('show')
+    # calculate to set the tab-pane's max-height
+    container_height = @$(">div").outerHeight()
+    tabs_height = @$(">div .nav-tabs").outerHeight()
+    pane_height = container_height - tabs_height
+    log container_height, tabs_height
+    @$(">div .tab-pane.active").height(pane_height)
 
-  render: ->
+  render: (tab)->
     @$(".tab-content").empty()
     settings_categories = new Reader.Views.SettingsCategories
     @$(".tab-content").append(settings_categories.el)
     settings_feeds = new Reader.Views.SettingsFeeds(collection: new Backbone.Collection @feeds)
     @$(".tab-content").append(settings_feeds.el)
+    settings_import = new Reader.Views.ImportExport(collection: new Backbone.Collection @feeds)
+    @$(".tab-content").append(settings_import.el)
+
     @

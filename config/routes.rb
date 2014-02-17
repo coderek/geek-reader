@@ -9,6 +9,7 @@ Reader::Application.routes.draw do
   get "entries/starred" => "entries#starred"
   get "reader"=>"main#reader", as: "reader"
   get "categories/:category_id/entries"=>"entries#category"
+  post "import_feeds" => "feeds#import_feeds"
 
   resources :settings do
     collection do

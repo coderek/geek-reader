@@ -61,6 +61,23 @@ module FeedsHelper
     doc.to_s
   end
 
+  def import_opml opml
+    output = []
+    doc = Nokogiri::XML(opml)
+    doc.xpath("/*/*/outline").each do |node|
+      if node["type"].blank?
+        cat = node["title"]
+        sub_nodes = node.xpath("./outline")
+        sub_nodes.each do |n|
+          output << [n["xmlUrl"], cat] unless n["xmlUrl"].blank?
+        end
+      else
+        output << [node["xmlUrl"], nil]unless node["xmlUrl"].blank?
+      end
+    end
+    output
+  end
+
 
   def get_domain url
     url =~ /https?:\/\/[\w\.]+/

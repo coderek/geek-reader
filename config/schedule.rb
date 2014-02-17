@@ -22,3 +22,7 @@
 every 2.hours do
   rake "geek_reader:refresh_all_feeds"
 end
+
+every 1.month do
+  rake "geek_reader:obsolete_entries"
+end

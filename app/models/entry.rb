@@ -11,6 +11,9 @@ class Entry < ActiveRecord::Base
   def process_article
     feed_domain = get_domain(feed.url)
     extended_content = content.to_s + summary.to_s
+    if published.blank?
+      write_attribute(:published , Time.now)
+    end
 
     if feed.secondary_fetch == 1
       begin

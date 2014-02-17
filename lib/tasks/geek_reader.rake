@@ -6,4 +6,9 @@ namespace :geek_reader do
       f.fetch_feed
     end
   end
+
+  desc "Obsolete entries that are older than 2 months"
+  task obsolete_entries: :environment do
+    Entry.where(["published < ? and is_read = 0", Time.now - 2.months]).update_all({is_read: 1})
+  end
 end

@@ -66,4 +66,4 @@ gem "whenever", :require => false
 gem 'rails_12factor', group: :production
 
 
-ruby "2.1.0"
+ruby ENV['CUSTOM_RUBY_VERSION'] || '2.1.0'

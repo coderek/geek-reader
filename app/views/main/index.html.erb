@@ -1,1 +1,22 @@
-<%= render 'sessions/form' %>
+<h3>Login using these services</h3>
+
+<% if flash[:notice]  %>
+  <div class="alert alert-warning">
+    <%= flash[:notice]  %>
+  </div>
+<% end %>
+
+<% if flash[:error]  %>
+  <div class="alert alert-error">
+    <%= flash[:error]  %>
+  </div>
+<% end %>
+
+<%= render "common/oauth" %>
+
+<p>or just
+  <%= link_to("login", login_url) %> or
+  <%= link_to("signup", register_url) %>
+</p>
+
+<%# render 'sessions/form' %>

@@ -1,0 +1,30 @@
+@mixin entries {
+  .entries {
+    @extend .slim;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    .refresh {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+      &.loading {
+        @include animation-play-state(running);
+      }
+      @include animation-play-state(paused);
+      @include animation-name(loading);
+      @include animation-duration(2s);
+      @include animation-timing-function(linear);
+      @include animation-iteration-count(infinite);
+    }
+    @include entry;
+    .more {
+      text-align: center;
+      padding: 10px;
+      font-size: 14pt;
+      font-weight: bold;
+      color: #c0c0c0;
+    }
+  }
+}

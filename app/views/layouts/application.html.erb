@@ -13,28 +13,34 @@
 <body>
 
 <div class="container">
-  <div class="row">
-    <div class="col-lg-8">
-
-      <h1>Geek Reader</h1>
-      <summary>An awesome reader for Geeks like you!</summary>
-      <div class="screen_shot">
-        <%= image_tag("gr_screenshot.png") %>
+      <div class="row">
+        <div class="col-xs-8">
+          <%= link_to(content_tag("h1", "Geek Reader"), :root, class: "geek_reader") %>
+        </div>
+        <div class="col-xs-4">
+          <span class="login pull-right"><%=link_to("Login Now", :login, :class => "btn btn-default") %></span>
+        </div>
       </div>
-      <ul class="row">
-        <li class="col-md-4">
+      <summary>An awesome reader for Geeks like you!</summary>
+      <p>
+        <div class="screen_shot">
+          <%= image_tag("gr_screenshot.gif") %>
+        </div>
+      </p>
+      <ul class="row features">
+        <li class="col-md-4 list-unstyled">
           <h3>Code Highlighting</h3>
           <p>
-            It uses Hightlight.js for highlighting code snippet.
+            It uses Hightlight.js for highlighting code snippet. Every article will have a consistent look of their code snippets.
           </p>
         </li>
-        <li class="col-md-4">
+        <li class="col-md-4 list-unstyled">
           <h3>Custom Styles</h3>
           <p>
             You can customize the stylesheets of any feed, so you can hide those ignoring 1px images and more.
           </p>
         </li>
-        <li class="col-md-4">
+        <li class="col-md-4 list-unstyled">
           <h3>Secondary Fetching</h3>
           <p>
             Feed sources like HackerNews can be set to fetch content from feed url. So you will not need to click the link to see it's content.
@@ -42,27 +48,23 @@
         </li>
       </ul>
 
-      <p>Besides those, you still get all the goodies of a normal reader app.</p>
+      <div class="row">
+        <div class="col-md-8">
+          <p>Besides those, you still get all the goodies of a normal reader app.</p>
 
-      <ul>
-        <li>Periodic updates</li>
-        <li>Email notifications</li>
-        <li>Mobile support</li>
-      </ul>
+          <ul class="other_features">
+            <li>Periodic updates</li>
+            <li>Email notifications</li>
+            <li>Mobile support</li>
+          </ul>
+          <p>Last but not least, it's <a href="https://github.com/coderek/geek-reader">open source!</a> You can modify it to suit your own needs.</p>
+        </div>
+        <div class="col-md-4">
+          <strong>Share</strong>
+          <%= social_share_button_tag("Geek Reader", {:url => "http://geek-reader.com", :image=>image_path("gr_screenshot.gif")}) %>
+        </div>
+      </div>
 
-      <p>Last but not least, it's <a href="https://github.com/coderek/geek-reader">open source!</a> You can modify it to suit your own needs.</p>
-    </div>
-    <div class="col-lg-4">
-        <%= yield %>
-       <p>
-         For demo, login using:
-         <table class="table">
-           <tr><td>Email</td><td>demo@geek-reader.com</td></tr>
-           <tr><td>Password</td><td>demo</td></tr>
-         </table>
-       </p>
-    </div>
-  </div>
   <footer class="footer">&copy; Derek Zeng 2014</footer>
 </div>
 <%= render "common/tracking" %>

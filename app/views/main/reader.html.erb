@@ -1,3 +1,11 @@
+<% if flash[:notice]  %>
+  <div class="flash notice">
+    <span class="alert alert-success">
+      <%= flash[:notice] %>
+    </span>
+  </div>
+<% end %>
+
 <div class="container" id="main">
 
   <div class="menu_col ">

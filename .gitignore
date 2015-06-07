@@ -17,8 +17,8 @@
 
 
 /config/database.yml
-/public/assets
 
 .DS_Store
-.idea
-exp.md
+
+
+

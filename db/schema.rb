@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140203044340) do
+ActiveRecord::Schema.define(version: 20140217201218) do
+
+  create_table "authentications", force: true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -24,16 +32,17 @@ ActiveRecord::Schema.define(version: 20140203044340) do
     t.string   "title"
     t.string   "url"
     t.string   "author"
-    t.text     "summary",    limit: 16777215
-    t.text     "content",    limit: 16777215
+    t.text     "summary",           limit: 16777215
+    t.text     "content",           limit: 16777215
     t.datetime "published"
     t.string   "categories"
     t.string   "uuid"
-    t.integer  "is_read",                     default: 0
-    t.integer  "is_starred",                  default: 0
+    t.integer  "is_read",                            default: 0
+    t.integer  "is_starred",                         default: 0
     t.integer  "feed_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "secondary_fetched",                  default: 0
   end
 
   create_table "feeds", force: true do |t|
@@ -41,13 +50,15 @@ ActiveRecord::Schema.define(version: 20140203044340) do
     t.text     "title"
     t.text     "description"
     t.string   "etag"
-    t.string   "feed_url",      null: false
+    t.string   "feed_url",                           null: false
     t.datetime "last_modified"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "style"
     t.integer  "category_id"
+    t.integer  "secondary_fetch", default: 0
+    t.string   "fetch_type",      default: "append"
   end
 
   create_table "users", force: true do |t|

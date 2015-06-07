@@ -1,18 +1,21 @@
 <div class="title">
     <%= @entry.get("title")%>
+    <% if @entry.get("published")? : %>
+        <abbr class="timeago pull-right" title="<%= @entry.get("published") %>"></abbr>
+    <% else : %>
+        <abbr class="timeago pull-right" title="<%= @entry.get("created_at") %>"></abbr>
+    <% end %>
     <div class="sub_title">
         <% if @entry.get("author")? : %>
-            <%= @entry.get("author")%>
-        <% end %>
-        <% if @entry.get("entry_title")? : %>
-            | <%= @entry.get("entry_title") %>
+            <span class="author">
+                <%= @entry.get("author")%>
+            </span>
         <% end %>
 
-        <% if @entry.get("published")? : %>
-            <abbr class="timeago pull-right" title="<%= @entry.get("published") %>"></abbr>
-        <% else : %>
-            <abbr class="timeago pull-right" title="<%= @entry.get("created_at") %>"></abbr>
+        <% unless Backbone.history.fragment.match(/feeds/i) : %>
+            (<a class="feed_title" href="<%=@entry.feed.get_url()%>"><%= @entry.feed.get("title") %></a>)
         <% end %>
+
         <div class="clearfix"></div>
     </div>
 </div>

@@ -16,13 +16,3 @@ class Reader.Collections.Categories extends Backbone.Collection
     cat.feeds.each (feed)=>
       feed.set("category_id", default_cat.id)
       default_cat.feeds.add(feed)
-
-  load_all_feed: ->
-    cat_loaders = @map (cat)=>
-      cat.load_feeds()
-      cat.feeds_are_loaded
-
-    $.when.apply($, cat_loaders).done =>
-      @all_feeds_are_loaded.resolve()
-
-    return @all_feeds_are_loaded

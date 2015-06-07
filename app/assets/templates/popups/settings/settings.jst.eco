@@ -2,6 +2,7 @@
     <ul class="nav nav-tabs">
         <li class="active"><a href="#settings_categories" data-toggle="tab">Manage Categories</a></li>
         <li><a href="#settings_feeds" data-toggle="tab">Manage Feeds</a></li>
+        <li><a href="#settings_import" data-toggle="tab">Import Feeds</a></li>
     </ul>
     <div class="tab-content">
         loading...

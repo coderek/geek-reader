@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :feeds, :dependent => :destroy
   has_many :categories, :dependent =>  :destroy
+  has_many :authentications, :dependent => :destroy
+
   has_secure_password
   validates_presence_of :email
   validates_uniqueness_of :email
@@ -17,5 +19,9 @@ class User < ActiveRecord::Base
 
   def update_feeds
     feeds.each(&:fetch_feed)
+  end
+
+  def password_required?
+    (authentications.empty? || !password.blank?)
   end
 end

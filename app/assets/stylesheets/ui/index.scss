@@ -1,0 +1,41 @@
+// style for index page
+.container {
+//  max-width: 800px;
+  margin: 10px auto;
+  background-color: #ffffff;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  form {
+    width: 100%;
+    margin: 20px 0;
+    background-color: aliceblue;
+    border-radius: 4px;
+    padding: 4px 10px;
+    border: 1px solid #DDDDDD;
+  }
+  ul:first-of-type {
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    margin: 0;
+    padding: 0;
+  }
+
+  .screen_shot {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  padding-bottom: 10px;
+  color: lightgrey;
+}
+
+form.login, .register {
+  padding: 10px;
+}

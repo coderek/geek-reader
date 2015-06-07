@@ -2,8 +2,4 @@
 <h4><%=@entry.get("author") %></h4>
 
 <span class="close"><i class="glyphicon glyphicon-minus"></i> </span>
-<% if not @entry.has("content") or @entry.get("content") is "": %>
-<%- @entry.get("summary") %>
-<% else: %>
 <%- @entry.get("content") %>
-<% end %>

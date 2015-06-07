@@ -8,13 +8,14 @@ class Reader.Views.Feed extends Backbone.View
     @listenTo @model, "remove destroy", @remove_feed
     @listenTo @model, "update_unread", @update_unread
     @listenTo @model, "change:title", @render
+    @listenTo @model, "open", @open
     @$el.attr("data-id", @model.id)
 
   remove_feed: ->
     @remove()
 
   events:
-    "click": "open"
+    "click": "delegate_open"
     "dragstart": "dragstart"
     "dragend":"dragend"
 
@@ -29,6 +30,10 @@ class Reader.Views.Feed extends Backbone.View
   dragend: ->
     @$el.css("opacity", 1)
 
+  delegate_open: (ev)->
+    unless $(ev.target).is("a")
+      Backbone.history.navigate @$("a").attr("href"), trigger: true
+
   open: ->
     log "called open feed"
     @show_entries()
@@ -40,7 +45,7 @@ class Reader.Views.Feed extends Backbone.View
     @
 
   show_entries: ->
-    Reader.display_manager.render_entries(@model)
+    Reader.display_manager.render_entries(@model.entries)
 
   update_unread: (change)->
     @model.set "unread_count", Math.max(parseInt(@model.get("unread_count"), 10) + change, 0)

@@ -1,7 +1,13 @@
 <div>
     <i class="glyphicon glyphicon-chevron-down"></i>
     <i class="glyphicon glyphicon-chevron-right"></i>
-    <span class="cat_name"><%= @model.get("name") %></span>
+    <a class="cat_name" href="#category/<%=@model.id%>"><%= @model.get("name") %></a>
+    <% feed_count = @model.feeds.length %>
+    <% if feed_count > 1 : %>
+    <span class="feed_count pull-right"><%= feed_count %> </span>
+    <% else if feed_count > 0 : %>
+    <span class="feed_count pull-right"><%= feed_count %> </span>
+    <% end %>
 </div>
 <ul class="feeds">
 </ul>

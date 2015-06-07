@@ -1,4 +1,11 @@
-<a href="#feeds/<%=@feed.get('category_id')%>/<%= @feed.get("id")%>">
-<%= @feed.get("title") %> <span class="unread pull-right"><%= @feed.get("unread_count") %></span>
-</a>
+<div class="row">
+    <div class="col-xs-10">
+        <a href="#feeds/<%=@feed.get('category_id')%>/<%= @feed.get("id")%>">
+            <%= @feed.get("title") %>
+        </a>
+    </div>
+    <div class="col-xs-2 unread">
+        <%= @feed.get("unread_count") %>
+    </div>
+</div>
 <!--<div class="desc"><%= @feed.get("description")%></div>-->

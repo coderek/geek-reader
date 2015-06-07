@@ -4,6 +4,7 @@
     <a data-toggle="dropdown" class="glyphicon glyphicon-align-right pull-right" href="#"></a>
     <ul class="dropdown-menu"  aria-labelledby="dropdownMenu1">
       <li><a href="#" class="settings">Settings</a></li>
+      <li><a href="#" class="import">Import/Export</a></li>
       <li class="divider"></li>
       <li>
         <a href="#"><%=current_user.email%></a>
@@ -11,13 +12,17 @@
       </li>
     </ul>
   </div>
+  <div class="toggle_fullscreen">
+    <i class="glyphicon glyphicon-resize-full" title="expand menu"></i>
+    <i class="glyphicon glyphicon-resize-small" title="minimize menu"></i>
+  </div>
 </div>
 <div id="menu" class="body">
   <ul>
-    <li>
+    <li class="new_sub">
       <div>
         <i class="glyphicon glyphicon-plus-sign"></i>
-        <span class="new_sub">new subscription</span>
+        <span>new subscription</span>
       </div>
     </li>
     <li class="unread">

@@ -78,18 +78,22 @@ class Reader.Views.Entries extends Backbone.View
     $("body>.container").toggleClass("show_menu")
 
   scroll: (ev)->
-    log "scroll event"
+    # toggle floating toolbar if there is a opening entry
+    @opened_entry?.toggle_toolbar(ev)
+
     clearTimeout(@scroll_detector) if @scroll_detector?
     @scroll_detector = setTimeout (=> @check_scroll()), 500
     return true
 
   check_scroll: ->
     log "check scroll, state is #{@state}"
+
+    # try fetching more entries
     return if @state is "nomore"
     scroll_el = @$("ul.entries")
     scroll_bottom = scroll_el.scrollTop() + scroll_el.height()
     actual_height = scroll_el[0].scrollHeight
-    log "scroll_bottom: #{scroll_bottom} actual_height: #{actual_height} state: #{@state}"
+
     if actual_height - scroll_bottom < 4 and @state isnt "loading"
       warn "getting more entries"
       @state = "loading"
@@ -97,15 +101,18 @@ class Reader.Views.Entries extends Backbone.View
       @page += 1
       req = $.getJSON(@collection.url+"?page="+@page)
       req.done (entries)=>
-        @collection.add(entries)
-        @state = "loaded"
-        @$("li.more").remove()
+        if entries.length > 0
+          @collection.add(entries)
+          @state = "loaded"
+          @$("li.more").remove()
+        else
+          @state = "nomore"
+          @$("li.more").html("No more")
       req.fail (jXhr, text, status)=>
-        @state = "nomore"
-        @$("li.more").html("No more") if status is "Not Found"
+        @$("li.more").html("Problem fetching feeds: status #{status}")
 
   refreshed: ->
-    Reader.flashMessage("feed is updated successfully! ")
+    Reader.flash_message("feed is updated successfully! ")
 #    @$(".refresh").removeClass("loading")
 
   refresh_feed: ->
@@ -115,6 +122,7 @@ class Reader.Views.Entries extends Backbone.View
   render_entry: (entry)->
     @$("li.more").remove()
     # always insert entries in the correct order
+    # need to cater updated entries (insert at top) and paged entries (insert at bottom)
     entry_view = new Reader.Views.Entry({model:entry, parent: @})
     idx = @collection.indexOf(entry) + 1
     insert_before = null
@@ -134,6 +142,10 @@ class Reader.Views.Entries extends Backbone.View
 
   set_opened_entry: (entryView)->
     @opened_entry = entryView
+
+  close_entry: ()->
+    @opened_entry?.close()
+    @opened_entry = null
 
   remove_entry: (model)->
     @entry_views["entry_#{model.id}"]?.remove()

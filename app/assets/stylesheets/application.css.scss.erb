@@ -1,0 +1,70 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require social-share-button
+ */
+@import "bootstrap_helper";
+@import "ui/index";
+
+a.geek_reader {
+  text-decoration: none;
+  color : #000000;
+  h1 {
+  }
+}
+span.login {
+  margin-top: 10px;
+}
+
+ul.features {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+
+    box-shadow: inset 0 0 1px 1px #c0c0c0;
+  li {
+    /*background-color: lightblue;*/
+    >* {
+      margin-left: 10px;
+      margin-right: 5px;
+    }
+    >:first-child, >:last-child{
+      margin-top: 10px !important;
+      margin-bottom: 10px !important;
+    }
+    height: 130px;
+  }
+}
+.screen_shot {
+  img {
+    max-width: 800px;
+    box-shadow: inset 0 0 1px 1px #000;
+    border: 1px solid #ddd;
+  }
+  text-align: center;
+  /*background-color: #ddd;*/
+  padding: 10px;
+}
+
+.other_features {
+  li {
+    list-style: disc !important;
+    margin-left: 20px !important;
+  }
+  margin-bottom: 10px !important;
+}
+
+@media (max-width: 992px) {
+  .screen_shot {
+    img {
+      /*box-shadow: none;*/
+    }
+    /*padding: 0px;*/
+  }
+}

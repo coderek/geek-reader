@@ -44,7 +44,7 @@ class Reader.Views.SettingsCategories extends Backbone.View
     cat = Reader.categories.get(id)
     if cat?
       cat.destroy()
-      Reader.flashMessage("Feeds under #{cat.get("name")} are moved to Deafult")
+      Reader.flash_message("Feeds under #{cat.get("name")} are moved to Deafult")
 
   add_category: ->
     Reader.categories.create({name: @$("input").val()}, {wait: true})
@@ -96,7 +96,7 @@ class Reader.Views.SettingsFeeds extends Backbone.View
     feed = @collection.get(id)
     if feed?
       feed.destroy({wait: true, success: => feed_li.remove()})
-      Reader.flashMessage("Feed #{feed.get("title")} is removed")
+      Reader.flash_message("Feed #{feed.get("title")} is removed")
 
   render: ->
     @$el.html @template(feeds: @collection.models)
@@ -120,19 +120,27 @@ class Reader.Views.Settings extends Backbone.View
   initialize: ->
     @$el.html @template()
     @feeds = []
-    Reader.categories.load_all_feed().done =>
-      Reader.categories.each (cat)=>
-        models = cat.feeds.models
-        @feeds = @feeds.concat models
-      @render()
+    Reader.categories.each (cat)=>
+      models = cat.feeds.models
+      @feeds = @feeds.concat models
+    @render()
 
   toggle_tabs: (ev)->
     $(ev.target).tab('show')
+    # calculate to set the tab-pane's max-height
+    container_height = @$(">div").outerHeight()
+    tabs_height = @$(">div .nav-tabs").outerHeight()
+    pane_height = container_height - tabs_height
+    log container_height, tabs_height
+    @$(">div .tab-pane.active").height(pane_height)
 
-  render: ->
+  render: (tab)->
     @$(".tab-content").empty()
     settings_categories = new Reader.Views.SettingsCategories
     @$(".tab-content").append(settings_categories.el)
     settings_feeds = new Reader.Views.SettingsFeeds(collection: new Backbone.Collection @feeds)
     @$(".tab-content").append(settings_feeds.el)
+    settings_import = new Reader.Views.ImportExport(collection: new Backbone.Collection @feeds)
+    @$(".tab-content").append(settings_import.el)
+
     @

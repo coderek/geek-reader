@@ -7,19 +7,28 @@
     </div>
   <% end %>
 
+  <% if flash[:error]  %>
+    <div class="alert alert-error">
+      <%= flash[:error]  %>
+    </div>
+  <% end %>
+
   <div class="field form-group">
     <%= f.label :email %><br>
     <%= f.email_field :email, :class=>"form-control"%>
   </div>
-  <div class="field form-group">
-    <%= f.label :password %><br>
-    <%= f.password_field :password, :class=>"form-control" %>
-  </div>
 
-  <div class="field form-group">
-    <%= f.label :password_confirmation, "Type Again" %><br>
-    <%= f.password_field :password_confirmation, :class=>"form-control" %>
-  </div>
+  <% unless session[:omniauth] %>
+    <div class="field form-group">
+      <%= f.label :password %><br>
+      <%= f.password_field :password, :class=>"form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :password_confirmation, "Type Again" %><br>
+      <%= f.password_field :password_confirmation, :class=>"form-control" %>
+    </div>
+  <% end %>
   <div class="actions form-group">
     <%= f.submit "Signup", :class=>"form-control" %>
   </div>

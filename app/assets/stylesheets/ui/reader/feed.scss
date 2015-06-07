@@ -1,0 +1,29 @@
+@mixin feed {
+  .feed {
+    @extend .menu_item;
+    .unread {
+      padding-left: 0px;
+      font-weight: bold;
+      color: #c0c0c0;
+      text-align: right;
+    }
+    padding-left: $left + 20px;
+    a {
+      color: black;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &.selected {
+      background-color: aliceblue;
+    }
+    font-weight: normal;
+    &.open {
+    }
+//    padding: 10px;
+    display: block;
+    cursor: move;
+
+    @include hover_style;
+  }
+}

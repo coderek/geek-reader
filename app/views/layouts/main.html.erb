@@ -3,8 +3,10 @@
 <head>
   <title>Reader</title>
   <meta name="viewport" content="width=device-width, user-scalable=no">
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => false %>
   <%= stylesheet_link_tag    "reader", media: "all", "data-turbolinks-track" => false %>
+  <script src="/assets/ace/ace.js"></script>
+  <script src="/assets/ace/mode-scss.js"></script>
+  <script src="/assets/ace/theme-twilight.js"></script>
   <%= javascript_include_tag "application"%>
   <%= javascript_include_tag "reader"%>
   <%= csrf_meta_tags %>

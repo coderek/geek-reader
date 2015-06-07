@@ -7,22 +7,44 @@ class EntriesController < ApplicationController
   def index
     page = params[:page] || 0
     entries = current_user.feeds.find(params[:feed_id]).entries.limit(LIMIT).offset(LIMIT*page.to_i)
-    logger.debug current_user.inspect
-    logger.debug entries
     respond_paged_entries entries
+  end
+
+  def category
+    page = params[:page] || 0
+    fids =current_user.feeds.where(:category_id => params[:category_id]).map(&:id)
+    entries = Entry
+    .except(:content, :summary)
+    .limit(LIMIT)
+    .offset(LIMIT*page.to_i)
+    .order("published Desc, created_at Desc")
+    .find_all_by_feed_id_and_is_read(fids, 0)
+
+    respond_paged_entries entries.shuffle
   end
 
   def unread
     page = params[:page] || 0
     fids =current_user.feeds.map(&:id)
-    entries = Entry.except(:content, :summary).limit(LIMIT).offset(LIMIT*page.to_i).order("published Desc, created_at Desc").find_all_by_feed_id_and_is_read(fids, 0)
+    entries = Entry
+      .except(:content, :summary)
+      .limit(LIMIT)
+      .offset(LIMIT*page.to_i)
+      .order("published Desc, created_at Desc")
+      .find_all_by_feed_id_and_is_read(fids, 0)
+
     respond_paged_entries entries.shuffle
   end
 
   def starred
     page = params[:page] || 0
     fids =current_user.feeds.map(&:id)
-    entries = Entry.except(:content, :summary).limit(LIMIT).offset(LIMIT*page.to_i).order("published Desc, created_at Desc").find_all_by_feed_id_and_is_starred(fids, 1)
+    entries = Entry
+      .except(:content, :summary)
+      .limit(LIMIT)
+      .offset(LIMIT*page.to_i)
+      .order("published Desc, created_at Desc")
+      .find_all_by_feed_id_and_is_starred(fids, 1)
     respond_paged_entries entries
   end
 
@@ -47,10 +69,6 @@ class EntriesController < ApplicationController
 
   private
   def respond_paged_entries entries
-    if entries.count > 0
-      respond_with(entries)
-    else
-      respond_with(nil, status: 404)
-    end
+    respond_with(entries)
   end
 end

@@ -1,6 +1,7 @@
 class FeedsController < ApplicationController
   respond_to :json
   before_filter :authenticate
+  include FeedsHelper
 
   def create
     if feed = current_user.feeds.create(feed_params)
@@ -50,8 +51,28 @@ class FeedsController < ApplicationController
     end
   end
 
+  def import_feeds
+    file_content = params[:file_content]
+    begin
+      feed_urls = import_opml file_content
+      feed_urls.each do |pair|
+        url, cat_name = pair
+        cat_name = cat_name || "Default"
+        cat = current_user.categories.find_by_name(cat_name) || current_user.categories.create({:name => cat_name})
+        begin
+          current_user.feeds.create({feed_url: url, category_id: cat.id})
+        rescue
+        end
+      end
+    rescue Exception => e
+      logger.error e
+    ensure
+    end
+    redirect_to :reader
+  end
+
   private
   def feed_params
-    params.permit(:feed_url, :id, :category_id, :title, :style)
+    params.permit(:feed_url, :id, :category_id, :title, :style, :secondary_fetch)
   end
 end

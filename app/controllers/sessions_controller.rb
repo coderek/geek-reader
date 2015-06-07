@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   respond_to :json
 
   def new
+    render layout: "auth"
   end
 
   def index

@@ -1,5 +1,4 @@
 class Feed < ActiveRecord::Base
-  include FeedsHelper
   after_create :fetch_feed
 
   belongs_to :user
@@ -31,7 +30,7 @@ class Feed < ActiveRecord::Base
   end
 
   def fetch_feed(f=nil)
-    logger.info "fetching feed: #{feed_url}"
+    logger.info "user #{user_id}: fetching feed: #{feed_url}"
     if f==nil
       raise "feed url is not valid" unless feed_url =~ /^http/
       if last_modified != nil
@@ -56,14 +55,10 @@ class Feed < ActiveRecord::Base
         hash[:title]      = e.title
         hash[:url]        = e.url
         hash[:author]     = e.author
-        hash[:summary]    = parse_article e.summary, get_domain(f.url)
+        hash[:summary]    = (e.respond_to?(:summary )) ? e.summary : ""
         hash[:published]  = e.published
         hash[:uuid]       = e.id
-        if e.respond_to? :content
-          hash[:content]    = parse_article e.content, get_domain(f.url)
-        else
-          hash[:content]    = ""
-        end
+        hash[:content]    = (e.respond_to? (:content)) ? e.content : ""
         e = entries.new(hash)
         created_entries << e if e.save
       end

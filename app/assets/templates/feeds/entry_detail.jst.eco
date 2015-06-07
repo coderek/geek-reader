@@ -1,7 +1,10 @@
 <div class="ops">
-    <a href="<%=@entry.get("url") %>" target=_blank class="glyphicon glyphicon-link"></a>
-    <i class="glyphicon glyphicon-star star"></i>
-    <i class="glyphicon glyphicon-minus close pull-right"></i>
+    <div class="btn-group btn-group-sm pull-right">
+        <button type="button" class="btn btn-default prev_entry"><span class="glyphicon glyphicon-backward"></span>previous</button>
+        <button type="button" class="btn btn-default close_entry"><span class="glyphicon glyphicon-stop"></span>close</button>
+        <button type="button" class="btn btn-default next_entry" ><span class="glyphicon glyphicon-forward"></span>next</button>
+        <button type="button" class="btn btn-default star_entry"><span class="glyphicon glyphicon-star"></span>Star</button>
+    </div>
 </div>
 <h3>
     <a href="<%=@entry.get("url") %>" target=_blank><%= @entry.get("title") %></a>
@@ -19,7 +22,6 @@
     <% end %>
     - <%= a.join(" / ") %>
 </h5>
-<style></style>
 <div class="article_body" data-feed-id="<%=@entry.get("feed_id")%>">
     <% if @entry.has("content") and @entry.get("content") isnt "" : %>
     <%- @entry.get("content")%>
@@ -27,3 +29,4 @@
     <%- @entry.get("summary")%>
     <% end %>
 </div>
+<%- @entry.get("social_share_button_tags")%>

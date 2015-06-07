@@ -10,8 +10,18 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate
-    unless current_user
-      redirect_to :root
+
+    case request.media_type
+    when "application/json"
+      if user = authenticate_with_http_basic {|u, p|  User.find_by_email(u) }
+        session[:user] = user.id
+      else
+        request_http_basic_authentication
+      end
+    else
+      unless current_user
+        redirect_to :root
+      end
     end
   end
 

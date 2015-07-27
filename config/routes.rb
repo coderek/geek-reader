@@ -8,6 +8,7 @@ Reader::Application.routes.draw do
   delete "sessions"                     => "sessions#destroy", as: "logout"
   get "register"                        => "users#new", as: "register"
   get "entries/unread"                  => "entries#unread"
+  get "refresh_unread"                  => "entries#refresh_unread"
   get "entries/starred"                 => "entries#starred"
   get "reader"                          => "main#reader", as: "reader"
   get "categories/:category_id/entries" => "entries#category"

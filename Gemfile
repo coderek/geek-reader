@@ -7,7 +7,8 @@ group :production do
 end
 
 group :development do
-  gem 'sqlite3'
+  # gem 'sqlite3'
+  gem 'pg'
 end
 group :test, :development do
   gem 'rspec-rails'
@@ -26,7 +27,7 @@ gem 'backbone-on-rails'
 gem 'bcrypt-ruby', '~> 3.0.1', require: 'bcrypt'
 
 # feed related gem
-gem 'feedzirra'
+gem 'feedjira'
 gem 'loofah'
 
 gem 'unicorn-rails'

@@ -67,6 +67,13 @@ class EntriesController < ApplicationController
     respond_with(Entry.update(pa[:id], pa))
   end
 
+  def refresh_unread
+      # refresh all feeds, this is going to take a while
+      #
+      current_user.update_feeds
+      render :json => {}
+  end
+
   private
   def respond_paged_entries entries
     respond_with(entries)

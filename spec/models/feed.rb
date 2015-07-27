@@ -9,12 +9,12 @@ describe Feed do
 
   it "should be able to refresh the feed correctly" do
     # need to disable after_create callback
-    feed = Feedzirra::Feed.parse File.read(File.expand_path(File.dirname(__FILE__)+"/sample_rss2.xml"))
+    feed = Feedjira::Feed.parse File.read(File.expand_path(File.dirname(__FILE__)+"/sample_rss2.xml"))
     f = Feed.create(:feed_url=>"http://codingc.om/feed")
     f.fetch_feed feed
     f.title.should == feed.title
     f.entries.count.should == 3
-    new_feed = Feedzirra::Feed.parse File.read(File.expand_path(File.dirname(__FILE__)+"/sample_rss1.xml"))
+    new_feed = Feedjira::Feed.parse File.read(File.expand_path(File.dirname(__FILE__)+"/sample_rss1.xml"))
     updated = f.fetch_feed new_feed
     updated.count.should == 2
     f.entries.count.should == 5

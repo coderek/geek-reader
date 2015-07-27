@@ -34,9 +34,9 @@ class Feed < ActiveRecord::Base
     if f==nil
       raise "feed url is not valid" unless feed_url =~ /^http/
       if last_modified != nil
-        f = Feedzirra::Feed.fetch_and_parse feed_url, {:if_modified_since => last_modified, :timeout=> 30.seconds}
+        f = Feedjira::Feed.fetch_and_parse feed_url, {:if_modified_since => last_modified, :timeout=> 30.seconds}
       else
-        f = Feedzirra::Feed.fetch_and_parse feed_url, {:timeout=> 30.seconds}
+        f = Feedjira::Feed.fetch_and_parse feed_url, {:timeout=> 30.seconds}
       end
     end
 

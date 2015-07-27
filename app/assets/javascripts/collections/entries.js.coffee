@@ -2,8 +2,11 @@ class Reader.Collections.Entries extends Backbone.Collection
   model: Reader.Models.Entry
 
   refresh: ->
-    if @url.match /(unread)|(starred)/i
-      @fetch reset: true
+    if @url.match /unread/i
+      req = $.get("/refresh_unread")
+      req.done (entries)=>
+        console.log "success"
+      # @fetch reset: true
     else
       req = $.get(@url+"/refresh")
       req.done (entries)=>

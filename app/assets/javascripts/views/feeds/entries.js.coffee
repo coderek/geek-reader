@@ -36,8 +36,8 @@ class Reader.Views.Entries extends Backbone.View
     _.each(models, (e)=> @render_entry(e))
     @check_scroll()
 
-#    "click [class$=refresh]": "refresh_feed"
   events:
+    "click [class$=refresh]": "refresh_feed"
     "click .menu_toggle": "toggle_menu"
     "click .brand" : "toggle_feed_menu"
     "click ul.dropdown-menu a[data-mark]" : "mark_read"

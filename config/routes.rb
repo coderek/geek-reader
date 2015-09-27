@@ -38,5 +38,6 @@ Reader::Application.routes.draw do
       end
     end
   end
+  mount Reader::API => '/endpoint'
   root "main#index"
 end

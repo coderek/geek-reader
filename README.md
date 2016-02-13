@@ -3,7 +3,7 @@
 
 # Geek Reader 
 
-This is yet another online feed reader. [http://geek-reader.herokuapp.com/](http://geek-reader.herokuapp.com/)
+This is yet another online feed reader. [http://reader.derekzeng.me/](http://reader.derekzeng.me/)
 The unique thing about Geek Reader is that its functions are designed towards geeky readers.
 
 # ![Screenshot](https://raw2.github.com/coderek/geek-reader/master/app/assets/images/gr_screenshot.gif)

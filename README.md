@@ -1,4 +1,7 @@
-# Geek Reader (Currently under re-design and re-architecting. It will be built using Django framework and integrate with other apps of mine)
+> (Currently under re-design and re-architecting. It will be built using Django framework and integrate with other apps of mine)
+
+
+# Geek Reader 
 
 This is yet another online feed reader. [http://geek-reader.herokuapp.com/](http://geek-reader.herokuapp.com/)
 The unique thing about Geek Reader is that its functions are designed towards geeky readers.
